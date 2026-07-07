@@ -15,8 +15,9 @@ This repo **is** an Obsidian vault (PARA structure) doubling as a knowledge grap
 - Never commit `graphify-out/` (regenerable), `.obsidian/workspace*.json` (machine-local UI state), or
   a `.env` file (use `.env.example` as the template) — CI (`.github/workflows/vault-check.yml`) blocks
   all three, plus obvious API-key-shaped strings.
-- Before committing note changes, run `python3 scripts/check-links.py` — CI fails the PR on any
-  `[[wikilink]]` pointing at a note that doesn't exist.
+- Run `./scripts/install-hooks.sh` once per clone — it wires up a pre-commit hook (`.githooks/pre-commit`)
+  that runs `check-links.py` and `guard-secrets.sh` locally, so violations are caught before a commit
+  exists rather than after it's pushed. CI (`vault-check.yml`) runs the same two checks as a backstop.
 - Don't delete notes to "clean up" — move stale ones to `04-Archive/` so the graph keeps their history.
 - If you run `graphify install --project`, diff the resulting changes to this file before accepting —
   it may try to rewrite sections that are hand-maintained here.

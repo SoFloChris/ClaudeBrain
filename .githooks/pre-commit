@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Installed via ./scripts/install-hooks.sh. Blocks a commit if the vault has
+# broken wikilinks or a secret/build artifact staged — the same checks CI
+# runs, just before the commit exists instead of after it's pushed.
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+
+python3 scripts/check-links.py
+./scripts/guard-secrets.sh

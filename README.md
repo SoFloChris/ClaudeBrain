@@ -69,16 +69,21 @@ served unauthenticated to anything that can reach that host/port.
 
 ### Hardening / CI
 
+```bash
+./scripts/install-hooks.sh   # one-time: run the checks below on every local commit, not just in CI
+```
+
 - `.github/workflows/vault-check.yml`'s actions are pinned to commit SHAs (not floating `@v4`/`@v5`
   tags) and the workflow's `GITHUB_TOKEN` is scoped to `permissions: contents: read` — standard
-  supply-chain hardening for Actions.
+  supply-chain hardening for Actions. `shellcheck` lints every script on each run.
 - `scripts/graphify-mcp.sh` checks that the `graphify` Python module actually imports before serving,
   so a missing install fails with an install hint instead of a bare traceback.
-- `scripts/check-links.py` — fails if any `[[wikilink]]` points at a note that doesn't exist. Also
-  run automatically by `graphify-sync.sh`.
-- On every push/PR the workflow also validates `.mcp.json` and blocks the merge if `graphify-out/`, a
-  `.env` file, a `*.pem`/`*.key` file, or an API-key/private-key-shaped string ends up committed
-  (covers Anthropic, OpenAI, Google, AWS, GitHub, and Slack token formats).
+- `scripts/check-links.py` — fails if any `[[wikilink]]` points at a note that doesn't exist. Run by
+  `graphify-sync.sh`, the pre-commit hook, and CI.
+- `scripts/guard-secrets.sh` — blocks `graphify-out/`, a `.env` file, a `*.pem`/`*.key` file, or an
+  API-key/private-key-shaped string from being committed (covers Anthropic, OpenAI, Google, AWS,
+  GitHub, and Slack token formats). Run by the pre-commit hook and CI — the hook catches it before the
+  commit exists, CI is the backstop if the hook was never installed or was bypassed.
 
 ## Workflow
 
