@@ -13,4 +13,10 @@ fi
 PYTHON_BIN="python3"
 command -v python3 >/dev/null 2>&1 || PYTHON_BIN="python"
 
+if ! "$PYTHON_BIN" -c "import graphify" >/dev/null 2>&1; then
+  echo "graphify Python package not importable by $PYTHON_BIN. Install it first:" >&2
+  echo "  pipx install graphifyy   # or: uv tool install graphifyy" >&2
+  exit 1
+fi
+
 exec "$PYTHON_BIN" -m graphify.serve "$GRAPH_FILE"

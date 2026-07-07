@@ -62,13 +62,23 @@ Once the graph exists (run the sync script first), any Claude Code session opene
 `query_graph`, `get_node`, `get_neighbors`, and `shortest_path` tools scoped to this vault — no need
 to dump whole notes into context.
 
+`.mcp.json` uses `graphify.serve`'s stdio transport (local-process only, no network exposure). Graphify
+also supports `--transport http --host 0.0.0.0 --port ... --api-key ...` for team-wide access — if you
+ever switch to that, **always set `--api-key`**; without it, the graph (personal notes included) is
+served unauthenticated to anything that can reach that host/port.
+
 ### Hardening / CI
 
+- `.github/workflows/vault-check.yml`'s actions are pinned to commit SHAs (not floating `@v4`/`@v5`
+  tags) and the workflow's `GITHUB_TOKEN` is scoped to `permissions: contents: read` — standard
+  supply-chain hardening for Actions.
+- `scripts/graphify-mcp.sh` checks that the `graphify` Python module actually imports before serving,
+  so a missing install fails with an install hint instead of a bare traceback.
 - `scripts/check-links.py` — fails if any `[[wikilink]]` points at a note that doesn't exist. Also
   run automatically by `graphify-sync.sh`.
-- `.github/workflows/vault-check.yml` — on every push/PR: validates `.mcp.json`, runs the link
-  checker, and blocks the merge if `graphify-out/`, a `.env` file, or an API-key-shaped string ends
-  up committed.
+- On every push/PR the workflow also validates `.mcp.json` and blocks the merge if `graphify-out/`, a
+  `.env` file, a `*.pem`/`*.key` file, or an API-key/private-key-shaped string ends up committed
+  (covers Anthropic, OpenAI, Google, AWS, GitHub, and Slack token formats).
 
 ## Workflow
 
