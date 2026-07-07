@@ -26,16 +26,22 @@ Graphify turns the vault's Markdown + `[[wikilinks]]` into a queryable knowledge
 ```bash
 pipx install graphifyy        # or: uv tool install graphifyy
 graphify install --project    # registers the skill for this repo (writes CLAUDE.md/AGENTS.md hints)
+cp .env.example .env          # only needed for standalone `graphify extract`/`query` outside an assistant session
 ```
+
+`graphify install --project` may rewrite `CLAUDE.md`/`AGENTS.md` — diff before accepting, since this
+repo's `CLAUDE.md` is also hand-maintained (see below).
 
 ### Build / refresh the graph
 
 ```bash
-./scripts/graphify-sync.sh    # wraps: graphify extract . --update
+./scripts/graphify-sync.sh
 ```
 
-Run this after any batch of note edits. `--update` re-extracts only changed files, so it's cheap to
-run often. Output lands in `graphify-out/` (gitignored — regenerate locally, don't commit it).
+Run this after any batch of note edits. The script checks for broken `[[wikilinks]]` first (via
+`scripts/check-links.py`) and fails fast rather than feeding a broken vault into extraction; it does
+a full `graphify extract .` on first run and an incremental `--update` afterward. Output lands in
+`graphify-out/` (gitignored — regenerate locally, don't commit it).
 
 ### Query it
 
@@ -47,22 +53,22 @@ graphify path "<note A>" "<note B>"
 
 ### Live agent access (MCP)
 
-`.mcp.json` in this repo registers a `graphify` MCP server for Claude Code:
+`.mcp.json` registers a `graphify` MCP server for Claude Code, pointed at `scripts/graphify-mcp.sh`
+rather than invoking `python`/`python3` directly — the wrapper picks whichever interpreter exists and
+fails with a clear message (instead of a Python traceback) if `graphify-out/graph.json` hasn't been
+built yet.
 
-```json
-{
-  "mcpServers": {
-    "graphify": {
-      "command": "python",
-      "args": ["-m", "graphify.serve", "graphify-out/graph.json"]
-    }
-  }
-}
-```
+Once the graph exists (run the sync script first), any Claude Code session opened in this repo gets
+`query_graph`, `get_node`, `get_neighbors`, and `shortest_path` tools scoped to this vault — no need
+to dump whole notes into context.
 
-Once `graphify-out/graph.json` exists (run the sync script first), any Claude Code session opened in
-this repo gets `query_graph`, `get_node`, `get_neighbors`, and `shortest_path` tools scoped to this
-vault — no need to dump whole notes into context.
+### Hardening / CI
+
+- `scripts/check-links.py` — fails if any `[[wikilink]]` points at a note that doesn't exist. Also
+  run automatically by `graphify-sync.sh`.
+- `.github/workflows/vault-check.yml` — on every push/PR: validates `.mcp.json`, runs the link
+  checker, and blocks the merge if `graphify-out/`, a `.env` file, or an API-key-shaped string ends
+  up committed.
 
 ## Workflow
 

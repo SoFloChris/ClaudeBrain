@@ -1,0 +1,39 @@
+name: Vault Check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Validate .mcp.json
+        run: python3 -c "import json; json.load(open('.mcp.json'))"
+
+      - name: Check for broken wikilinks
+        run: python3 scripts/check-links.py
+
+      - name: Guard against committed secrets / build output
+        run: |
+          set -euo pipefail
+          if [ -d graphify-out ]; then
+            echo "graphify-out/ must not be committed — it's regenerable build output." >&2
+            exit 1
+          fi
+          if [ -f .env ]; then
+            echo ".env must not be committed — copy .env.example instead." >&2
+            exit 1
+          fi
+          if grep -RInE "sk-ant-[A-Za-z0-9_-]{20,}|sk-proj-[A-Za-z0-9_-]{20,}|AIza[0-9A-Za-z_-]{35}" \
+              --exclude-dir=.git .; then
+            echo "Possible API key found in a tracked file." >&2
+            exit 1
+          fi

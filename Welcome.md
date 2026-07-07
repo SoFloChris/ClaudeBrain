@@ -1,6 +1,6 @@
 # Welcome
 
-This vault is a [[PARA]]-organized second brain, indexed by [Graphify](https://github.com/safishamsi/graphify)
+This vault is a PARA-organized second brain, indexed by [Graphify](https://github.com/safishamsi/graphify)
 so an agent can query it as a knowledge graph instead of reading every note.
 
 ## Map

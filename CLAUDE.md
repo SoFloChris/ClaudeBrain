@@ -12,5 +12,11 @@ This repo **is** an Obsidian vault (PARA structure) doubling as a knowledge grap
   before relying on query results for anything just written.
 - Keep notes in the right PARA bucket (`00-Inbox` → triage → `01-Projects`/`02-Areas`/`03-Resources`/`04-Archive`).
   Link related notes with `[[wikilinks]]` — unlinked notes are graph dead ends.
-- Never commit `graphify-out/` (regenerable) or `.obsidian/workspace*.json` (machine-local UI state).
+- Never commit `graphify-out/` (regenerable), `.obsidian/workspace*.json` (machine-local UI state), or
+  a `.env` file (use `.env.example` as the template) — CI (`.github/workflows/vault-check.yml`) blocks
+  all three, plus obvious API-key-shaped strings.
+- Before committing note changes, run `python3 scripts/check-links.py` — CI fails the PR on any
+  `[[wikilink]]` pointing at a note that doesn't exist.
 - Don't delete notes to "clean up" — move stale ones to `04-Archive/` so the graph keeps their history.
+- If you run `graphify install --project`, diff the resulting changes to this file before accepting —
+  it may try to rewrite sections that are hand-maintained here.

@@ -5,3 +5,10 @@ graphify-out/
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/cache
+
+# Secrets — copy .env.example to .env and never commit it
+.env
+.env.local
+
+# OS/editor cruft
+.DS_Store
