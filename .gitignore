@@ -1,0 +1,7 @@
+# Graphify build output — regenerate locally with scripts/graphify-sync.sh
+graphify-out/
+
+# Obsidian local/volatile state (keep vault content, drop machine-specific UI state)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
