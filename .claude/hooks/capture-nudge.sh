@@ -19,7 +19,12 @@ except Exception: sys.exit(0)
 fi
 
 # 2. Did anything in the vault actually change? If so, work was captured — stay quiet.
+#    Check BOTH uncommitted edits and recent commits: a session that wrote notes and
+#    then committed them leaves a clean tree, and must not be nagged for it.
 if [ -n "$(git status --porcelain -- '*.md' 2>/dev/null)" ]; then
+  exit 0
+fi
+if [ -n "$(git log --since='6 hours ago' --name-only --pretty=format: -- '*.md' 2>/dev/null | head -1)" ]; then
   exit 0
 fi
 
