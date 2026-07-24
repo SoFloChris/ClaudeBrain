@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Four kinds of documentation - tutorial, how-to, reference, explanation - and the claim that mixing them is the dominant documentation failure."
 aliases: [Diátaxis]
 related: ["[[Documentation Rot]]", "[[Architecture Decision Record]]"]
 tags:

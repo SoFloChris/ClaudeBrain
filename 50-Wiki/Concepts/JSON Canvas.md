@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "The open JSON format behind Obsidian .canvas files - which is what lets an agent author a visual map as a file."
 aliases: [Canvas, .canvas]
 related: ["[[Obsidian]]", "[[C4 Model]]"]
 tags:

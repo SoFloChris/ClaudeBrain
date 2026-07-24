@@ -1,5 +1,6 @@
 ---
 type: project
+summary: ""   # one sentence: what this system is, in the words I would search for.
 status: active
 repo: 
 build: 

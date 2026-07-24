@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: ""   # one sentence: the claim this note makes. Feeds progressive disclosure.
 aliases: []
 broader: 
 related: []

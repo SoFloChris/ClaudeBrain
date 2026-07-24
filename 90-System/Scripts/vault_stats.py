@@ -18,11 +18,20 @@ VAULT = Path(__file__).resolve().parents[2]
 SKIP_DIRS = {".obsidian", ".git", ".trash", "node_modules", ".claude"}
 SKIP_PREFIXES = ("90-System/Templates/", "90-System/Scripts/", "90-System/Graph/",
                  "90-System/Search Index/")
-STRUCTURAL = {"_Index", "Home", "SETUP", "README", "CLAUDE"}
+# Memory is @-imported into CLAUDE.md, so it is always already in context — it never
+# needs a summary to help an agent decide whether to open it.
+STRUCTURAL = {"_Index", "Home", "SETUP", "README", "CLAUDE", "Memory"}
 # Inside markdown tables the alias pipe must be escaped (`[[note\|Alias]]`), so the
 # trailing backslash has to be stripped off the captured target.
 WIKILINK = re.compile(r"\[\[([^\]|#]+?)\\?(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]")
 STUB_WORDS = 40
+SUMMARY = re.compile(r"^summary:\s*\S", re.M)
+NOTE_TYPE = re.compile(r"^type:\s*(\S+)", re.M)
+# Entity notes are *supposed* to be thin — they are link infrastructure and backlink
+# targets, not essays (see Agent Guide). Only the types that carry thinking get
+# flagged as stubs; padding a person or company note to clear a word count is
+# exactly the note-spam failure mode the vault is trying to avoid.
+THINKING_TYPES = {"concept", "project", "resource", "adr", "runbook", "moc", "area"}
 
 
 def iter_notes():
@@ -32,6 +41,24 @@ def iter_notes():
         if path.relative_to(VAULT).as_posix().startswith(SKIP_PREFIXES):
             continue
         yield path
+
+
+def has_summary(text):
+    """A one-line `summary:` is what lets an agent skip opening the note."""
+    if not text.startswith("---"):
+        return False
+    end = text.find("\n---", 3)
+    return end != -1 and bool(SUMMARY.search(text[3:end]))
+
+
+def note_type(text):
+    if not text.startswith("---"):
+        return ""
+    end = text.find("\n---", 3)
+    if end == -1:
+        return ""
+    m = NOTE_TYPE.search(text[3:end])
+    return m.group(1).strip('"\'') if m else ""
 
 
 def body_of(text):
@@ -71,6 +98,8 @@ def collect():
             "folder": rel.split("/")[0] if "/" in rel else "(root)",
             "words": len(body_of(text).split()),
             "structural": path.stem in STRUCTURAL,
+            "summary": has_summary(text),
+            "type": note_type(text),
         }
         links_out[path.stem] = targets
         for t in targets:
@@ -87,9 +116,11 @@ def report(brief=False):
         if not links_out.get(n) and mentioned.get(n, 0) == 0
     )
     stubs = sorted(
-        (i["words"], n) for n, i in content.items() if i["words"] < STUB_WORDS
+        (i["words"], n) for n, i in content.items()
+        if i["words"] < STUB_WORDS and i["type"] in THINKING_TYPES
     )
     unresolved = sorted({t for tgts in links_out.values() for t in tgts if t not in notes})
+    no_summary = sorted(n for n, i in content.items() if not i["summary"])
     inbox = [n for n, i in content.items() if i["folder"] == "00-Inbox"]
     by_folder = Counter(i["folder"] for i in content.values())
 
@@ -103,6 +134,8 @@ def report(brief=False):
             bits.append(f"{len(stubs)} stubs")
         if unresolved:
             bits.append(f"{len(unresolved)} broken links")
+        if no_summary:
+            bits.append(f"{len(no_summary)} without a summary")
         print("Vault: " + ", ".join(bits) + ".")
         if orphans[:3]:
             print("Orphans (no links in or out): " + ", ".join(orphans[:3])
@@ -120,12 +153,15 @@ def report(brief=False):
     print(f"\n## Orphans — no links in or out ({len(orphans)})")
     print("  " + ("\n  ".join(orphans) if orphans else "none 🎉"))
 
-    print(f"\n## Stubs — under {STUB_WORDS} words ({len(stubs)})")
+    print(f"\n## Stubs — thinking notes under {STUB_WORDS} words ({len(stubs)})")
     if stubs:
         for words, name in stubs:
             print(f"  {words:4}w  {name}")
     else:
         print("  none 🎉")
+
+    print(f"\n## Missing `summary:` — agents must open these to know what they say ({len(no_summary)})")
+    print("  " + ("\n  ".join(no_summary) if no_summary else "none 🎉"))
 
     print(f"\n## Broken links — pointed at, but no such note ({len(unresolved)})")
     if unresolved:
@@ -135,7 +171,7 @@ def report(brief=False):
     else:
         print("  none 🎉")
 
-    if unresolved or orphans or stubs:
+    if unresolved or orphans or stubs or no_summary:
         print("\nEach line above is a note worth writing or connecting.")
 
 

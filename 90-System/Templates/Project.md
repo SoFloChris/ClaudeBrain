@@ -1,5 +1,6 @@
 ---
 type: project
+summary: ""   # one sentence: the outcome this project delivers.
 status: active
 people: []
 companies: []

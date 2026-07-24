@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "Anthropic's agentic coding tool and the engine of this vault - it auto-loads CLAUDE.md, which is what makes Level 1 work at all."
 built_by: "[[Anthropic]]"
 related: ["[[Second Brain]]", "[[LLM Wiki]]"]
 ---

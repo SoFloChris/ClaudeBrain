@@ -1,5 +1,6 @@
 ---
 type: resource
+summary: "How to encode typed relationships in Obsidian so both humans and scripts can read them - the research behind Graph Schema."
 topic: "[[Knowledge Graph]]"
 related: ["[[Obsidian]]", "[[Graph Schema]]", "[[Dataview]]"]
 ---

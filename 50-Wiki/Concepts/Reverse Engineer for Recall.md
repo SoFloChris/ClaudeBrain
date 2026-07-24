@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "File things by the question that will retrieve them later, not by how they arrived."
 broader: "[[Second Brain]]"
 inspired_by: "[[Nate Herk]]"
 related: ["[[Second Brain]]"]

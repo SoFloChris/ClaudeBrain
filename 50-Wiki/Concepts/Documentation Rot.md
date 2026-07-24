@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Notes decay as the thing they describe moves on, and incorrect documentation is worse than missing documentation."
 aliases: [doc rot, documentation decay]
 related: ["[[Architecture Decision Record]]", "[[Diataxis]]", "[[Context vs Connections]]"]
 tags:

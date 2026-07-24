@@ -1,5 +1,6 @@
 ---
 type: person
+summary: "Creator of the 5-level second-brain framework this vault is built on; advocates starting at the lowest level that solves the pain."
 works_at: "[[AI Automation Society]]"
 role: YouTuber & AI automation educator
 ---

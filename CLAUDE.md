@@ -74,6 +74,7 @@ Note-type conventions (from Andy Matuschak's evergreen-note practice):
 - **Memory:** When you learn a durable fact about me, my projects, or my preferences, append it to `90-System/Memory.md` under the right heading with today's date (the `/remember` command does this too). Never store secrets or credentials there.
 - **Linking:** Prefer `[[wikilinks]]` to people, companies, and concepts in `50-Wiki/`. Create the wiki note (from the matching template in `90-System/Templates/`) if it doesn't exist.
 - **Typed relationships:** Record facts like "works at" as frontmatter (`works_at: "[[Acme]]"`, quoted, snake_case) using only the predicates in `90-System/Graph Schema.md`. That's what powers `/graph`.
+- **Every note gets a `summary:`** — one quoted sentence saying what the note *claims*, not what category it's in. It's how the next agent decides whether opening the note is worth the context. `/vault-status` reports any note missing one.
 - **Recall tools:** `/recall <question>` for semantic + keyword search across the vault; `/graph <entity>` for relationship questions; plain Grep/Read for everything else (often best — this vault is small).
 - **Naming:** Descriptive Title Case filenames, no dates in titles except daily notes (`YYYY-MM-DD`).
 - **Templates:** Use `90-System/Templates/` when creating projects, people, companies, concepts, meetings, or resources.

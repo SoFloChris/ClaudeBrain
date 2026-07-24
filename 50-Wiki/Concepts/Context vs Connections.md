@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "The filter for what belongs in a second brain: store evergreen context, discard transient connection noise."
 broader: "[[Second Brain]]"
 inspired_by: "[[Nate Herk]]"
 related: ["[[Second Brain]]"]

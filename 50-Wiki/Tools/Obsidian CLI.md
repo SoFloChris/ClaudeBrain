@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "Command-line access to a vault; the one job it does that the filesystem cannot is renaming a note without breaking inbound links."
 aliases: [obsidian-cli]
 built_by: "[[Dynalist Inc]]"
 related: ["[[Obsidian]]", "[[Claude Code]]"]

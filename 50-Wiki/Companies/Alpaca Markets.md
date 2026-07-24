@@ -1,5 +1,6 @@
 ---
 type: company
+summary: "API-first commission-free brokerage; the broker behind COMMAND, whose paper environment mirrors live order semantics."
 aliases: [Alpaca]
 relationship: vendor
 related: ["[[Alpaca]]", "[[COMMAND — Quant Operations Platform]]"]

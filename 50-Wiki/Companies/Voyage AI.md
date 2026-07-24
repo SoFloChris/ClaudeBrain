@@ -1,5 +1,6 @@
 ---
 type: company
+summary: "Embedding and reranking vendor, now owned by MongoDB; the provider Anthropic officially points to for embeddings."
 relationship: vendor
 related: ["[[Embeddings]]", "[[Semantic Search]]"]
 ---

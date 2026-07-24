@@ -1,5 +1,6 @@
 ---
 type: company
+summary: "Makers of Claude and Claude Code. Ship no first-party embeddings API and point users to Voyage AI - the reason this vault embeds locally."
 relationship: vendor
 related: ["[[Claude Code]]"]
 ---

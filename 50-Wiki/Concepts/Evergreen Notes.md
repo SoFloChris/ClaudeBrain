@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Andy Matuschak's practice: atomic, concept-oriented, densely linked notes written to accumulate - because better thinking, not better note-taking, is the point."
 aliases: [evergreen note, permanent notes]
 broader: "[[Second Brain]]"
 inspired_by: "[[Andrej Karpathy]]"

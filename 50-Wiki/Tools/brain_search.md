@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "This vault's Level 3 semantic-search engine: local embeddings, heading-based chunking, incremental gitignored index, invoked by /recall."
 related: ["[[Semantic Search]]", "[[Embeddings]]"]
 uses: ["[[Local Embedding Models]]"]
 alternative_to: ["[[Smart Connections]]"]

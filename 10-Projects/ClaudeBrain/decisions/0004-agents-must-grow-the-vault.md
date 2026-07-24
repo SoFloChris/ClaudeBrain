@@ -1,5 +1,6 @@
 ---
 type: adr
+summary: "ADR-0004 (accepted): agents must write to the vault unprompted, not only read from it - with note-spam as the named counter-risk."
 status: accepted
 date: 2026-07-24
 decision_makers: ["[[Chris Aguirre]]"]

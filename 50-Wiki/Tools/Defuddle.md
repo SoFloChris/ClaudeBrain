@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "Strips a web page down to the actual article and returns clean markdown - the capture pipeline's front door, and cheaper than WebFetch."
 built_by: "[[Dynalist Inc]]"
 alternative_to: []
 related: ["[[Context vs Connections]]"]

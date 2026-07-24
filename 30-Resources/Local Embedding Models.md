@@ -1,5 +1,6 @@
 ---
 type: resource
+summary: "Comparison of small local embedding models for personal-vault semantic search, and why bge-small-en-v1.5 won on being ungated rather than on benchmark rank."
 topic: "[[Embeddings]]"
 related: ["[[Semantic Search]]", "[[brain_search]]", "[[Voyage AI]]"]
 ---

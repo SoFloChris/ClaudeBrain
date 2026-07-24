@@ -1,5 +1,6 @@
 ---
 type: person
+summary: "The owner of this vault; the hub note every person, project, and company links back to."
 aliases: [Chris, me]
 related: ["[[Second Brain]]"]
 ---

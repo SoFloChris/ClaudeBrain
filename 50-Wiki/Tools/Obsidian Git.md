@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "The community plugin that is this vault's entire sync engine between laptop and desktop."
 related: ["[[Obsidian]]"]
 ---
 

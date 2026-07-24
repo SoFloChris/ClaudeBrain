@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "The markdown editor this vault lives in - plain files on disk, which is why it survives at every level."
 built_by: "[[Dynalist Inc]]"
 related: ["[[Second Brain]]", "[[PARA Method]]", "[[Bases]]"]
 uses: ["[[Obsidian Git]]"]

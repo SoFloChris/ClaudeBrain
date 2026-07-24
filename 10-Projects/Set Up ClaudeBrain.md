@@ -1,5 +1,6 @@
 ---
 type: project
+summary: "Master note for this vault: what it is, how Levels 1-4 are built, and what is left to do. The vault documenting itself."
 status: active
 repo: "https://github.com/SoFloChris/ClaudeBrain"
 people: ["[[Chris Aguirre]]"]

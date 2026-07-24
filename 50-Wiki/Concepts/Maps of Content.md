@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Nick Milo's linking hubs: a workbench for thinking about scattered notes, heterarchical rather than hierarchical."
 aliases: [MOC, MOCs]
 broader: "[[Second Brain]]"
 related: ["[[Evergreen Notes]]", "[[PARA Method]]"]

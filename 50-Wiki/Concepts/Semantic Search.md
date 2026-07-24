@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Search by meaning rather than keyword, via embedding vectors and cosine similarity - Level 3 of this vault, and a fallback rather than a default."
 broader: "[[Second Brain]]"
 related: ["[[Second Brain]]", "[[Knowledge Graph]]"]
 ---

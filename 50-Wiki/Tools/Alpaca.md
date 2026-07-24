@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "The brokerage API COMMAND executes through - paper only, with a reconciliation worker syncing broker truth every 60s."
 built_by: "[[Alpaca Markets]]"
 related: ["[[COMMAND — Quant Operations Platform]]"]
 ---

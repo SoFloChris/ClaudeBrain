@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "The no-code Obsidian semantic-search plugin - the alternative to this vault's brain_search script."
 related: ["[[Semantic Search]]", "[[Obsidian]]"]
 alternative_to: ["[[brain_search]]"]
 uses: ["[[Embeddings]]"]

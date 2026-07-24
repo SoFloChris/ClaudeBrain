@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "A personal knowledge system captured for recall and maintained jointly with an AI assistant."
 related: []
 ---
 

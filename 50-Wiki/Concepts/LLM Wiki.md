@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "A wiki written for an AI to read and maintain: indexed, interlinked concept pages a model can navigate instead of loading wholesale."
 broader: "[[Second Brain]]"
 related: ["[[Second Brain]]"]
 ---

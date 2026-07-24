@@ -1,5 +1,6 @@
 ---
 type: resource
+summary: "Reference for the Claude Code features this vault runs on: the memory hierarchy, @-imports, slash commands, skills, and hooks. Verified against official docs, 2026-07."
 topic: "[[Claude Code]]"
 related: ["[[Second Brain]]", "[[LLM Wiki]]"]
 ---

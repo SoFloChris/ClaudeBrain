@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "Graph-RAG system that extracts entities and relations with an LLM - and the source of the colourful node-ball people mistake for Obsidian's graph view."
 related: ["[[Knowledge Graph]]", "[[RAG]]"]
 alternative_to: ["[[brain_graph]]"]
 ---

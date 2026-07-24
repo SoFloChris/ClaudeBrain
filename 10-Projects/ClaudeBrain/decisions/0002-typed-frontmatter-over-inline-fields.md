@@ -1,5 +1,6 @@
 ---
 type: adr
+summary: "ADR-0002 (accepted): encode typed graph edges as quoted wikilinks in YAML frontmatter, not Dataview inline fields or prose."
 status: accepted
 date: 2026-07-24
 decision_makers: ["[[Chris Aguirre]]"]

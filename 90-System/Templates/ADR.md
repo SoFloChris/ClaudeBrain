@@ -1,5 +1,6 @@
 ---
 type: adr
+summary: ""   # one sentence: the decision, stated as a decision.
 status: proposed
 date: {{date}}
 decision_makers: ["[[Chris Aguirre]]"]

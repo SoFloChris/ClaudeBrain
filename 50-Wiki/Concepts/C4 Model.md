@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Simon Brown's four zoom levels for architecture diagrams: context, container, component, code - draw only the levels that earn their upkeep."
 aliases: [C4]
 related: ["[[Diataxis]]", "[[Architecture Decision Record]]"]
 tags:

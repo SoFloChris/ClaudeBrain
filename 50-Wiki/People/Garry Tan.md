@@ -1,5 +1,6 @@
 ---
 type: person
+summary: "YC CEO; built GBrain, the open-source Level 5 autonomous brain this vault treats as its reference design."
 works_at: "[[Y Combinator]]"
 role: CEO of Y Combinator
 ---

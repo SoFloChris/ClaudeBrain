@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "Garry Tan's open-source Level 5 brain: markdown in git as system of record, synced to Postgres, auto-linked with zero LLM calls."
 built_by: "[[Garry Tan]]"
 related: ["[[Second Brain]]", "[[Knowledge Graph]]"]
 uses: ["[[Embeddings]]"]

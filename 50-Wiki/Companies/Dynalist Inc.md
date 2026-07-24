@@ -1,5 +1,6 @@
 ---
 type: company
+summary: "Makers of Obsidian: not venture-funded, no cloud lock-in, plain files on disk - which is why this vault can be plain markdown."
 aliases: [Dynalist]
 relationship: vendor
 people: ["[[Steph Ango]]"]

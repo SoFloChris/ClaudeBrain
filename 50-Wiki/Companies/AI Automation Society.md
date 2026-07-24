@@ -1,5 +1,6 @@
 ---
 type: company
+summary: "Nate Herk's Skool community for AI automation; distributes his skills and templates."
 relationship: interest
 people: ["[[Nate Herk]]"]
 ---

@@ -1,3 +1,7 @@
+---
+summary: "How an agent operates this vault at a professional standard - the retrieval cost ladder, note-type conventions, and the failure modes to watch for."
+---
+
 # Agent Guide
 
 How an agent operates this vault at a professional standard. `CLAUDE.md` is the router — the *rules*. This is the *craft*: what to reach for, in what order, and what the failure modes look like.
@@ -23,6 +27,7 @@ Each level answers one question, and each is implemented with specific machinery
 |---|---|---|
 | Does a note exist? What's it called? | `_Index.md`, or `ls 50-Wiki/**` | **Cheapest** |
 | What's this note about? | Its `summary:` frontmatter | Cheap |
+| What's this note about, across 60 notes? | `grep -h '^summary:' -r 50-Wiki/` | Cheap, and answers "which one?" |
 | A specific claim inside it | `Grep -C 3 "<term>"` | Medium |
 | The whole argument | `Read` the note | **Expensive — last resort** |
 
@@ -35,6 +40,8 @@ Then, by question type:
 5. **`/vault-status`** — what's *missing* rather than what exists.
 
 **Never claim the vault has nothing until both the index and a full-text search come back empty — and say that you searched.**
+
+**Every note carries a one-line `summary:`, and that is not decoration.** `grep -h '^summary:' -r 50-Wiki/` returns the whole wiki's contents for the price of one small read — cheaper than opening three notes, and enough to pick the right one. Write the summary as the note's *claim*, never its category: "a safety mechanism an agent can reset is not a safety mechanism" tells the next agent whether to open the file; "a trading concept" does not.
 
 ## Renaming is dangerous — read this before moving anything
 

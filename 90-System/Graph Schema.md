@@ -1,3 +1,7 @@
+---
+summary: "The controlled vocabulary of typed frontmatter predicates that make this vault's knowledge graph queryable."
+---
+
 # Graph Schema
 
 The controlled vocabulary for this vault's knowledge graph. Every typed relationship is a frontmatter key whose value is a quoted `"[[wikilink]]"` (or a list of them). The key name **is** the relationship type. Stick to this list — invent a new predicate only when none fits, and add it here when you do.
@@ -8,6 +12,12 @@ The controlled vocabulary for this vault's knowledge graph. Every typed relation
 
 Wiki subfolders: `50-Wiki/People/`, `Companies/`, `Tools/`, `Concepts/`.
 Per-project documentation: `10-Projects/<Project>/decisions/NNNN-title-with-dashes.md` (ADRs, per MADR convention).
+
+## `summary:` — required on every content note
+
+One sentence, quoted, stating what the note says. Not a category label ("a trading concept") but the claim itself ("a safety mechanism an agent can reset is not a safety mechanism").
+
+It carries no edge; it exists so an agent can decide whether to open the note. Reading 60 summaries costs less than opening three notes, which is the whole point of the retrieval cost ladder in [[Agent Guide]]. Every template ships with the field — fill it, don't delete it.
 
 ## Predicates (frontmatter keys → typed edges)
 
@@ -37,7 +47,7 @@ Body `[[wikilinks]]` become untyped `mentions` edges automatically — use them 
 
 1. **Quote every link in YAML**: `works_at: "[[Acme]]"` — unquoted brackets are invalid YAML and break parsing.
 2. **Store each fact once, on the subject's note.** Jane's note says `works_at: "[[Acme]]"`; Acme's note doesn't need a mirror entry (the graph and backlinks derive the reverse direction).
-3. **Reserved keys carry no edges**: `type`, `tags`, `aliases`, `status`, `created`, `updated`, `date`, `last_reviewed`, `last_tested`, plus plain-string fields like `role`, `relationship`, `source`, `due`, `repo`, `build`, `risk`, `reversible`, `versioning`.
+3. **Reserved keys carry no edges**: `type`, `summary`, `tags`, `aliases`, `status`, `created`, `updated`, `date`, `last_reviewed`, `last_tested`, plus plain-string fields like `role`, `relationship`, `source`, `due`, `repo`, `build`, `risk`, `reversible`, `versioning`.
 4. snake_case predicate names, always.
 
 ## Consumers

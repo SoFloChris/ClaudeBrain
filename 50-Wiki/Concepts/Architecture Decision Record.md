@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "A short document capturing one decision and the context that forced it - the one documentation form that does not rot, because it is explicitly historical."
 aliases: [ADR, ADRs]
 related: ["[[Documentation Rot]]", "[[Diataxis]]"]
 tags:

@@ -1,5 +1,6 @@
 ---
 type: meeting
+summary: ""   # one sentence: what was decided or learned.
 people: []
 related: []
 tags:

@@ -1,5 +1,6 @@
 ---
 type: adr
+summary: "ADR-0003 (accepted): run bge-small-en-v1.5 locally with a flat numpy index rather than a hosted embeddings API and vector database."
 status: accepted
 date: 2026-07-24
 decision_makers: ["[[Chris Aguirre]]"]

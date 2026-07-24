@@ -1,5 +1,6 @@
 ---
 type: company
+summary: ""   # one sentence: what they do and how they touch my work.
 aliases: []
 relationship: 
 people: []

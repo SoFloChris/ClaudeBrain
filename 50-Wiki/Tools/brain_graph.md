@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "This vault's Level 4 knowledge-graph engine: builds typed edges from frontmatter, answers /graph, pure standard library."
 related: ["[[Knowledge Graph]]", "[[Graph Schema]]"]
 alternative_to: ["[[LightRAG]]"]
 ---

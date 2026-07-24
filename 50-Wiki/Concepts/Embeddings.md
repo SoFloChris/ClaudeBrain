@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Text as vectors positioned so similar meanings land near each other - the engine under semantic search and /recall."
 broader: "[[Semantic Search]]"
 related: ["[[Semantic Search]]", "[[RAG]]"]
 ---

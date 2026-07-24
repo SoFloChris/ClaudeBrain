@@ -1,5 +1,6 @@
 ---
 type: project
+summary: "Self-hosted quant research and execution platform: a 16-gate governed order pipeline, nine local models, and eight strategy sidecars. Paper on Alpaca; Kalshi is the one live-money exception."
 status: active
 repo: "https://github.com/SoFloChris/openclaw-ui"
 people: ["[[Chris Aguirre]]"]
@@ -93,7 +94,7 @@ Ports: frontend 8080 · backend 3001 · Ollama 11434 · docker proxy 2375 · IBK
 
 ## Current state (last snapshot)
 
-Equity $99,646.81 from a $100,000 start · 12 strategies (6 paper-active, 1 validated, 3 draft, 2 backtested) · 6,063 ghost trades · 58 backtest runs · 35 scheduled jobs · 793 agent runs.
+Equity $99,646.81 from a $100,000 start · 12 strategies (6 paper-active, 1 validated, 3 draft, 2 backtested) · ~11,785 [[Ghost Trades\|ghost trades]] · 58 backtest runs · 35 scheduled jobs · 793 agent runs.
 
 Backlog: 16 tasks, 14 done — the one open item is splitting `BotDashboard.tsx` (1109 LOC) per the file-structure rule.
 

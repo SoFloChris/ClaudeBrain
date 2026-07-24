@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Projects, Areas, Resources, Archive - organized by how actionable something is rather than what topic it belongs to."
 broader: "[[Second Brain]]"
 related: ["[[Second Brain]]"]
 ---

@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Basecamp's method; the two portable ideas are fixed appetite instead of estimates, and explicit non-goals."
 aliases: [appetite, no-gos]
 related: ["[[Architecture Decision Record]]"]
 tags:

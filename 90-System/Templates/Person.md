@@ -1,5 +1,6 @@
 ---
 type: person
+summary: ""   # one sentence: who they are and why they are in my vault.
 aliases: []
 works_at: 
 knows: []

@@ -1,5 +1,6 @@
 ---
 type: person
+summary: "Originated the LLM wiki idea behind Level 2 - documentation written for a model to navigate."
 related: ["[[LLM Wiki]]"]
 ---
 

@@ -1,5 +1,6 @@
 ---
 type: project
+summary: "Placeholder project: the repo exists but is empty. Needs a scope decision or archival."
 status: draft
 repo: "https://github.com/SoFloChris/Helper-Agents"
 people: ["[[Chris Aguirre]]"]

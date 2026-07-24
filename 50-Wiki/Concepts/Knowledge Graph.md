@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Entities connected by typed relationships, so you can trace a chain hop-by-hop. Wikilinks alone are not a knowledge graph - they omit the how."
 broader: "[[Second Brain]]"
 related: ["[[Second Brain]]", "[[Semantic Search]]"]
 ---

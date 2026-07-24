@@ -1,5 +1,6 @@
 ---
 type: resource
+summary: "Distilled notes from Nate Herk's video defining the 5-level second-brain maturity model this vault is built on."
 source: "https://www.youtube.com/watch?v=DTCyvo6cC54"
 author: "[[Nate Herk]]"
 topic: "[[Second Brain]]"

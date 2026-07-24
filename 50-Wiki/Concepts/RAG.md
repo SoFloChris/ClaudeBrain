@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Retrieve relevant documents first, then generate from them - and cite the sources, which is the part that makes the answer checkable."
 broader: "[[Semantic Search]]"
 related: ["[[Semantic Search]]", "[[Embeddings]]", "[[Knowledge Graph]]"]
 ---

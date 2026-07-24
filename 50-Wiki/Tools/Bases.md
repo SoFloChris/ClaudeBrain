@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "Obsidian's core database plugin: table, card, and list views built from frontmatter properties, no community plugin needed."
 aliases: [Obsidian Bases]
 built_by: "[[Dynalist Inc]]"
 alternative_to: ["[[Dataview]]"]

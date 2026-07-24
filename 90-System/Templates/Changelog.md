@@ -1,5 +1,6 @@
 ---
 type: changelog
+summary: ""   # one sentence: what this log tracks.
 project: 
 versioning: semver
 last_reviewed: {{date}}
