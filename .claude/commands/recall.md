@@ -11,3 +11,4 @@ Find what the vault knows about: $ARGUMENTS
 2. Also run a plain keyword Grep for the distinctive terms — semantic and keyword search miss different things.
 3. Open the top-scoring notes and read the relevant sections.
 4. Answer from the notes, citing each source as `[[Note Name]]`. If the vault has nothing, say so plainly rather than guessing.
+5. **Capture on miss:** if the vault couldn't answer and you answered from general knowledge or research instead, save the distilled answer as a note (`30-Resources/` or `50-Wiki/Concepts/`, from the template, linked into the wiki) so the next `/recall` finds it. Tell me you did.

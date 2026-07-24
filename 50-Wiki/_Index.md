@@ -12,6 +12,7 @@ Evergreen entities — the "nouns" of my life and work. One note per entity, alw
 
 ## People
 
+- [[Chris Aguirre]] — me; the hub every other note connects back to
 - [[Nate Herk]] — creator of the second-brain framework this vault follows
 - [[Garry Tan]] — YC CEO; built GBrain, the Level 5 archetype
 

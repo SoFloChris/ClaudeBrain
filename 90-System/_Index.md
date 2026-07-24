@@ -8,7 +8,7 @@ The machinery of the vault. Rarely touched during day-to-day capture.
 - `Templates/` — note templates (wired to Obsidian's Templates core plugin)
 - `Scripts/` — `brain_search.py` (Level 3 semantic search) and `brain_graph.py` (Level 4 knowledge graph)
 
-Slash commands (in `.claude/commands/`, available in any Claude Code session here): `/remember`, `/process-inbox`, `/recall`, `/graph`.
+Slash commands (in `.claude/commands/`, available in any Claude Code session here): `/remember`, `/process-inbox`, `/recall`, `/graph`, `/wrap` (harvest a conversation into notes).
 
 Vault-level files (in the root, outside this folder):
 
