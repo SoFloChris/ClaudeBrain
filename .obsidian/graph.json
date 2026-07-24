@@ -1,0 +1,31 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    { "query": "path:50-Wiki/People", "color": { "a": 1, "rgb": 5025616 } },
+    { "query": "path:50-Wiki/Companies", "color": { "a": 1, "rgb": 3049182 } },
+    { "query": "path:50-Wiki/Concepts", "color": { "a": 1, "rgb": 15965202 } },
+    { "query": "path:10-Projects", "color": { "a": 1, "rgb": 14964526 } },
+    { "query": "path:20-Areas", "color": { "a": 1, "rgb": 1752220 } },
+    { "query": "path:30-Resources", "color": { "a": 1, "rgb": 10181046 } },
+    { "query": "path:00-Inbox", "color": { "a": 1, "rgb": 15844367 } },
+    { "query": "path:40-Archive", "color": { "a": 1, "rgb": 9807270 } },
+    { "query": "path:90-System", "color": { "a": 1, "rgb": 6710886 } }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1.2,
+  "lineSizeMultiplier": 1,
+  "centerStrength": 0.5,
+  "repelStrength": 12,
+  "linkStrength": 1,
+  "linkDistance": 180,
+  "scale": 1,
+  "close": false
+}
