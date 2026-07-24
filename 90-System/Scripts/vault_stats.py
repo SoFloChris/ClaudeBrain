@@ -7,6 +7,7 @@ Pure standard library. Used by the SessionStart hook to brief agents, and by
 Usage:
     python3 vault_stats.py            # full report
     python3 vault_stats.py --brief    # one-paragraph summary (for hooks)
+    python3 vault_stats.py --check    # exit 1 on broken links or missing summaries (CI)
 """
 
 import re
@@ -107,7 +108,14 @@ def collect():
     return notes, links_out, mentioned
 
 
-def report(brief=False):
+def report(brief=False, check=False):
+    """Returns the number of hard failures — broken links and missing summaries.
+
+    Orphans and stubs are advisory: a note can legitimately sit unlinked for a
+    while, and thinness is a judgment call. A link to a note that does not exist
+    and a note that cannot describe itself are not judgment calls, so those are
+    what `--check` fails CI on.
+    """
     notes, links_out, mentioned = collect()
     content = {n: i for n, i in notes.items() if not i["structural"]}
 
@@ -143,7 +151,7 @@ def report(brief=False):
         if unresolved[:3]:
             print("Links pointing at notes that don't exist yet: "
                   + ", ".join(unresolved[:3]) + (" …" if len(unresolved) > 3 else ""))
-        return
+        return len(unresolved) + len(no_summary)
 
     print(f"# Vault health — {len(content)} content notes\n")
     print("## By folder")
@@ -174,6 +182,16 @@ def report(brief=False):
     if unresolved or orphans or stubs or no_summary:
         print("\nEach line above is a note worth writing or connecting.")
 
+    failures = len(unresolved) + len(no_summary)
+    if check:
+        if failures:
+            print(f"\nFAIL — {len(unresolved)} broken link(s), "
+                  f"{len(no_summary)} note(s) without a summary.")
+        else:
+            print("\nPASS — no broken links, every content note describes itself.")
+    return failures
+
 
 if __name__ == "__main__":
-    report(brief="--brief" in sys.argv)
+    failures = report(brief="--brief" in sys.argv, check="--check" in sys.argv)
+    sys.exit(1 if ("--check" in sys.argv and failures) else 0)

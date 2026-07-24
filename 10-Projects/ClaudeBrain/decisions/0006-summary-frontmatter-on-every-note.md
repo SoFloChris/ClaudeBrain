@@ -50,7 +50,7 @@ The status/date fields of the richer option were rejected as redundant: `status`
 
 ### Confirmation
 
-`python3 90-System/Scripts/vault_stats.py` prints a **"Missing `summary:`"** section. Zero is the passing state, and the SessionStart brief reports it every session.
+`python3 90-System/Scripts/vault_stats.py --check` exits non-zero if any content note lacks a summary. The SessionStart brief reports the count every session, and `.github/workflows/vault-check.yml` runs the same command on every pull request — so the rule is blocking, not advisory.
 
 ## Pros and Cons of the Options
 

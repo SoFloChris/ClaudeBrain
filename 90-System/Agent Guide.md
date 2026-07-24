@@ -103,6 +103,25 @@ Five official Obsidian skills are vendored in `.claude/skills/` and load automat
 - **Untyped relationships.** If everything is `related`, the graph can't answer anything a backlink pane couldn't.
 - **Derived files in git.** `90-System/Graph/` and `Search Index/` are gitignored on purpose — they're per-machine and would conflict endlessly.
 
+## What actually blocks a bad commit
+
+Three layers, weakest to strongest. Rules an agent must remember degrade over a long session; only the last one can't be forgotten.
+
+| Layer | Mechanism | Catches |
+|---|---|---|
+| **Suggests** | Templates in `90-System/Templates/` | A missing `summary:` or predicate, at authoring time |
+| **Reports** | `vault_stats.py` via the SessionStart hook and `/vault-status` | Orphans, stubs, broken links, missing summaries — as a work list |
+| **Blocks** | `.github/workflows/vault-check.yml` on every PR | Unparseable or unquoted frontmatter, broken links, a graph that won't build, derived data or credential shapes in git |
+
+Run both checkers locally before pushing — they're the same commands CI runs:
+
+```bash
+python3 90-System/Scripts/check_frontmatter.py
+python3 90-System/Scripts/vault_stats.py --check
+```
+
+**The one worth internalising is the unquoted wikilink.** `works_at: [[Acme]]` is *valid YAML* — it parses as a nested list, not a link — so Obsidian, Bases, and every script silently drop it. The note looks correct in the editor and is invisible to the graph. Always `works_at: "[[Acme]]"`.
+
 ## Related
 
 - [[Second Brain Levels]] — the roadmap and the Level 5 build-triggers
