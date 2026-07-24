@@ -1,0 +1,35 @@
+filters:
+  and:
+    - 'type == "project"'
+    - '!file.inFolder("40-Archive")'
+
+formulas:
+  stale: 'if((now() - file.mtime).days > 21, "🔸", "")'
+
+properties:
+  formula.stale:
+    displayName: ""
+  file.mtime:
+    displayName: "Last touched"
+
+views:
+  - type: table
+    name: Active
+    filters:
+      and:
+        - 'status == "active"'
+    order:
+      - formula.stale
+      - file.name
+      - status
+      - file.mtime
+
+  - type: table
+    name: Everything else
+    filters:
+      and:
+        - 'status != "active"'
+    order:
+      - file.name
+      - status
+      - file.mtime

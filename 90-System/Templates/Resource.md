@@ -1,7 +1,19 @@
+---
+type: resource
+aliases: []
+author: 
+topic: 
+source: 
+related: []
+tags:
+  - resource
+created: {{date}}
+updated: {{date}}
+---
+
 # {{title}}
 
-**Source:**
-**Topic:**
+One sentence on what this is and why it's worth keeping.
 
 ## Summary (in my own words)
 
@@ -13,4 +25,4 @@
 
 ## Related
 
-- [[ ]]
+- [[ ]] — say how it relates

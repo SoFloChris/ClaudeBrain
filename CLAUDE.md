@@ -29,7 +29,7 @@ Design principles (in priority order):
 | `20-Areas/` | Ongoing responsibilities with no end date (health, finances, home, work areas). |
 | `30-Resources/` | Reference material by topic — things I might use someday. |
 | `40-Archive/` | Completed projects and inactive notes. Move things here instead of deleting. |
-| `50-Wiki/` | Evergreen entities: `People/`, `Companies/`, `Concepts/`. One note per entity, linked with `[[wikilinks]]`. |
+| `50-Wiki/` | Evergreen entities: `People/`, `Companies/`, `Tools/`, `Concepts/`. One note per entity, linked with `[[wikilinks]]`. |
 | `90-System/` | The machinery: `Memory.md`, `Templates/`, and system docs. Rarely touched during normal capture. |
 
 Each folder has an `_Index.md` — a map of content listing what's inside. Keep indexes current when adding or moving notes.
@@ -47,9 +47,22 @@ Reading is half the job. The other half is writing, in the flow of normal conver
 - **Entity trigger.** The moment a person, company, tool, or concept comes up as more than a passing mention — in my messages, in research you do, in work we discuss — create its wiki note from the template, with typed frontmatter per the Graph Schema. Don't queue it, don't ask permission. A one-line note with two good links beats no note.
 - **Answer capture.** If I ask something the vault can't answer and you answer from general knowledge or research, save the distilled answer (to `30-Resources/` or `50-Wiki/Concepts/`) before finishing the turn. The fact that I asked proves it's worth retrieving later — that's "reverse engineer for recall."
 - **Decision capture.** When we decide something (approach, tool choice, plan), record it in the relevant project note's Decisions section, or create the project note if none exists.
-- **Connect while writing.** Every note you create or touch: link at least two related notes with `[[wikilinks]]` (only where the connection is real), add typed frontmatter edges where a Graph Schema predicate fits, and update the folder's `_Index.md`.
+- **Connect while writing.** Every note you create or touch: link related notes with `[[wikilinks]]` (only where the connection is real), add typed frontmatter edges where a Graph Schema predicate fits, and update the folder's `_Index.md`.
 - **End-of-session sweep.** Before ending any substantive session, do a 30-second pass: any entity, fact, decision, or answer from this conversation not yet in the vault? Write it now. `/wrap` runs this explicitly.
 - **The guardrail** is still context vs. connections: capture distilled, evergreen knowledge — never raw transcripts, logs, or play-by-play. If it wouldn't matter in a month, it doesn't go in.
+
+## Linking discipline
+
+Backlinks are only valuable if every one of them was deliberate. Two rules keep them that way:
+
+- **Never write a bare wikilink in a "Related" section.** Every curated link carries an em-dash clause saying *how* the notes relate: `- [[Graph Schema]] — defines which of these links become typed edges.` **If you can't state the relationship, don't add the link.** A forced link is worse than a missing one.
+- **Curate by hand, list in bulk with queries.** A hand-written `[[link]]` creates a backlink; a Bases/Dataview query does not. So hand-link the handful you can annotate, and use a `.base` view for "everything tagged X". Never hand-list 40 notes — that buries the signal in the target's backlink pane.
+
+Note-type conventions (from Andy Matuschak's evergreen-note practice):
+
+- **Concept notes carry the thinking.** Prefer declarative claim titles that make an argument (`Notes Should Be Atomic`) over bare nouns (`Atomicity`); bare nouns are for defining core terms. If a note runs past ~300 words, look for a second claim hiding inside it.
+- **Entity notes (People/Companies/Tools) are deliberately thin.** They're link infrastructure and backlink targets, not essays. Don't over-invest in them.
+- **Use `aliases`** on entities and concepts — it feeds Obsidian's unlinked-mentions pane, which is the cheapest way to find connections you missed.
 
 ## Rules for Claude
 
