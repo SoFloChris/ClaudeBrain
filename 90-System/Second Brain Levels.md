@@ -1,33 +1,32 @@
 # Second Brain Levels
 
-The 5-level maturity model this vault follows (from "Every Level of a Claude Second Brain Explained" by Nate Herk). The goal is **not** to reach Level 5 — it's the simplest architecture that solves the actual need. Only move up a level when you hit a specific pain point the current level cannot solve.
+The 5-level maturity model this vault follows, from [[Every Level of a Claude Second Brain]] by [[Nate Herk]]. The goal is **not** to reach Level 5 — it's the simplest architecture that solves the actual need. Notably, Nate himself stops at Level 4.
 
-## Level 1 — The Router ✅ (we are here)
+## Level 1 — The Router ✅
 
-A `CLAUDE.md` file acts as system prompt and router: who you are, how you work, where files live. Claude knows exactly where to look for project data.
+`CLAUDE.md` acts as system prompt and router: who I am, how I work, where files live. Claude knows exactly where to look, and exact word/filename matching handles most retrieval.
 
-## Level 2 — The Wiki ✅ (we are here)
+## Level 2 — The Wiki ✅
 
-Structured wiki notes for entities (`50-Wiki/`), folder indexes as maps of content, and an automatic memory file (`Memory.md`) so knowledge compounds across sessions.
+The [[LLM Wiki]]: `50-Wiki/` holds one page per entity with `_Index.md` maps of content, `90-System/Memory.md` auto-loads into every session via CLAUDE.md's `@import`, and `/remember` + `/process-inbox` keep both fed. Claude Code's built-in `/memory` command edits the memory layer directly.
 
-## Level 3 — Semantic Search
+## Level 3 — Semantic Search ✅
 
-Search by meaning instead of exact keywords, via embeddings / a vector database.
-**Level up when:** you regularly fail to find notes because you can't remember the words you used, and grep/wikilinks aren't cutting it.
+Search by meaning via `90-System/Scripts/brain_search.py` (`/recall`): local sentence-transformers embeddings, heading-based chunks, incremental per-machine index. **Used surgically, per Nate's own caveat** — semantic search is often worse than just reading a full markdown file; it earns its keep on big piles (transcripts, reference dumps), while grep and wikilinks stay primary for a tidy vault. See [[Semantic Search]].
 
-## Level 4 — Knowledge Graphs
+## Level 4 — Knowledge Graphs ✅
 
-Explicit entity relationships ("Person X works at Company Y") that can be traversed as chains.
-**Level up when:** you're asking multi-hop relationship questions the wiki's links can't answer.
+Typed relationships in frontmatter (`works_at: "[[Acme]]"` — vocabulary in `90-System/Graph Schema.md`) compiled by `90-System/Scripts/brain_graph.py` (`/graph`) into a queryable graph with hop-by-hop path tracing. Wikilinks alone aren't a graph — the types are what enable "how is X connected to Y?". See [[Knowledge Graph]].
 
-## Level 5 — The Autonomous Brain
+## Level 5 — The Autonomous Brain ⏸ (deliberately not built)
 
-Always-on syncing, autonomous memory updates, multiple agents maintaining the vault.
-**Level up when:** manual capture/processing is genuinely the bottleneck — not before.
+Always-on syncing, autonomous memory updates, multiple agents sharing one brain. The archetype is [[Garry Tan]]'s GBrain (markdown-in-git → Postgres, auto-typed edges, hybrid search, overnight "dream cycle" maintenance, MCP server).
+
+**Build it only when:** manual capture/processing is genuinely the bottleneck — e.g. multiple always-on agents need shared memory, or the vault grows past what session-based maintenance can keep clean. Until then, Level 4 is the ceiling on purpose.
 
 ## Key principles
 
 - **Reverse engineer for recall:** design the file architecture around how you'll ask questions later.
-- **Start with the lowest level:** don't chase complexity without a pain point.
-- **Context vs. connections:** store evergreen business/life context; don't fill the brain with noisy transient data (Slack threads, raw emails).
+- **Start with the lowest level:** different folders can run at different levels; don't chase complexity without a pain point.
+- **Context vs. connections:** store evergreen context; don't fill the brain with noisy transient data.
 - **Boring is beautiful:** a clean, well-organized folder of markdown files remains the foundation at every level.

@@ -12,12 +12,17 @@ Evergreen entities — the "nouns" of my life and work. One note per entity, alw
 
 ## People
 
-- (empty)
+- [[Nate Herk]] — creator of the second-brain framework this vault follows
+- [[Garry Tan]] — YC CEO; built GBrain, the Level 5 archetype
 
 ## Companies
 
-- (empty)
+- [[AI Automation Society]] — Nate Herk's community
+- [[Y Combinator]] — Garry Tan's company
 
 ## Concepts
 
 - [[Second Brain]] — what this vault is
+- [[LLM Wiki]] — Level 2: a wiki written for an AI to read and maintain
+- [[Semantic Search]] — Level 3: search by meaning (and when not to)
+- [[Knowledge Graph]] — Level 4: typed relationships and chain tracing

@@ -49,7 +49,23 @@ Any of these work — they all read `CLAUDE.md` automatically because it's in th
 
 First session, try: *"Read my router and tell me how this vault works. Then add a note to my inbox that says hello."*
 
-## 6. Make it yours
+Vault slash commands once you're in: `/remember <fact>`, `/process-inbox`, `/recall <question>`, `/graph <entity>`.
+
+## 6. Enable the deeper levels (optional, per machine)
+
+The vault runs at Level 1–2 out of the box. Levels 3–4 need one small step each:
+
+**Level 3 — semantic search (`/recall`):** install Python 3.10+ if you don't have it, then:
+
+```
+pip install sentence-transformers
+```
+
+First `/recall` on a machine downloads a small local embedding model (~130 MB) and builds the index. Everything runs locally — nothing leaves your computer. Prefer a no-code version inside Obsidian? Install the **Smart Connections** community plugin instead/as well — it embeds locally by default.
+
+**Level 4 — knowledge graph (`/graph`):** needs only Python (no packages). Nice extras in Obsidian that read the same frontmatter: the built-in **Bases** core plugin for entity dashboards, and the **Graph Link Types** community plugin to label relationship edges in graph view.
+
+## 7. Make it yours
 
 - Fill in the **Who I am** section of `CLAUDE.md` (role, current focus).
 - Add your real areas to `20-Areas/_Index.md`.

@@ -125,6 +125,10 @@ def build():
                         ensure_node(target)
                         edges.append({"from": name, "rel": prop, "to": target})
 
+        # links inside code spans/blocks are examples, not relationships
+        body = re.sub(r"```.*?```", "", body, flags=re.DOTALL)
+        body = re.sub(r"`[^`\n]*`", "", body)
+
         typed = {(e["from"], e["to"]) for e in edges}
         for target in WIKILINK.findall(body):
             target = target.strip()

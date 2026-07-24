@@ -14,7 +14,9 @@ related: ["[[Second Brain]]"]
 - [ ] Follow `SETUP.md` on the laptop
 - [ ] Confirm a note edited on one machine appears on the other
 - [ ] Fill in the "Who I am" section of `CLAUDE.md`
-- [ ] Capture 3 real notes into the Inbox and process them
+- [ ] `pip install sentence-transformers` on each machine (enables `/recall`)
+- [ ] Capture 3 real notes into the Inbox and run `/process-inbox`
+- [ ] Try `/graph "Nate Herk"` and `/recall what are the 5 levels?`
 
 ## Notes
 

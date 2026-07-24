@@ -6,4 +6,4 @@ Create notes from [[90-System/Templates/Resource|the Resource template]]. Keep t
 
 ## Topics
 
-- (add topic notes or subfolders as they accumulate)
+- [[Every Level of a Claude Second Brain]] — the video this vault's architecture comes from

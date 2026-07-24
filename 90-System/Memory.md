@@ -8,7 +8,8 @@ Durable facts Claude has learned, appended over time. Each entry gets a date. Ed
 
 ## Preferences
 
-- Keep the vault at Level 1–2 (router + wiki) until a real pain point demands more.
+- (2026-07-24) Vault runs at Levels 1–4 (router, wiki, semantic search, knowledge graph); Level 5 deliberately skipped until a concrete pain point demands it.
+- Semantic search is a fallback, not the default — grep and wikilinks first (per the source video's advice).
 
 ## Projects
 
