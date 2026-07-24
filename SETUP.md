@@ -49,7 +49,7 @@ Any of these work — they all read `CLAUDE.md` automatically because it's in th
 
 First session, try: *"Read my router and tell me how this vault works. Then add a note to my inbox that says hello."*
 
-Vault slash commands once you're in: `/remember <fact>`, `/process-inbox`, `/recall <question>`, `/graph <entity>`.
+Vault slash commands once you're in: `/remember <fact>`, `/process-inbox`, `/recall <question>`, `/graph <entity>`, and `/wrap` at the end of a good conversation to harvest it into notes.
 
 ## 6. Enable the deeper levels (optional, per machine)
 
