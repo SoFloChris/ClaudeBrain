@@ -37,7 +37,9 @@ SKIP_PREFIXES = (
 )
 SKIP_REL_KEYS = {"type", "tags", "aliases", "status", "created", "cssclasses"}
 
-WIKILINK = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]")
+# Inside markdown tables the alias pipe must be escaped (`[[note\|Alias]]`), so the
+# trailing backslash has to be stripped off the captured target.
+WIKILINK = re.compile(r"\[\[([^\]|#]+?)\\?(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]")
 
 FOLDER_TYPES = {
     "50-Wiki/People": "person",

@@ -33,11 +33,14 @@ A second brain that is genuinely usable from both machines, and that [[Claude Co
 
 ## Decisions
 
-- (2026-07-24) **Agents must grow the vault, not just read it.** Router principle #5 plus a "Grow the vault" section; `/wrap` harvests conversations. *Why:* sessions were producing research and decisions that never became notes.
-- (2026-07-24) **Levels 1–4 built, Level 5 skipped.** *Why:* [[Nate Herk]] stops at 4 himself; [[GBrain]]'s scale (146K pages) is the threshold that justifies always-on machinery, and this vault has ~50.
-- (2026-07-24) **Typed frontmatter over inline fields** for relationships. *Why:* frontmatter is readable by Obsidian natively, Bases, [[Dataview]], and [[brain_graph]]; inline `key::` fields are Dataview-only.
-- (2026-07-24) **Local embeddings, plain numpy storage.** *Why:* private and free; at a few thousand chunks brute-force cosine is milliseconds, so a vector DB would be pure overhead. `bge-small-en-v1.5` over EmbeddingGemma because Gemma is license-gated on Hugging Face and would break zero-config setup.
-- (2026-07-24) **Semantic search is a fallback, not the default.** *Why:* the source video's own warning — grep and wikilinks first.
+Index only — the reasoning lives in the [[Architecture Decision Record]]s themselves, which are immutable and dated.
+
+| ADR | Decision | Status |
+|---|---|---|
+| [[0001-build-levels-1-4-skip-level-5\|ADR-0001]] | Build Levels 1–4, deliberately skip Level 5 | accepted |
+| [[0002-typed-frontmatter-over-inline-fields\|ADR-0002]] | Typed relationships as quoted-wikilink frontmatter | accepted |
+| [[0003-local-embeddings-numpy-storage\|ADR-0003]] | Local embeddings, plain numpy storage | accepted |
+| [[0004-agents-must-grow-the-vault\|ADR-0004]] | Agents must write to the vault, not only read | accepted |
 
 ## Tasks
 

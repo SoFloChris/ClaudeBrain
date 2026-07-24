@@ -2,7 +2,9 @@
 
 Active efforts with a defined outcome and an end date. One master note per project, created from [[90-System/Templates/Project|the Project template]].
 
-Each master note carries: outcome, status, architecture, **decisions log**, tasks, and open questions. When a project finishes, move it to [[40-Archive/_Index|Archive]] and update this index.
+Each master note carries: outcome, status, scope **and explicit non-goals**, architecture (facts only), a **decisions index**, and open questions. Reasoning goes in [[Architecture Decision Record]]s under `<Project>/decisions/`, never in the master note — see [[Diataxis]] for why mixing the two rots both.
+
+When a project finishes, move it to [[40-Archive/_Index|Archive]] and update this index.
 
 ## Active
 

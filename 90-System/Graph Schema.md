@@ -4,9 +4,10 @@ The controlled vocabulary for this vault's knowledge graph. Every typed relation
 
 ## Node types (`type:` — plain string, never a link)
 
-`person` · `company` · `tool` · `concept` · `project` · `area` · `resource`
+`person` · `company` · `tool` · `concept` · `project` · `area` · `resource` · `adr` · `runbook` · `moc` · `meeting` · `changelog`
 
 Wiki subfolders: `50-Wiki/People/`, `Companies/`, `Tools/`, `Concepts/`.
+Per-project documentation: `10-Projects/<Project>/decisions/NNNN-title-with-dashes.md` (ADRs, per MADR convention).
 
 ## Predicates (frontmatter keys → typed edges)
 
@@ -24,6 +25,11 @@ Wiki subfolders: `50-Wiki/People/`, `Companies/`, `Tools/`, `Concepts/`.
 | `uses` | project, tool | Depends on / is built with |
 | `alternative_to` | tool | Competing or substitutable option |
 | `inspired_by` | concept, tool | Where the idea came from |
+| `project` | adr, runbook, changelog | Which project this document belongs to |
+| `decision_makers` | adr | Who made the call |
+| `owner` | runbook | Who maintains it |
+| `supersedes` | adr | This ADR replaces an older one |
+| `superseded_by` | adr | This ADR was replaced — set on **both** notes when superseding |
 
 Body `[[wikilinks]]` become untyped `mentions` edges automatically — use them freely in prose; reserve frontmatter for facts worth typing.
 
@@ -31,7 +37,7 @@ Body `[[wikilinks]]` become untyped `mentions` edges automatically — use them 
 
 1. **Quote every link in YAML**: `works_at: "[[Acme]]"` — unquoted brackets are invalid YAML and break parsing.
 2. **Store each fact once, on the subject's note.** Jane's note says `works_at: "[[Acme]]"`; Acme's note doesn't need a mirror entry (the graph and backlinks derive the reverse direction).
-3. **Reserved keys carry no edges**: `type`, `tags`, `aliases`, `status`, `created`, plus plain-string fields like `role`, `relationship`, `source`, `due`.
+3. **Reserved keys carry no edges**: `type`, `tags`, `aliases`, `status`, `created`, `updated`, `date`, `last_reviewed`, `last_tested`, plus plain-string fields like `role`, `relationship`, `source`, `due`, `repo`, `build`, `risk`, `reversible`, `versioning`.
 4. snake_case predicate names, always.
 
 ## Consumers

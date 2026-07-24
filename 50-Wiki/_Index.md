@@ -42,3 +42,4 @@ Evergreen entities — the "nouns" of my life and work. One page per entity, alw
 - [[LLM Wiki]] — Level 2 · [[Semantic Search]] — Level 3 · [[Knowledge Graph]] — Level 4
 - [[Embeddings]] · [[RAG]] — the retrieval machinery
 - [[Strategy Promotion Ladder]] · [[Governed Tool Execution]] — patterns from [[COMMAND — Quant Operations Platform]]
+- [[Architecture Decision Record]] · [[Diataxis]] · [[Documentation Rot]] · [[C4 Model]] — how to write docs that survive
