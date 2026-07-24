@@ -61,3 +61,4 @@ Falsified if the hooks prove more annoying than useful — in which case keep th
 ## Amendments
 
 <!-- Append only. -->
+- **2026-07-24** — **The Stop hook false-positived on its first real run**, on a session that had written 60+ notes. It tested only `git status --porcelain` for uncommitted changes, so a session that wrote notes *and committed them* left a clean tree and looked idle. Fixed by also checking `git log --since='6 hours ago'` for committed note changes. The decision stands, but this is the exact failure mode the "Bad, because" bullet predicted — a nudge that fires wrongly is a nudge you learn to dismiss. Worth re-checking after a week of real use: if it misfires again, keep the rules and drop the hook.
