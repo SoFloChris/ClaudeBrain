@@ -1,3 +1,9 @@
+---
+type: concept
+related: []
+tags: []
+---
+
 # {{title}}
 
 One-paragraph definition in my own words.

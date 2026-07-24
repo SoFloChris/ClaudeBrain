@@ -1,3 +1,8 @@
+---
+type: concept
+related: []
+---
+
 # Second Brain
 
 A personal knowledge system: capture what matters, organize it for recall, and let an AI assistant (Claude) read and maintain it with you.

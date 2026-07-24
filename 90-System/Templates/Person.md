@@ -1,7 +1,13 @@
+---
+type: person
+works_at: 
+knows: []
+role: 
+tags: []
+---
+
 # {{title}}
 
-**Role:**
-**Company:** [[ ]]
 **How we know each other:**
 **Contact:**
 

@@ -1,8 +1,12 @@
+---
+type: project
+status: active
+related: ["[[Second Brain]]"]
+---
+
 # Set Up ClaudeBrain
 
-**Status:** Active
 **Outcome:** Vault cloned, syncing, and usable with Claude on both machines.
-**Due:** —
 
 ## Tasks
 

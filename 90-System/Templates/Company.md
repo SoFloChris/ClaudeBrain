@@ -1,8 +1,13 @@
+---
+type: company
+relationship: 
+people: []
+tags: []
+---
+
 # {{title}}
 
 **What they do:**
-**Relationship:** client / vendor / employer / interest
-**People:** [[ ]]
 
 ## Key facts
 

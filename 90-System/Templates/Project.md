@@ -1,9 +1,14 @@
+---
+type: project
+status: active
+people: []
+companies: []
+due: 
+---
+
 # {{title}}
 
-**Status:** Active
 **Outcome:** What does "done" look like?
-**Due:** —
-**People:** [[ ]]
 
 ## Tasks
 
