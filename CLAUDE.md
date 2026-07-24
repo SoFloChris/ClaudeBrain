@@ -33,10 +33,16 @@ Design principles (in priority order):
 
 Each folder has an `_Index.md` — a map of content listing what's inside. Keep indexes current when adding or moving notes.
 
+## Memory (auto-loaded)
+
+My durable facts and preferences load with this file every session:
+
+@90-System/Memory.md
+
 ## Rules for Claude
 
 - **Filing:** New raw input goes to `00-Inbox/` unless I say where it belongs. When processing the inbox, move notes to the correct folder and update that folder's `_Index.md`.
-- **Memory:** When you learn a durable fact about me, my projects, or my preferences, append it to `90-System/Memory.md` under the right heading with today's date. Never store secrets or credentials there.
+- **Memory:** When you learn a durable fact about me, my projects, or my preferences, append it to `90-System/Memory.md` under the right heading with today's date (the `/remember` command does this too). Never store secrets or credentials there.
 - **Linking:** Prefer `[[wikilinks]]` to people, companies, and concepts in `50-Wiki/`. Create the wiki note (from the matching template in `90-System/Templates/`) if it doesn't exist.
 - **Naming:** Descriptive Title Case filenames, no dates in titles except daily notes (`YYYY-MM-DD`).
 - **Templates:** Use `90-System/Templates/` when creating projects, people, companies, concepts, meetings, or resources.
