@@ -34,6 +34,10 @@ Design principles (in priority order):
 
 Each folder has an `_Index.md` — a map of content listing what's inside. Keep indexes current when adding or moving notes.
 
+## The craft
+
+`90-System/Agent Guide.md` is the working manual — which tool answers which question, the note-type conventions, the failure modes, and the vendored Obsidian skills. Read it when doing substantive work in the vault.
+
 ## Memory (auto-loaded)
 
 My durable facts and preferences load with this file every session:

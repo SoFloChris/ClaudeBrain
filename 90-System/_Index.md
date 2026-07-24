@@ -4,9 +4,11 @@ The machinery of the vault. Rarely touched during day-to-day capture.
 
 ## Docs
 
+- [[Agent Guide]] — the working manual: which tool answers which question, note-type conventions, failure modes
 - [[Memory]] — durable facts Claude has learned (auto-loaded into every session, human-editable)
 - [[Second Brain Levels]] — the 5-level roadmap; Levels 1–4 built, Level 5 deliberately skipped
 - [[Graph Schema]] — the controlled vocabulary for typed relationships
+- `Vault Architecture.canvas` — visual map of the four levels; every box opens the real note
 
 ## Templates (`Templates/`)
 
