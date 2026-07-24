@@ -1,6 +1,8 @@
 # Second Brain Levels
 
-The 5-level maturity model this vault follows, from [[Every Level of a Claude Second Brain]] by [[Nate Herk]]. The goal is **not** to reach Level 5 — it's the simplest architecture that solves the actual need. Notably, Nate himself stops at Level 4.
+The 5-level maturity model this vault follows, from [[Every Level of a Claude Second Brain]] by [[Nate Herk]]. The goal is **not** to reach Level 5 — it's the simplest architecture that solves the actual need. Notably, Nate himself stops at Level 4, and his own framing: "complexity climbs as you go up, not cost — most people land at 1–3."
+
+Each level answers one question: L1 "find it by exact word/name" · L2 "pull everything on a topic together" · L3 "I searched different words than I wrote" · L4 "trace relationship chains across a cast" · L5 "consolidate on its own while I'm away".
 
 ## Level 1 — The Router ✅
 

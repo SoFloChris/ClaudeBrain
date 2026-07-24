@@ -13,6 +13,20 @@ topic: "[[Second Brain]]"
 
 Five levels of AI second brain, from a simple markdown router to an always-on autonomous system. The central advice is anti-hype: pick the **lowest** level that solves your actual pain, and different folders of the same vault can run at different levels.
 
+## Five levels = five questions
+
+His whole map up front — each level exists to answer one kind of question:
+
+| The question you're asking | Level |
+|---|---|
+| "Find it by an exact word or name?" | 1 — Router |
+| "Pull everything on a topic together?" | 2 — Wiki |
+| "I searched different words than I wrote?" | 3 — Semantic search |
+| "Trace relationship chains across a cast? (CRM)" | 4 — Knowledge graph |
+| "Consolidate on its own while I'm away?" | 5 — Autonomous |
+
+"Complexity climbs as you go up, not cost. **Most people land at 1–3.**"
+
 ## The 5 levels
 
 1. **Router** — one `CLAUDE.md` auto-loads as system prompt + routing layer over a clean folder tree. Retrieval is exact word/filename matching.
