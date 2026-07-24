@@ -1,5 +1,6 @@
 ---
 type: concept
+broader: "[[Second Brain]]"
 related: ["[[Second Brain]]", "[[Knowledge Graph]]"]
 ---
 

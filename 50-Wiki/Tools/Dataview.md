@@ -1,5 +1,6 @@
 ---
 type: tool
+alternative_to: ["[[Bases]]"]
 related: ["[[Obsidian]]", "[[Knowledge Graph]]"]
 ---
 

@@ -1,6 +1,7 @@
 ---
 type: tool
-related: ["[[Second Brain]]", "[[PARA Method]]"]
+built_by: "[[Dynalist Inc]]"
+related: ["[[Second Brain]]", "[[PARA Method]]", "[[Bases]]"]
 uses: ["[[Obsidian Git]]"]
 ---
 

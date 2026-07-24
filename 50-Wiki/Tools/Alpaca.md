@@ -1,5 +1,6 @@
 ---
 type: tool
+built_by: "[[Alpaca Markets]]"
 related: ["[[COMMAND — Quant Operations Platform]]"]
 ---
 
