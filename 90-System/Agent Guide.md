@@ -107,4 +107,6 @@ Five official Obsidian skills are vendored in `.claude/skills/` and load automat
 
 - [[Second Brain Levels]] — the roadmap and the Level 5 build-triggers
 - [[Graph Schema]] — the relationship vocabulary
+- [[Progressive Disclosure]] — the token budget the cost ladder above is derived from
+- [[Retrieve to Enter, Navigate to Expand]] — why grep-then-follow-links beats retrieval at this size
 - [[Documentation Rot]] — why these rules exist

@@ -47,6 +47,11 @@ Evergreen entities — the "nouns" of my life and work. One page per entity, alw
 - [[LLM Wiki]] — Level 2 · [[Semantic Search]] — Level 3 · [[Knowledge Graph]] — Level 4
 - [[Embeddings]] · [[RAG]] — the retrieval machinery
 
+**Feeding an agent without drowning it**
+
+- [[Progressive Disclosure]] — load a map, not the territory; the three-tier budget behind indexes and summaries
+- [[Retrieve to Enter, Navigate to Expand]] — which retriever earns its keep at which vault size, and why curation outlasts all of them
+
 **Writing that survives**
 
 - [[Evergreen Notes]] · [[Maps of Content]] — how notes are written and navigated here

@@ -42,6 +42,8 @@ Index only — the reasoning lives in the [[Architecture Decision Record]]s them
 | [[0002-typed-frontmatter-over-inline-fields\|ADR-0002]] | Typed relationships as quoted-wikilink frontmatter | accepted |
 | [[0003-local-embeddings-numpy-storage\|ADR-0003]] | Local embeddings, plain numpy storage | accepted |
 | [[0004-agents-must-grow-the-vault\|ADR-0004]] | Agents must write to the vault, not only read | accepted |
+| [[0005-filesystem-and-cli-over-obsidian-mcp\|ADR-0005]] | Filesystem + CLI, no Obsidian MCP server | accepted |
+| [[0006-summary-frontmatter-on-every-note\|ADR-0006]] | A one-line `summary:` on every content note | accepted |
 
 ## Tasks
 
