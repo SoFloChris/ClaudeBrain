@@ -1,0 +1,14 @@
+# Obsidian per-device state — never sync these
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/graph.json
+.trash/
+
+# Derived data — rebuilt on demand by 90-System/Scripts (would conflict if synced)
+90-System/Graph/
+90-System/Search Index/
+
+# OS noise
+.DS_Store
+Thumbs.db
