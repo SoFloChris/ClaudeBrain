@@ -1,5 +1,6 @@
 ---
 type: concept
+broader: "[[Second Brain]]"
 inspired_by: "[[Nate Herk]]"
 related: ["[[Second Brain]]"]
 ---

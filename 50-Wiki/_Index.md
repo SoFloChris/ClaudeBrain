@@ -17,11 +17,14 @@ Evergreen entities — the "nouns" of my life and work. One page per entity, alw
 - [[Nate Herk]] — creator of the second-brain framework this vault follows
 - [[Garry Tan]] — YC CEO; built [[GBrain]], the Level 5 archetype
 - [[Andrej Karpathy]] — originated the [[LLM Wiki]] idea behind Level 2
+- [[Steph Ango]] — Obsidian's CEO; wrote the skills vendored in this vault
 
 ## Companies
 
 - [[Anthropic]] — makers of [[Claude Code]]; no first-party embeddings API
+- [[Dynalist Inc]] — makers of [[Obsidian]]
 - [[Voyage AI]] — embeddings vendor Anthropic points to
+- [[Alpaca Markets]] — the broker behind [[COMMAND — Quant Operations Platform]]
 - [[AI Automation Society]] — Nate Herk's community
 - [[Y Combinator]] — Garry Tan's company
 
@@ -30,7 +33,8 @@ Evergreen entities — the "nouns" of my life and work. One page per entity, alw
 - [[Obsidian]] — where the notes live · [[Obsidian Git]] — how they sync
 - [[Claude Code]] — the agent harness
 - [[brain_search]] — Level 3 semantic search · [[brain_graph]] — Level 4 knowledge graph
-- [[Smart Connections]] — no-code semantic search plugin · [[Dataview]] — query plugin
+- [[Bases]] — core database plugin, powers the dashboards · [[Dataview]] — the query plugin it largely replaces
+- [[Smart Connections]] — no-code semantic search plugin
 - [[LightRAG]] — graph RAG system · [[GBrain]] — Level 5 reference design
 - [[Alpaca]] — broker API · [[Ollama]] — local LLM runtime
 

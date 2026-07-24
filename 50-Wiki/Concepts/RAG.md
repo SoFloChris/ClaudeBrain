@@ -1,5 +1,6 @@
 ---
 type: concept
+broader: "[[Semantic Search]]"
 related: ["[[Semantic Search]]", "[[Embeddings]]", "[[Knowledge Graph]]"]
 ---
 

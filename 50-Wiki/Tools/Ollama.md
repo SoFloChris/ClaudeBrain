@@ -1,5 +1,6 @@
 ---
 type: tool
+alternative_to: ["[[Voyage AI]]"]
 related: ["[[Embeddings]]", "[[COMMAND — Quant Operations Platform]]"]
 ---
 
