@@ -1,8 +1,12 @@
 ---
 type: company
+aliases: []
 relationship: 
 people: []
-tags: []
+related: []
+tags:
+  - company
+created: {{date}}
 ---
 
 # {{title}}
@@ -13,6 +17,10 @@ tags: []
 
 -
 
-## History
+## Related
 
-- {{date}} — note created
+- [[ ]] — say how it relates
+
+## Appears in
+
+![[Entity.base#Mentioned in]]

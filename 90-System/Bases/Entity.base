@@ -1,0 +1,11 @@
+views:
+  - type: table
+    name: Mentioned in
+    filters:
+      and:
+        - 'file.hasLink(this)'
+        - '!file.name.contains("_Index")'
+    order:
+      - file.name
+      - type
+      - file.mtime

@@ -1,14 +1,18 @@
 ---
 type: tool
+aliases: []
 built_by: 
 uses: []
 alternative_to: []
 related: []
+tags:
+  - tool
+created: {{date}}
 ---
 
 # {{title}}
 
-One-sentence description of what it is and what it's for.
+One sentence: what it is and what it's for.
 
 ## Key facts
 
@@ -20,4 +24,8 @@ How I actually use it, or why I chose it over the alternative.
 
 ## Related
 
-- [[ ]]
+- [[ ]] — say how it relates
+
+## Appears in
+
+![[Entity.base#Mentioned in]]

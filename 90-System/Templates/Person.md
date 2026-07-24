@@ -1,12 +1,19 @@
 ---
 type: person
+aliases: []
 works_at: 
 knows: []
 role: 
-tags: []
+related: []
+tags:
+  - person
+created: {{date}}
 ---
 
 # {{title}}
+
+> Entity notes are deliberately thin — link infrastructure and backlink targets, not essays.
+> Put the thinking in concept notes and link here.
 
 **How we know each other:**
 **Contact:**
@@ -15,6 +22,10 @@ tags: []
 
 -
 
-## History
+## Related
 
-- {{date}} — note created
+- [[ ]] — say how it relates
+
+## Appears in
+
+![[Entity.base#Mentioned in]]
