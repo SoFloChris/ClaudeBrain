@@ -29,7 +29,7 @@ Design principles (in priority order):
 | `20-Areas/` | Ongoing responsibilities with no end date (health, finances, home, work areas). |
 | `30-Resources/` | Reference material by topic — things I might use someday. |
 | `40-Archive/` | Completed projects and inactive notes. Move things here instead of deleting. |
-| `50-Wiki/` | Evergreen entities: `People/`, `Companies/`, `Concepts/`. One note per entity, linked with `[[wikilinks]]`. |
+| `50-Wiki/` | Evergreen entities: `People/`, `Companies/`, `Tools/`, `Concepts/`. One note per entity, linked with `[[wikilinks]]`. |
 | `90-System/` | The machinery: `Memory.md`, `Templates/`, and system docs. Rarely touched during normal capture. |
 
 Each folder has an `_Index.md` — a map of content listing what's inside. Keep indexes current when adding or moving notes.

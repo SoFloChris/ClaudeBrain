@@ -26,7 +26,15 @@ from pathlib import Path
 
 VAULT = Path(__file__).resolve().parents[2]
 GRAPH_PATH = VAULT / "90-System" / "Graph" / "graph.json"
-SKIP_DIRS = {".obsidian", ".git", ".trash", "node_modules", "90-System"}
+SKIP_DIRS = {".obsidian", ".git", ".trash", "node_modules", ".claude"}
+# System docs (Memory, Graph Schema, Second Brain Levels) are real knowledge and
+# belong in the graph; templates, scripts, and derived data do not.
+SKIP_PREFIXES = (
+    "90-System/Templates/",
+    "90-System/Scripts/",
+    "90-System/Graph/",
+    "90-System/Search Index/",
+)
 SKIP_REL_KEYS = {"type", "tags", "aliases", "status", "created", "cssclasses"}
 
 WIKILINK = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]")
@@ -44,6 +52,8 @@ FOLDER_TYPES = {
 def iter_notes():
     for path in VAULT.rglob("*.md"):
         if any(part in SKIP_DIRS for part in path.parts):
+            continue
+        if path.relative_to(VAULT).as_posix().startswith(SKIP_PREFIXES):
             continue
         yield path
 

@@ -4,7 +4,9 @@ The controlled vocabulary for this vault's knowledge graph. Every typed relation
 
 ## Node types (`type:` — plain string, never a link)
 
-`person` · `company` · `concept` · `project` · `area` · `resource`
+`person` · `company` · `tool` · `concept` · `project` · `area` · `resource`
+
+Wiki subfolders: `50-Wiki/People/`, `Companies/`, `Tools/`, `Concepts/`.
 
 ## Predicates (frontmatter keys → typed edges)
 
@@ -18,6 +20,10 @@ The controlled vocabulary for this vault's knowledge graph. Every typed relation
 | `author` | resource | Who made it |
 | `topic` | resource | What it's about |
 | `broader` | concept | Parent concept (hierarchy) |
+| `built_by` | tool | Who makes it: tool → person/company |
+| `uses` | project, tool | Depends on / is built with |
+| `alternative_to` | tool | Competing or substitutable option |
+| `inspired_by` | concept, tool | Where the idea came from |
 
 Body `[[wikilinks]]` become untyped `mentions` edges automatically — use them freely in prose; reserve frontmatter for facts worth typing.
 
