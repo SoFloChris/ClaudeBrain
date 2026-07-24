@@ -9,9 +9,13 @@ related: ["[[Governed Tool Execution]]", "[[Strategy Promotion Ladder]]"]
 
 # COMMAND — Quant Operations Platform
 
-> Institutional-grade autonomous quantitative trading lab: 9-gate governance, multi-model AI, full-stack observability. **Paper trading live on [[Alpaca]].**
+> Self-hosted quant research and execution platform: governed order pipeline, multi-model local AI, a fleet of strategy sidecars, full-stack observability. **Alpaca path is paper-only — [[Kalshi Bot]] is the one live-money exception.**
 
-**Repo:** `SoFloChris/openclaw-ui` (private) · **Build:** V112 · **Status:** Active, paper-live
+**Repo:** `SoFloChris/openclaw-ui` (private) · **Build:** V112 · **Status:** Active
+
+> [!warning] Two things to get right about this system
+> 1. **"9 gates" is overloaded.** The [[Strategy Promotion Ladder]] has **9 gates**; order sealing in `execution-authority.ts` runs **16**. The README conflates them.
+> 2. **It is not uniformly paper-only.** Everything on [[Alpaca]] is paper. `kalshi-bot` trades **real money**, deliberately micro-sized (max $3/trade, $8 daily loss, one loss trips the breaker).
 
 ## Outcome
 
@@ -32,23 +36,26 @@ A trading platform where no strategy reaches real money without passing an expli
 
 Monorepo: `packages/{server,client,shared,tests}` (pnpm workspaces), plus standalone `services/` bots — donchian, vwma, options, crypto, kalshi, risk-governor, ict-signal-sidecar, market-data-bus.
 
-## The trading pipeline
+## Two execution architectures (the key structural fact)
 
-```
-ICT signal detection (4-layer)
-  → bot signal pipeline (validation + scoring)
-  → 9-gate promotion ladder  ← see [[Strategy Promotion Ladder]]
-  → execution authority (single writer, state machine)
-  → Alpaca paper trading
-  → reconciliation worker (60s state sync)
-```
+They coexist, and only one is governed:
 
-**Safety controls:** paper-mode assertion, stop-loss required, $20K max single order, 50 max daily orders, circuit breaker on drawdown.
+| Path | Who | Flow |
+|---|---|---|
+| **Governed** | Backend ICT bot → `ict-signal-sidecar` | Signal → `execution-authority.ts` → **16 gates** → sealed packet → broker outbox → worker → Alpaca |
+| **Sidecar** | donchian, vwma, options, crypto-agent | Signal → `risk-governor` check → **direct Alpaca REST call** |
+
+The sidecars never write [[Order Intent]]s, so they technically honour the [[Single Writer Rule]] — but they bypass the 16-gate pipeline entirely. Their governance substitute is the [[Risk Governor]]. Worth knowing before assuming every order is gated. Full service-by-service breakdown: [[Sidecar Fleet]].
+
+**Hard safety constants** (verified in `trading-safety.ts`, not the docs): paper-URL assertion before every broker call · stop-loss can never be disabled · **$20,000** max single order · 50 max daily orders · **$5,000** hard daily-loss cap that config cannot override. See [[Circuit Breaker]].
+
+> Docs drift here: `TRADING-SYSTEM.md` and `BRAIN_MAP.md` still say $10,000. Source says $20,000. See [[Config Lies, Code Wins]].
 
 ## Core services worth knowing
 
-- `execution-authority.ts` — **single writer** for `order_intents`; 9-gate evaluation + state machine
+- `execution-authority.ts` — **single writer** for `order_intents`; **16-gate** evaluation + state machine ([[Order Intent]], [[Single Writer Rule]])
 - `trading-safety.ts` — paper-mode enforcement, caps, circuit breaker
+- `reconciliation-worker.ts` — 60s broker/DB drift repair; its freshness is itself gate 14 ([[Reconciliation]])
 - `policy-engine.ts` — tiered evaluation (info / read / write / admin / dangerous) — see [[Governed Tool Execution]]
 - `dispatcher.ts` — the 9-step governed tool pipeline (131 governed tools, 17 categories)
 - `model-router.ts` / `model-exchange.ts` — local-first, cost-aware LLM routing across 5 providers
@@ -97,5 +104,7 @@ Backlog: 16 tasks, 14 done — the one open item is splitting `BotDashboard.tsx`
 
 ## Related
 
+- [[Sidecar Fleet]] — the eight standalone services and how they wire together
+- [[Strategy Promotion Ladder]] — the 9 gates a strategy climbs, versus the 16 an order passes
 - [[Set Up ClaudeBrain]] — the vault documenting this
 - [[Claude Code]] — the agent harness both projects are built around

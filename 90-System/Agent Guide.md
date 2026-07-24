@@ -15,15 +15,34 @@ Each level answers one question, and each is implemented with specific machinery
 
 **Level 5 is deliberately not built** — see ADR-0001. Don't add always-on automation without one of its build-triggers firing.
 
-## Which tool for which question
+## The retrieval cost ladder
 
-Reach for the cheapest thing that answers it. Ordered by cost:
+**Escalate only when the cheaper primitive can't answer the question.** A 300-line note opened to read 15 lines is 285 lines of wasted context.
 
-1. **Grep / Read** — you know roughly what it's called or what words it uses. In a vault this size this is *usually the right answer*, and the source framework says so explicitly.
-2. **Backlinks / `[[wikilink]] `following** — you have one note and want its neighbourhood.
-3. **`/graph <entity>`** — you want a *typed* relationship or a chain: "who works where", "how do these two connect".
-4. **`/recall <question>`** — keyword search failed because the note uses different vocabulary. Semantic search is a **fallback, not a default**.
-5. **`/vault-status`** — you want to know what's missing rather than what exists.
+| Need | Reach for | Cost |
+|---|---|---|
+| Does a note exist? What's it called? | `_Index.md`, or `ls 50-Wiki/**` | **Cheapest** |
+| What's this note about? | Its `summary:` frontmatter | Cheap |
+| A specific claim inside it | `Grep -C 3 "<term>"` | Medium |
+| The whole argument | `Read` the note | **Expensive — last resort** |
+
+Then, by question type:
+
+1. **Grep / Read** — you know roughly what it's called or what words it use. In a vault this size this is *usually the right answer*.
+2. **Backlinks / following `[[wikilinks]]`** — you have one note and want its neighbourhood. On a well-linked vault, traversing hand-made links often beats vector search: those links encode judgments about relevance that embeddings only approximate.
+3. **`/graph <entity>`** — a *typed* relationship or a chain: "who works where", "how do these connect".
+4. **`/recall <question>`** — keyword search failed because the note uses different vocabulary. A **fallback, not a default**.
+5. **`/vault-status`** — what's *missing* rather than what exists.
+
+**Never claim the vault has nothing until both the index and a full-text search come back empty — and say that you searched.**
+
+## Renaming is dangerous — read this before moving anything
+
+Obsidian rewrites inbound `[[wikilinks]]` **only when the rename happens inside the app.** In an agent session Obsidian isn't running, so `mv` / `git mv` / write-then-delete renames the file at the OS level and every link pointing at it breaks silently.
+
+If a rename is genuinely needed: grep the vault for the old name, rewrite every inbound link in the same commit, rebuild the graph, and confirm zero unresolved links. On a machine where Obsidian *is* running, `obsidian move` does this correctly — that's the one job the CLI does that the filesystem can't.
+
+**Prefer `aliases:` over renaming.** An alias preserves every existing link, feeds unlinked-mentions, and costs nothing.
 
 ## Writing notes: the professional bar
 

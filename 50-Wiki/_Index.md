@@ -40,13 +40,35 @@ Evergreen entities — the "nouns" of my life and work. One page per entity, alw
 
 ## Concepts
 
-- [[Second Brain]] — what this vault is
-- [[PARA Method]] — the folder skeleton
+**How this vault works**
+
+- [[Second Brain]] — what this vault is · [[PARA Method]] — the folder skeleton
 - [[Context vs Connections]] — what gets in · [[Reverse Engineer for Recall]] — where it goes
 - [[LLM Wiki]] — Level 2 · [[Semantic Search]] — Level 3 · [[Knowledge Graph]] — Level 4
 - [[Embeddings]] · [[RAG]] — the retrieval machinery
-- [[Strategy Promotion Ladder]] · [[Governed Tool Execution]] — patterns from [[COMMAND — Quant Operations Platform]]
+
+**Writing that survives**
+
 - [[Evergreen Notes]] · [[Maps of Content]] — how notes are written and navigated here
-- [[Architecture Decision Record]] · [[Diataxis]] · [[Documentation Rot]] · [[C4 Model]] — how to write docs that survive
+- [[Architecture Decision Record]] · [[Diataxis]] · [[C4 Model]] — the documentation forms
+- [[Documentation Rot]] — the decay all of the above defend against · [[Config Lies, Code Wins]] — its sharpest instance
 - [[Shape Up]] — appetite and non-goals, for scoping work
 - [[JSON Canvas]] — visual maps an agent can author
+
+**Governing systems that act on their own** — patterns from [[COMMAND — Quant Operations Platform]]
+
+- [[Governed Tool Execution]] — allow / deny / ask, applied to every tool call
+- [[Strategy Promotion Ladder]] — the 9 gates a strategy climbs before it risks money
+- [[Order Intent]] — freezing the decision · [[Evidence Bundles]] — the work it must show
+- [[Single Writer Rule]] — one service per table · [[Outbox Pattern]] — surviving the crash between decision and send
+- [[Reconciliation]] — repairing drift from broker truth · [[Circuit Breaker]] — the halt that can't reset itself
+- [[Safety Checks Should Fail Closed]] — what a guard does when it can't run
+
+**Markets** — the domain vocabulary behind COMMAND
+
+- [[ICT Smart Money Concepts]] — the price-action vocabulary and its 4-layer filter
+- [[Donchian Channels]] · [[Volume-Weighted Moving Average]] — the two breakout primitives
+- [[Walk-Forward Validation]] — the honest backtest · [[Ghost Trades]] — the rung below paper
+- [[Loss Quarantine]] — per-symbol memory beneath the portfolio breaker
+
+A full, always-current list lives in [[90-System/Bases/Entity|the Entity base]] — this index is the curated view.
