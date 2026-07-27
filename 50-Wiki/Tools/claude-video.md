@@ -29,6 +29,8 @@ This vault's founding note — [[Every Level of a Claude Second Brain]] — is a
 
 First run on a new machine installs `ffmpeg` and `yt-dlp` and writes `~/.config/watch/.env` — outside the repo, so no key ever lands in git.
 
+**Run it locally, not on the web.** Claude Code web sessions sit behind an egress proxy that blocks YouTube (403 on CONNECT), so `/watch` fails at the download step there no matter how it's configured — verified 2026-07-27. Nothing is wrong with the skill when that happens; it's the environment's network policy. Use a local session.
+
 ## Related
 
 - [[Claude Code]] — the harness; this installs as a plugin/skill

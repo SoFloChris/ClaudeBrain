@@ -16,6 +16,10 @@ Durable facts Claude has learned, appended over time. Each entry gets a date. Ed
 - (2026-07-27) Third-party skills get **vendored into `.claude/skills/`**, not installed as plugins — the vault syncs by git, so checking the skill in makes it work on both machines with no per-device setup. Document source, version, and license in `.claude/skills/README.md`.
 - (2026-07-27) `/watch` ([[claude-video]]) is installed vault-wide for turning videos into notes. Needs `ffmpeg` + `yt-dlp` on first run per machine.
 
+## Environment
+
+- (2026-07-27) **Claude Code web sessions run behind an egress proxy** that denies most non-allowlisted hosts (YouTube is blocked — verified 403 on CONNECT). So `/watch` and anything else that fetches from the open web only works in a **local** session on the laptop or desktop. Don't retry or route around a proxy 403 — it's an org policy denial, not a transient failure. The allowlist is governed by the environment's network policy, changeable in the Claude Code on the web settings.
+
 ## Projects
 
 - (nothing yet)
