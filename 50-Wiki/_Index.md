@@ -27,6 +27,7 @@ Evergreen entities — the "nouns" of my life and work. One page per entity, alw
 - [[Alpaca Markets]] — the broker behind [[COMMAND — Quant Operations Platform]]
 - [[AI Automation Society]] — Nate Herk's community
 - [[Y Combinator]] — Garry Tan's company
+- [[ColdIQ]] — publishes the largest public Claude Code skill library
 
 ## Tools
 
@@ -36,6 +37,7 @@ Evergreen entities — the "nouns" of my life and work. One page per entity, alw
 - [[Bases]] — core database plugin, powers the dashboards · [[Dataview]] — the query plugin it largely replaces
 - [[Smart Connections]] — no-code semantic search plugin
 - [[LightRAG]] — graph RAG system · [[GBrain]] — Level 5 reference design
+- [[claude-video]] — `/watch`, a video capture pipeline for the vault
 - [[Alpaca]] — broker API · [[Ollama]] — local LLM runtime
 
 ## Concepts
@@ -45,5 +47,8 @@ Evergreen entities — the "nouns" of my life and work. One page per entity, alw
 - [[Context vs Connections]] — what gets in · [[Reverse Engineer for Recall]] — where it goes
 - [[LLM Wiki]] — Level 2 · [[Semantic Search]] — Level 3 · [[Knowledge Graph]] — Level 4
 - [[Embeddings]] · [[RAG]] — the retrieval machinery
+- [[Graph Engineering]] — Level 4 at corpus scale, and what the 2026 term actually means
+- [[Skills Are Verbs, Notes Are Nouns]] — how to shape an agent workspace
+- [[Verify the Claim, Steal the Architecture]] — how to process viral AI claims
 - [[Strategy Promotion Ladder]] · [[Governed Tool Execution]] — patterns from [[COMMAND — Quant Operations Platform]]
 - [[Architecture Decision Record]] · [[Diataxis]] · [[Documentation Rot]] · [[C4 Model]] — how to write docs that survive

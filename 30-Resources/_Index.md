@@ -13,3 +13,4 @@ Create notes from [[90-System/Templates/Resource|the Resource template]]. Keep t
 
 - [[Claude Code Memory and Commands]] — memory hierarchy, imports, slash commands, hooks
 - [[Local Embedding Models]] — which embedding model to run, and why chunking matters more
+- [[Claude Code Skill Packs]] — public skill packs worth knowing, with install commands
