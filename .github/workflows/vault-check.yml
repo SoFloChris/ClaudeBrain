@@ -27,10 +27,11 @@ jobs:
       - name: Check for broken wikilinks
         run: python3 "90-System/Scripts/check_links.py"
 
-      # brain_graph's frontmatter parser is hand-rolled and silently dropped
-      # every multi-value typed edge until 2026-07-27. It gets tests.
-      - name: Graph parser regression tests
-        run: python3 "90-System/Scripts/test_brain_graph.py"
+      # Both bugs these pin were silent under-reporters: brain_graph's parser
+      # dropped every multi-value typed edge, and vault_stats collapsed all
+      # seven _Index.md files into one. Discovery picks up new suites for free.
+      - name: Script regression tests
+        run: python3 -m unittest discover -s "90-System/Scripts" -p "test_*.py" -v
 
       # Catches an outright broken script, which the tests above would miss.
       - name: Graph builds cleanly
