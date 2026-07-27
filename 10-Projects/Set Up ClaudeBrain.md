@@ -32,6 +32,8 @@ A second brain that is genuinely usable from both machines, and that [[Claude Co
 
 **Sync:** plain git via [[Obsidian Git]] — 5-minute auto pull/push, laptop ↔ desktop. Derived artifacts (search index, graph JSON) are gitignored and rebuilt per machine, so they never conflict.
 
+**Quality gates:** three layers, weakest to strongest — templates *suggest* (every one ships a `summary:` field), `vault_stats.py` *reports* via the SessionStart hook, and `.github/workflows/vault-check.yml` *blocks* on every PR: frontmatter validity, quoted wikilinks, snake_case keys, a summary on every content note, broken links, the graph building, regression tests, secret shapes, and derived data in git. Only the third layer can't be forgotten — see [[0006-enforce-invariants-in-ci|ADR-0006]]. Local commands are in [[90-System/_Index|the System index]].
+
 ## Decisions
 
 Index only — the reasoning lives in the [[Architecture Decision Record]]s themselves, which are immutable and dated.
