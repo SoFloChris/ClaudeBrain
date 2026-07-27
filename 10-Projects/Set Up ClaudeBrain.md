@@ -45,6 +45,7 @@ Index only — the reasoning lives in the [[Architecture Decision Record]]s them
 | [[0005-vendor-skills-not-plugins\|ADR-0005]] | Vendor third-party skills into the repo, don't plugin-install | accepted |
 | [[0006-enforce-invariants-in-ci\|ADR-0006]] | Enforce vault invariants in CI, not just report them | accepted |
 | [[0007-summary-frontmatter-on-every-note\|ADR-0007]] | Every content note carries a one-line `summary:` | accepted |
+| [[0008-filesystem-and-cli-over-obsidian-mcp\|ADR-0008]] | Filesystem + Obsidian CLI, no Obsidian MCP server | accepted |
 
 ## Tasks
 
@@ -55,7 +56,9 @@ Index only — the reasoning lives in the [[Architecture Decision Record]]s them
 - [ ] `pip install sentence-transformers` on each machine (enables `/recall`)
 - [ ] Capture 3 real notes into the Inbox and run `/process-inbox`
 - [ ] Try `/graph "Nate Herk"` and `/recall what are the 5 levels?`
-- [ ] **Triage `claude/obsidian-second-brain-setup-0c0jdy`** — an unmerged branch with 6 commits that nobody has read. Its sibling `claude/graphify-obsidian-integration-m15xef` turned out to be a superseded vault scaffold worth raiding for CI (see [[Graphify]]); this one may be the same or may be nothing. Decide: salvage or delete.
+- [x] **Triage `claude/obsidian-second-brain-setup-0c0jdy`** — done 2026-07-27. It was a substantial extension of this vault, not a rival scaffold: it already had CI (rebuilt from scratch in #13 before anyone read it), 20 concepts, 3 COMMAND references, 3 more kepano skills, the [[Agent Guide]], the architecture Canvas, and the `summary:` convention. Salvaged across #17–#20; nothing of value left on it. Safe to delete once someone confirms.
+- [ ] **Review the 60 summaries written on 2026-07-27** — they're tier-1 metadata an agent reads *instead of* opening a note, so one that misstates a note's claim misroutes future sessions. `grep -h '^summary:' -r 50-Wiki/` shows all of them in one read.
+- [ ] **Fact-check the COMMAND reference notes** ([[Sidecar Fleet]], [[Risk Governor]], [[Kalshi Bot]]) against the running system — they carry position sizing and risk limits reproduced from an unmerged branch, never confirmed.
 - [ ] **Verify `/watch` end-to-end on a local machine** — it has never actually watched a video. Web sessions can't (egress policy blocks YouTube), so this only proves out locally. Run it on the [[Every Level of a Claude Second Brain]] video, where a hand-written note already exists to compare the extraction against.
 
 ## Open questions
