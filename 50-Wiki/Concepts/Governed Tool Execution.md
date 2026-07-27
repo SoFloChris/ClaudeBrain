@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Every tool an agent can call passes a policy engine that classifies it by blast radius, and the dangerous tiers require an approval record before they run."
 related: ["[[COMMAND — Quant Operations Platform]]", "[[Strategy Promotion Ladder]]"]
 ---
 

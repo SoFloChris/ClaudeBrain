@@ -1,5 +1,6 @@
 ---
 type: project
+summary: "This vault documented by itself: Levels 1-4 built, Level 5 deliberately skipped, and the decision index explaining why."
 status: active
 repo: "https://github.com/SoFloChris/ClaudeBrain"
 people: ["[[Chris Aguirre]]"]
@@ -43,6 +44,7 @@ Index only — the reasoning lives in the [[Architecture Decision Record]]s them
 | [[0004-agents-must-grow-the-vault\|ADR-0004]] | Agents must write to the vault, not only read | accepted |
 | [[0005-vendor-skills-not-plugins\|ADR-0005]] | Vendor third-party skills into the repo, don't plugin-install | accepted |
 | [[0006-enforce-invariants-in-ci\|ADR-0006]] | Enforce vault invariants in CI, not just report them | accepted |
+| [[0007-summary-frontmatter-on-every-note\|ADR-0007]] | Every content note carries a one-line `summary:` | accepted |
 
 ## Tasks
 

@@ -1,5 +1,6 @@
 ---
 type: company
+summary: "Makers of Claude Code, which runs this vault - and notably shipping no first-party embeddings API, pointing users to Voyage AI instead."
 relationship: vendor
 ---
 

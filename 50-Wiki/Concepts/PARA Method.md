@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Organize by how actionable something is rather than what topic it belongs to, which is why it survives contact with real life."
 broader: "[[Second Brain]]"
 related: ["[[Second Brain]]"]
 ---

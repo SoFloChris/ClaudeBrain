@@ -1,5 +1,7 @@
 ---
 type: resource
+# What this source says that made it worth keeping.
+summary: ""
 aliases: []
 author: 
 topic: 

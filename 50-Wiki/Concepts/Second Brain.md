@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "A personal knowledge system an AI assistant co-authors rather than merely searches."
 related: []
 ---
 

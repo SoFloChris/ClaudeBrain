@@ -1,5 +1,6 @@
 ---
 type: person
+summary: "Originator of the LLM-wiki idea that this vault's Level 2 is built on."
 ---
 
 # Andrej Karpathy

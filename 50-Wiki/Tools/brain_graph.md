@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "This vault's knowledge graph engine, whose hand-rolled frontmatter parser is the fragile part to check first."
 related: ["[[Knowledge Graph]]", "[[Graph Schema]]"]
 alternative_to: ["[[LightRAG]]"]
 ---

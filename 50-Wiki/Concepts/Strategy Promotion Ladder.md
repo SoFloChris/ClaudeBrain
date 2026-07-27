@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Nine gates a trading strategy must clear before touching real money, none of which advance by default."
 related: ["[[COMMAND — Quant Operations Platform]]", "[[Governed Tool Execution]]"]
 ---
 

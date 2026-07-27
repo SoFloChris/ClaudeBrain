@@ -1,5 +1,6 @@
 ---
 type: resource
+summary: "The Claude Code machinery this vault runs on - memory precedence, @imports, slash commands, and hooks - verified against the official docs."
 topic: "[[Claude Code]]"
 related: ["[[Second Brain]]", "[[LLM Wiki]]"]
 ---

@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "This vault's semantic search engine - local, free, and inspectable, built in-house rather than bought."
 related: ["[[Semantic Search]]", "[[Embeddings]]"]
 uses: ["[[Local Embedding Models]]"]
 alternative_to: ["[[Smart Connections]]"]

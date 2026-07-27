@@ -1,5 +1,7 @@
 ---
 type: changelog
+# What changed, and why it mattered.
+summary: ""
 project: 
 versioning: semver
 last_reviewed: {{date}}

@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Store evergreen context and discard transient traffic - the filter for what is allowed into the vault at all."
 broader: "[[Second Brain]]"
 inspired_by: "[[Nate Herk]]"
 related: ["[[Second Brain]]"]

@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Viral AI posts are usually fabricated in their framing and sound in their diagram - discard the authority claim, then judge the architecture on its own merits."
 aliases: ["AI hype triage", "fabricated authority", "engagement-farmed AI posts"]
 related: ["[[Graph Engineering]]", "[[Context vs Connections]]"]
 ---

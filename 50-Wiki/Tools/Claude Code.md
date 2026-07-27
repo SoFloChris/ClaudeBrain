@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "The agent harness this vault runs on, and the reason a plain CLAUDE.md is enough to make Level 1 work at all."
 built_by: "[[Anthropic]]"
 related: ["[[Second Brain]]", "[[LLM Wiki]]"]
 ---

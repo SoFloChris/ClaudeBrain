@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "A wiki written for a model to navigate rather than a human to browse, so it can load exactly the pages it needs."
 broader: "[[Second Brain]]"
 inspired_by: "[[Andrej Karpathy]]"
 ---

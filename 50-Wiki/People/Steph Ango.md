@@ -1,5 +1,6 @@
 ---
 type: person
+summary: "Obsidian's CEO, whose official Obsidian skills are vendored into this vault."
 aliases: [kepano]
 works_at: "[[Dynalist Inc]]"
 role: CEO of Obsidian

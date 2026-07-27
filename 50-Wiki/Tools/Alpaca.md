@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "The brokerage API COMMAND executes through, currently paper-only."
 built_by: "[[Alpaca Markets]]"
 related: ["[[COMMAND — Quant Operations Platform]]"]
 ---

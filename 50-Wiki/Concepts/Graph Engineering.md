@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Designing an AI system around explicit typed edges rather than similarity search - a real discipline that went viral in July 2026 under three incompatible definitions."
 aliases: ["graph engineering", "agentic knowledge graph", "GraphRAG"]
 broader: "[[Knowledge Graph]]"
 related: ["[[RAG]]", "[[LightRAG]]"]

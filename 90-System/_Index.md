@@ -23,7 +23,7 @@ Other: `Daily Note` · `Meeting Note` · `Resource` · `MOC`
 | [[brain_graph]] | Level 4 knowledge graph — `build`, `query`, `path`, `stats` |
 | `vault_stats.py` | Vault health — orphans, stubs, broken links (`--brief` for hooks). **Reports; always exits 0.** |
 | `check_links.py` | Broken wikilinks with `file:line`, **exits non-zero** — the enforcing version, run by CI |
-| `check_frontmatter.py` | Frontmatter parses as YAML, links are quoted, keys are snake_case (needs PyYAML) |
+| `check_frontmatter.py` | Frontmatter parses as YAML, links quoted, keys snake_case, **every content note has a `summary:`** (needs PyYAML) |
 | `test_brain_graph.py` | Regression tests for [[brain_graph]]'s frontmatter parser (stdlib `unittest`) |
 | `test_vault_stats.py` | Regression tests for `vault_stats.py`'s note keying and link resolution |
 | `guard-secrets.sh` | Fails if anything secret-shaped is tracked; scans `git ls-files`, not the working tree |

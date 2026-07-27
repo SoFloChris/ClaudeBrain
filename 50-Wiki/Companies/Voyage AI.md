@@ -1,5 +1,6 @@
 ---
 type: company
+summary: "The embeddings vendor Anthropic points to - the researched paid upgrade path if local models ever stop being good enough."
 relationship: vendor
 related: ["[[Embeddings]]", "[[Semantic Search]]"]
 ---

@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "A working agent workspace keeps facts in notes and procedures in skills; merging them yields either procedures nobody runs or facts that go stale."
 aliases: ["agent workspace pattern", "skill pack architecture", "domain agent workspace"]
 broader: "[[Second Brain]]"
 inspired_by: "[[ColdIQ]]"

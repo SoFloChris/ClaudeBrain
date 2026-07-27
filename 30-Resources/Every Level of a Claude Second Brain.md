@@ -1,5 +1,6 @@
 ---
 type: resource
+summary: "The five-level second-brain model this vault is built on, whose central advice is anti-hype: pick the lowest level that solves your actual pain."
 source: "https://www.youtube.com/watch?v=DTCyvo6cC54"
 author: "[[Nate Herk]]"
 topic: "[[Second Brain]]"

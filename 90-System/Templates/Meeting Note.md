@@ -1,5 +1,7 @@
 ---
 type: meeting
+# The decision or outcome, not the agenda.
+summary: ""
 people: []
 related: []
 tags:

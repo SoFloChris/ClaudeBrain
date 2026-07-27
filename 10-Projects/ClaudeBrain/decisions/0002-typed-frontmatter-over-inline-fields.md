@@ -1,5 +1,6 @@
 ---
 type: adr
+summary: "ADR-0002 (accepted): typed relationships live in YAML frontmatter rather than Dataview inline fields, so Obsidian, plugins, and scripts all read the same edges."
 status: accepted
 date: 2026-07-24
 decision_makers: ["[[Chris Aguirre]]"]

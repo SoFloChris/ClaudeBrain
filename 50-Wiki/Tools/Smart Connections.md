@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "The no-code semantic-search plugin brain_search replaces, and the fallback if maintaining a script stops being worth it."
 related: ["[[Semantic Search]]"]
 alternative_to: ["[[brain_search]]"]
 uses: ["[[Embeddings]]", "[[Obsidian]]"]

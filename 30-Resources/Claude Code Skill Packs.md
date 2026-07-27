@@ -1,5 +1,6 @@
 ---
 type: resource
+summary: "The public Claude Code skill packs worth knowing, with install commands, and the standing filter for which are worth adopting versus reading as architecture."
 topic: "[[Claude Code]]"
 related: ["[[claude-video]]", "[[ColdIQ]]", "[[Skills Are Verbs, Notes Are Nouns]]"]
 ---

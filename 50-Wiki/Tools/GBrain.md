@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "Garry Tan's autonomous second brain - the Level 5 reference design, and the honest benchmark for how much scale justifies that complexity."
 built_by: "[[Garry Tan]]"
 related: ["[[Second Brain]]", "[[Knowledge Graph]]"]
 uses: ["[[Embeddings]]"]

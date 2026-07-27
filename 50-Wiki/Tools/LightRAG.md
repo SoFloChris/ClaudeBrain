@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "The heavyweight extraction-based alternative to this vault's authored graph, worth revisiting only past the scale hand-typed relations can cover."
 related: ["[[Knowledge Graph]]", "[[RAG]]"]
 alternative_to: ["[[brain_graph]]"]
 ---

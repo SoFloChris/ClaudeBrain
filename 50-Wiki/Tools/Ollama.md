@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "Local LLM runtime - no API key, no per-token cost, and nothing leaving the machine."
 alternative_to: ["[[Voyage AI]]"]
 related: ["[[Embeddings]]", "[[COMMAND — Quant Operations Platform]]"]
 ---

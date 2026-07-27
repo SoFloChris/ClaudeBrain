@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "The /watch skill that gives Claude a video input, verified real and vendored here, though never yet run end to end."
 aliases: ["/watch", "watch skill", "claude-video", "Claude video skill"]
 status: installed
 uses: ["[[Claude Code]]"]

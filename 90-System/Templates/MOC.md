@@ -1,5 +1,7 @@
 ---
 type: moc
+# What this map collects, and the thread connecting them.
+summary: ""
 aliases: []
 related: []
 tags:

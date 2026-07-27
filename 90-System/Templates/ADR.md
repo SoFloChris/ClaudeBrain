@@ -1,5 +1,8 @@
 ---
 type: adr
+# The decision and its because, in one line:
+# "ADR-000N (accepted): X, because Y."
+summary: ""
 status: proposed
 date: {{date}}
 decision_makers: ["[[Chris Aguirre]]"]
