@@ -11,6 +11,8 @@ Durable facts Claude has learned, appended over time. Each entry gets a date. Ed
 - (2026-07-24) Vault runs at Levels 1–4 (router, wiki, semantic search, knowledge graph); Level 5 deliberately skipped until a concrete pain point demands it.
 - Semantic search is a fallback, not the default — grep and wikilinks first (per the source video's advice).
 - (2026-07-24) Chris wants Claude to actively GROW the vault — create entity notes, capture answers and decisions, add connections — not just read from it. A session that only reads has failed.
+- (2026-07-27) Chris sends screenshots of X/Twitter posts and GitHub trees with "research this" — the expected output is verification (is the claim true?) plus extraction (what's the reusable architecture?), not a summary of the screenshot. See [[Verify the Claim, Steal the Architecture]].
+- (2026-07-27) Standing filter for skill packs and tools: install only what feeds a workflow already run by hand; read the rest as architecture references. Six maintained commands beat forty unmaintained ones.
 
 ## Projects
 

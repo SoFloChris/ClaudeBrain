@@ -29,3 +29,4 @@ knows: ["[[Jordan Lee]]"]
 ## Related
 
 - [[Every Level of a Claude Second Brain]] — Level 4 section
+- [[Graph Engineering]] — the same idea at corpus scale, where edges get extracted instead of written
