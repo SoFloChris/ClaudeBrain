@@ -17,7 +17,7 @@ related: ["[[Governed Tool Execution]]", "[[Strategy Promotion Ladder]]"]
 
 > [!warning] Two things to get right about this system
 > 1. **"9 gates" is overloaded.** The [[Strategy Promotion Ladder]] has **9 gates**; order sealing in `execution-authority.ts` runs **16**. The README conflates them.
-> 2. **It is not uniformly paper-only.** Everything on [[Alpaca]] is paper. `kalshi-bot` trades **real money**, deliberately micro-sized (max $3/trade, $8 daily loss, one loss trips the breaker).
+> 2. **It is not uniformly paper-only.** Everything on [[Alpaca]] is paper. `kalshi-bot` trades **real money**, deliberately micro-sized (max **$2**/trade, $8 daily loss, one loss trips the breaker). The `$3` you'll see in a trailing comment beside `maxTradeUsd` is a superseded value, not the enforced one.
 
 ## Outcome
 
