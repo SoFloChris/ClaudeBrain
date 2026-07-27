@@ -4,14 +4,23 @@ Checked in rather than linked so every machine and every agent session has them 
 offline — the vault syncs by git, so a skill vendored here works on both the laptop and the
 desktop with no per-machine install step.
 
-## `obsidian-markdown/` · `obsidian-bases/`
+## The kepano set — `obsidian-markdown/` · `obsidian-bases/` · `defuddle/` · `json-canvas/` · `obsidian-cli/`
 
-Vendored verbatim from [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) —
-the official Obsidian skills by Steph Ango (@kepano), Obsidian's CEO. MIT licensed,
-© 2026 Steph Ango.
+All five vendored verbatim from [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills)
+— the official Obsidian skills by Steph Ango (@kepano), Obsidian's CEO. MIT licensed,
+© 2026 Steph Ango; the full licence text is in `LICENSE-kepano-obsidian-skills`.
 
-They give Claude exact, authoritative syntax for Obsidian markdown (callouts, embeds, block
-references, properties) and for `.base` files (filters, formulas, views, functions).
+| Skill | What it gives Claude |
+|---|---|
+| `obsidian-markdown` | Exact syntax for callouts, embeds, block references, properties (+ three reference files) |
+| `obsidian-bases` | `.base` files — filters, formulas, views, functions |
+| `defuddle` | Clean markdown out of a web page, minus the navigation clutter — cheaper than WebFetch |
+| `json-canvas` | Reading and writing `.canvas` files (see `90-System/Vault Architecture.canvas`) |
+| `obsidian-cli` | Driving a vault from the command line; also plugin/theme debugging |
+
+`defuddle` and `obsidian-cli` shell out to tools that must be installed separately — they
+degrade to an error message rather than silently doing nothing, so an absent binary is
+obvious on first use.
 
 To update: re-download from
 `https://raw.githubusercontent.com/kepano/obsidian-skills/main/skills/<name>/SKILL.md`.

@@ -39,6 +39,7 @@ Evergreen entities — the "nouns" of my life and work. One page per entity, alw
 - [[LightRAG]] — graph RAG system · [[GBrain]] — Level 5 reference design
 - [[Graphify]] — the extraction-based graph tool this vault declined, twice
 - [[claude-video]] — `/watch`, a video capture pipeline for the vault
+- [[Defuddle]] — strips a web page down to its content · [[Obsidian CLI]] — drives the vault from a terminal
 - [[Alpaca]] — broker API · [[Ollama]] — local LLM runtime
 
 ## Concepts
@@ -53,3 +54,16 @@ Evergreen entities — the "nouns" of my life and work. One page per entity, alw
 - [[Verify the Claim, Steal the Architecture]] — how to process viral AI claims
 - [[Strategy Promotion Ladder]] · [[Governed Tool Execution]] — patterns from [[COMMAND — Quant Operations Platform]]
 - [[Architecture Decision Record]] · [[Diataxis]] · [[Documentation Rot]] · [[C4 Model]] — how to write docs that survive
+
+**Note craft** — how the vault itself should be written
+
+- [[Evergreen Notes]] · [[Maps of Content]] — the two shapes a note can take
+- [[Progressive Disclosure]] · [[Retrieve to Enter, Navigate to Expand]] — how an agent should reach for things, cheapest first
+- [[Shape Up]] — fixed time, variable scope · [[JSON Canvas]] — the open format behind `.canvas` files
+
+**[[COMMAND — Quant Operations Platform]] domain** — the patterns that platform runs on
+
+- [[Circuit Breaker]] · [[Loss Quarantine]] · [[Safety Checks Should Fail Closed]] · [[Ghost Trades]] — stopping badly, on purpose
+- [[Order Intent]] · [[Outbox Pattern]] · [[Reconciliation]] · [[Single Writer Rule]] — getting an order placed exactly once
+- [[Evidence Bundles]] · [[Config Lies, Code Wins]] — knowing what actually happened
+- [[Donchian Channels]] · [[Volume-Weighted Moving Average]] · [[ICT Smart Money Concepts]] · [[Walk-Forward Validation]] — signals, and proving they hold up
