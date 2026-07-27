@@ -17,6 +17,14 @@ ADRs are the one documentation form that **doesn't rot**, because they're explic
 
 That's why project master notes here carry an *index* of decisions rather than the decisions themselves: the volatile summary and the durable record have different lifecycles and shouldn't share a file.
 
+### The numbering hazard, learned the hard way
+
+Sequential numbers are the one part of the format that doesn't survive parallel work. Two agent sessions on separate branches will each read the `decisions/` folder *as their branch sees it*, each conclude the next number is 0005, and each be right locally and wrong globally.
+
+That happened in this vault. Three ADRs written on `claude/obsidian-second-brain-setup-0c0jdy` as 0005 and 0006 landed on `main` as **0007** and **0008**, because a different 0005 and 0006 had been merged meanwhile. The branch's copy survived as a duplicate sitting at a number that by then meant something else entirely — the kind of conflict git cannot detect, since both sides only ever *added* files.
+
+Two things follow. **Check the default branch before claiming a number**, and when adopting an unmerged ADR, **restate its numbers against the vault as it actually is** rather than preserving the ones it was born with — which is what `ADR-0007` does explicitly in its opening line.
+
 ## The two formats
 
 **Nygard (2011)** — the original, five sections: Title, Status, Context, Decision, Consequences. Minimal enough that there's no excuse not to write one.
@@ -26,6 +34,7 @@ That's why project master notes here carry an *index* of decisions rather than t
 ## Conventions worth keeping
 
 - **Filename:** `NNNN-title-with-dashes.md`, zero-padded, in a `decisions/` folder beside the project note.
+- **Take the number from the default branch, not from your own.** A sequential number is a *claim on a shared namespace*, and a branch is the one place you can't see who else has claimed it.
 - **When to write one:** when future-you would ask "why on earth is it like this?" Not for tiny, reversible, or temporary choices.
 - **Superseding is bidirectional:** the new ADR gets `supersedes`, the old gets `superseded_by` and a status change. Never delete a superseded ADR — the wrong turn is part of the record.
 - **Context and Decision are immutable once accepted.** Later learning goes in an appended, dated `## Amendments` section. In practice most teams allow this pragmatic mutability rather than pure immutability.
