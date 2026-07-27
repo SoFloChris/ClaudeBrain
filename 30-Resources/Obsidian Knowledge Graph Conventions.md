@@ -1,5 +1,6 @@
 ---
 type: resource
+summary: "How to encode typed relationships so Obsidian, Bases, Dataview, and scripts all read the same edges - the reasoning behind this vault's Graph Schema."
 topic: "[[Knowledge Graph]]"
 related: ["[[Obsidian]]", "[[Graph Schema]]", "[[Dataview]]"]
 ---

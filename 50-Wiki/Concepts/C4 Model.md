@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Four zoom levels of architecture diagram, so a diagram's audience is settled before its contents are."
 aliases: [C4]
 related: ["[[Diataxis]]", "[[Architecture Decision Record]]"]
 tags:

@@ -1,5 +1,6 @@
 ---
 type: adr
+summary: "ADR-0005 (accepted): third-party skills are vendored into the repo rather than plugin-installed, so they ride the git sync to both machines with no per-device setup."
 status: accepted
 date: 2026-07-27
 decision_makers: ["[[Chris Aguirre]]"]

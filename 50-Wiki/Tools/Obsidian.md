@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "Where the notes live: local plain-text markdown with no cloud lock-in, which is what makes everything else here possible."
 built_by: "[[Dynalist Inc]]"
 related: ["[[Second Brain]]", "[[PARA Method]]"]
 ---

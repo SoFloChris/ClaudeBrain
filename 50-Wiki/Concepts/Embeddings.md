@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Text as vectors positioned by meaning, so two passages can be judged related without sharing a single word."
 broader: "[[Semantic Search]]"
 related: ["[[Semantic Search]]", "[[RAG]]"]
 ---

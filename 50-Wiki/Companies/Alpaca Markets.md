@@ -1,5 +1,6 @@
 ---
 type: company
+summary: "The API-first brokerage behind COMMAND, whose paper environment mirrors live order semantics closely enough to exercise the whole execution path."
 aliases: [Alpaca]
 relationship: vendor
 tags:

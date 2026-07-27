@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "There are exactly four kinds of documentation because two axes define the whole territory, and mixing them rots both halves."
 aliases: [Diátaxis]
 related: ["[[Documentation Rot]]", "[[Architecture Decision Record]]"]
 tags:

@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "The value of an ADR is the context, not the decision - you will remember what you chose and forget what forced it."
 aliases: [ADR, ADRs]
 related: ["[[Documentation Rot]]", "[[Diataxis]]"]
 tags:

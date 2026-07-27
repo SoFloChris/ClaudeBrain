@@ -1,5 +1,6 @@
 ---
 type: company
+summary: "The accelerator Garry Tan leads, noted here for GBrain rather than for the fund."
 relationship: interest
 people: ["[[Garry Tan]]"]
 ---

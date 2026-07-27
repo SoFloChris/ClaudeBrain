@@ -65,6 +65,29 @@ class TestSnakeCaseKeys(unittest.TestCase):
             self.assertFalse(SNAKE.match(key), key)
 
 
+class TestSummaryExemptions(unittest.TestCase):
+    """ADR-0007 requires a summary on content notes — and only those."""
+
+    def test_structural_files_are_exempt(self):
+        for stem in ("_Index", "Home", "SETUP", "README", "CLAUDE"):
+            self.assertIn(stem, check_frontmatter.NO_SUMMARY_NEEDED, stem)
+
+    def test_memory_is_exempt(self):
+        """It's @-imported into CLAUDE.md, so it's always already in context."""
+        self.assertIn("Memory", check_frontmatter.NO_SUMMARY_NEEDED)
+
+    def test_daily_notes_are_exempt(self):
+        """Transient scratch logs have no single claim to state."""
+        for stem in ("2026-07-27", "2025-01-01"):
+            self.assertTrue(check_frontmatter.DAILY_NOTE.match(stem), stem)
+
+    def test_ordinary_notes_are_not_exempt(self):
+        for stem in ("Knowledge Graph", "Nate Herk", "2026-07", "notes-2026-07-27"):
+            exempt = (stem in check_frontmatter.NO_SUMMARY_NEEDED
+                      or bool(check_frontmatter.DAILY_NOTE.match(stem)))
+            self.assertFalse(exempt, stem)
+
+
 class TestAgainstTheRealVault(unittest.TestCase):
     def test_vault_passes(self):
         """Guards against a rule so strict the vault can't satisfy it."""

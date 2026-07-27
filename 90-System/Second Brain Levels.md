@@ -1,3 +1,7 @@
+---
+summary: "The five-level maturity model this vault follows, whose point is to stop at the simplest level that solves the actual need."
+---
+
 # Second Brain Levels
 
 The 5-level maturity model this vault follows, from [[Every Level of a Claude Second Brain]] by [[Nate Herk]]. The goal is **not** to reach Level 5 — it's the simplest architecture that solves the actual need. Notably, Nate himself stops at Level 4, and his own framing: "complexity climbs as you go up, not cost — most people land at 1–3."

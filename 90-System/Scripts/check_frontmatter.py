@@ -23,6 +23,14 @@ BARE_LINK = re.compile(r"^\s*[\w_]+\s*:\s*(?:\[\s*)?\[\[", re.M)
 KEY = re.compile(r"^([A-Za-z_][\w_]*)\s*:", re.M)
 SNAKE = re.compile(r"^[a-z][a-z0-9_]*$")
 
+# Exempt from the `summary:` requirement (ADR-0007):
+#   - structural files, which are maps and routers rather than claims
+#   - Memory.md, @-imported into CLAUDE.md and so always already in context
+#   - daily notes, which are transient scratch logs with no single claim;
+#     their content gets redistributed by /process-inbox and then archived
+NO_SUMMARY_NEEDED = {"_Index", "Home", "SETUP", "README", "CLAUDE", "Memory"}
+DAILY_NOTE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
 
 def iter_notes():
     for path in sorted(VAULT.rglob("*.md")):
@@ -53,7 +61,14 @@ def main():
         rel = path.relative_to(VAULT).as_posix()
         text = path.read_text(encoding="utf-8", errors="replace")
         fm = frontmatter(text)
+
+        needs_summary = (path.stem not in NO_SUMMARY_NEEDED
+                         and not DAILY_NOTE.match(path.stem))
+
         if fm is None:
+            if needs_summary:
+                errors.append(f"{rel}: no frontmatter, so no summary — "
+                              "every content note needs one (ADR-0007)")
             continue
 
         try:
@@ -77,13 +92,25 @@ def main():
             if not SNAKE.match(key):
                 errors.append(f"{rel}: frontmatter key '{key}' is not snake_case")
 
+        # A summary that exists but says nothing is worse than none: it costs a
+        # read to discover it was useless. Require actual prose.
+        if needs_summary and isinstance(data, dict):
+            summary = (data.get("summary") or "").strip()
+            if not summary:
+                errors.append(f"{rel}: missing summary — one sentence stating "
+                              "what the note claims (ADR-0007)")
+            elif len(summary) < 20:
+                errors.append(f"{rel}: summary is too short to be a claim "
+                              f"({len(summary)} chars): {summary!r}")
+
     if errors:
         print(f"FAIL — {len(errors)} frontmatter problem(s):\n")
         for err in errors:
             print(f"  {err}")
         return 1
 
-    print("PASS — frontmatter parses everywhere, links quoted, keys snake_case.")
+    print("PASS — frontmatter parses everywhere, links quoted, "
+          "keys snake_case, every content note has a summary.")
     return 0
 
 

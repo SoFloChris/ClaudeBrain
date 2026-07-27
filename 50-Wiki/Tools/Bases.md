@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "Obsidian's core database plugin, which turns the frontmatter this vault already writes into dashboards with no community plugin required."
 aliases: [Obsidian Bases]
 built_by: "[[Dynalist Inc]]"
 alternative_to: ["[[Dataview]]"]

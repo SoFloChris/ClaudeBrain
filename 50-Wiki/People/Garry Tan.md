@@ -1,5 +1,6 @@
 ---
 type: person
+summary: "Built GBrain, the Level 5 autonomous brain this vault measures itself against and deliberately does not imitate."
 works_at: "[[Y Combinator]]"
 role: CEO of Y Combinator
 ---

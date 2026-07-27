@@ -1,5 +1,6 @@
 ---
 type: project
+summary: "An autonomous quant trading lab where no strategy reaches real money without clearing nine explicit governance gates — paper-live on Alpaca."
 status: active
 repo: "https://github.com/SoFloChris/openclaw-ui"
 people: ["[[Chris Aguirre]]"]

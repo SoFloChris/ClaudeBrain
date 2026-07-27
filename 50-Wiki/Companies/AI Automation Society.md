@@ -1,5 +1,6 @@
 ---
 type: company
+summary: "Nate Herk's Skool community, where his second-brain skills and templates are distributed."
 relationship: interest
 people: ["[[Nate Herk]]"]
 ---

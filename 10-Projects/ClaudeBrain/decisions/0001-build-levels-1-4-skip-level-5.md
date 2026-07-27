@@ -1,5 +1,6 @@
 ---
 type: adr
+summary: "ADR-0001 (accepted): build Levels 1-4 and deliberately skip Level 5, because complexity should follow a concrete pain rather than ambition."
 status: accepted
 date: 2026-07-24
 decision_makers: ["[[Chris Aguirre]]"]

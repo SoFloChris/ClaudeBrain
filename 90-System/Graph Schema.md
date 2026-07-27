@@ -1,3 +1,7 @@
+---
+summary: "The controlled vocabulary of typed predicates that makes this vault's graph queryable - invent a predicate only when none fits, and record it here."
+---
+
 # Graph Schema
 
 The controlled vocabulary for this vault's knowledge graph. Every typed relationship is a frontmatter key whose value is a quoted `"[[wikilink]]"` (or a list of them). The key name **is** the relationship type. Stick to this list — invent a new predicate only when none fits, and add it here when you do.
@@ -10,6 +14,16 @@ The controlled vocabulary for this vault's knowledge graph. Every typed relation
 
 Wiki subfolders: `50-Wiki/People/`, `Companies/`, `Tools/`, `Concepts/`.
 Per-project documentation: `10-Projects/<Project>/decisions/NNNN-title-with-dashes.md` (ADRs, per MADR convention).
+
+## `summary:` — required on every content note
+
+One quoted sentence stating what the note **claims**, not what category it belongs to. Not *"a note about safety mechanisms"* but *"a safety mechanism an agent can reset is not a safety mechanism."*
+
+It carries no edge. It exists so an agent can decide whether to open a note without paying to read it — reading sixty summaries costs less than opening three notes, and a wasted read costs twice: the wrong note's tokens plus the right note's afterwards.
+
+**Exempt:** structural files (`_Index`, `Home`, `README`, `SETUP`, `CLAUDE`) and `Memory.md`, which is `@`-imported into `CLAUDE.md` and therefore always already in context. Templates carry the field as a prompt to fill in, not as a value.
+
+Enforced by `check_frontmatter.py`, so a note without one fails the build rather than merely appearing in a report. See ADR-0007 for why it is required rather than encouraged.
 
 ## Predicates (frontmatter keys → typed edges)
 
@@ -40,7 +54,6 @@ Body `[[wikilinks]]` become untyped `mentions` edges automatically — use them 
 1. **Quote every link in YAML**: `works_at: "[[Acme]]"` — unquoted brackets are invalid YAML and break parsing.
 2. **Store each fact once, on the subject's note.** Jane's note says `works_at: "[[Acme]]"`; Acme's note doesn't need a mirror entry (the graph and backlinks derive the reverse direction).
 3. **Reserved keys carry no edges**: `type`, `summary`, `tags`, `aliases`, `status`, `created`, `updated`, `date`, `last_reviewed`, `last_tested`, plus plain-string fields like `role`, `relationship`, `source`, `due`, `repo`, `build`, `risk`, `reversible`, `versioning`.
-   - **`summary:`** is one quoted sentence stating what a note *claims*, not what category it belongs to. It exists so an agent can decide whether to open a note without paying to read it. Currently **optional and unevenly present** — the notes salvaged from `claude/obsidian-second-brain-setup-0c0jdy` carry it, most others don't. Making it required vault-wide is a live proposal with its own ADR on that branch, not yet adopted.
 4. snake_case predicate names, always.
 
 ## Consumers

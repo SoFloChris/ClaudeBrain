@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "The extraction-based graph tool this vault declined twice, kept as a documented rejection with the condition that would make it interesting again."
 aliases: ["graphify", "graphifyy"]
 alternative_to: ["[[brain_graph]]"]
 related: ["[[Knowledge Graph]]", "[[Graph Engineering]]", "[[LightRAG]]"]

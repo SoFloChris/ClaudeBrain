@@ -1,5 +1,8 @@
 ---
 type: concept
+# The claim itself, not the topic. "Notes should be atomic",
+# not "a note about atomicity".
+summary: ""
 aliases: []
 broader: 
 related: []

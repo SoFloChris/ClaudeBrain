@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Search by meaning rather than exact words - powerful, and still worse than reading the file unless applied surgically."
 broader: "[[Second Brain]]"
 related: ["[[Second Brain]]", "[[Knowledge Graph]]"]
 ---

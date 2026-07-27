@@ -1,5 +1,6 @@
 ---
 type: adr
+summary: "ADR-0004 (accepted): agents must write to the vault rather than only read it, enforced by router rules plus a Stop hook, since instructions alone degrade over a long session."
 status: accepted
 date: 2026-07-24
 decision_makers: ["[[Chris Aguirre]]"]

@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Incorrect documentation is worse than missing documentation: missing docs send you elsewhere, wrong docs make you act confidently on a lie."
 aliases: [doc rot, documentation decay]
 related: ["[[Architecture Decision Record]]", "[[Diataxis]]", "[[Context vs Connections]]"]
 tags:

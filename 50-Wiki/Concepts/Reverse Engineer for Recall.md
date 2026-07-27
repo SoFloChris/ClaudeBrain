@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Design the file architecture around how you will ask for things later, not around how they arrive."
 broader: "[[Second Brain]]"
 inspired_by: "[[Nate Herk]]"
 related: ["[[Second Brain]]"]

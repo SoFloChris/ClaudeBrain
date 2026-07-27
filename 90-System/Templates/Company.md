@@ -1,5 +1,8 @@
 ---
 type: company
+# What they do and why they are in my vault -- not a boilerplate
+# description anyone could write.
+summary: ""
 aliases: []
 relationship: 
 people: []

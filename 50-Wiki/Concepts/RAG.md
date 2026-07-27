@@ -1,5 +1,6 @@
 ---
 type: concept
+summary: "Retrieve the relevant documents first and put them in context, rather than trusting what the model memorized."
 broader: "[[Semantic Search]]"
 related: ["[[Semantic Search]]", "[[Embeddings]]", "[[Knowledge Graph]]"]
 ---

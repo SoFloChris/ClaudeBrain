@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "The long-standing Obsidian query plugin, now largely superseded for property-driven dashboards by core Bases."
 alternative_to: ["[[Bases]]"]
 uses: ["[[Obsidian]]"]
 related: ["[[Knowledge Graph]]"]

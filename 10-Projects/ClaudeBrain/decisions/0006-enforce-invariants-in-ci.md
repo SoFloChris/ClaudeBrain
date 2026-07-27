@@ -1,5 +1,6 @@
 ---
 type: adr
+summary: "ADR-0006 (accepted): vault invariants are enforced by a failing build rather than only reported, because both bugs that shipped were silent under-reporters no health report could see."
 status: accepted
 date: 2026-07-27
 decision_makers: ["[[Chris Aguirre]]"]

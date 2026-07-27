@@ -1,5 +1,6 @@
 ---
 type: company
+summary: "The GTM consultancy behind the largest public Claude Code skill library, whose workspace architecture is worth more here than its outbound advice."
 aliases: ["Cold IQ", "ColdLabs"]
 relationship: reference
 related: ["[[Claude Code]]", "[[Skills Are Verbs, Notes Are Nouns]]"]

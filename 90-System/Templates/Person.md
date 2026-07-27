@@ -1,5 +1,7 @@
 ---
 type: person
+# Who they are to me -- how I know them, why they are here.
+summary: ""
 aliases: []
 works_at: 
 knows: []

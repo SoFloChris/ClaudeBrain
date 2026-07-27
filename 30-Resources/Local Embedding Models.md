@@ -1,5 +1,6 @@
 ---
 type: resource
+summary: "Which embedding model to run locally, and why chunking quality matters more than model choice at this vault's size."
 topic: "[[Embeddings]]"
 related: ["[[Semantic Search]]", "[[brain_search]]", "[[Voyage AI]]"]
 ---

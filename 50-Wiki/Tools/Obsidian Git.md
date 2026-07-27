@@ -1,5 +1,6 @@
 ---
 type: tool
+summary: "The plugin that syncs this vault between machines on a timer, which is the entire sync architecture."
 uses: ["[[Obsidian]]"]
 ---
 

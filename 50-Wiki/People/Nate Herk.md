@@ -1,5 +1,6 @@
 ---
 type: person
+summary: "Author of the five-level model this vault is built on - and, notably, someone who stops at Level 4 himself."
 works_at: "[[AI Automation Society]]"
 role: YouTuber & AI automation educator
 ---

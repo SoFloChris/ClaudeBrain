@@ -1,5 +1,6 @@
 ---
 type: adr
+summary: "ADR-0003 (accepted): local embeddings and a plain numpy matrix, because a personal vault of a few thousand chunks does not need a vector database."
 status: accepted
 date: 2026-07-24
 decision_makers: ["[[Chris Aguirre]]"]

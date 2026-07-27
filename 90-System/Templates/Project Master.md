@@ -1,5 +1,7 @@
 ---
 type: project
+# The outcome this project is chasing, in one line.
+summary: ""
 status: active
 repo: 
 build: 

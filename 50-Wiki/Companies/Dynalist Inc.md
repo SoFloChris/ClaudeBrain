@@ -1,5 +1,6 @@
 ---
 type: company
+summary: "The makers of Obsidian, whose no-VC, local-files-first model is the reason this vault can be plain markdown in git."
 aliases: [Dynalist]
 relationship: vendor
 people: ["[[Steph Ango]]"]
