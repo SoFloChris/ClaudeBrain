@@ -1,6 +1,6 @@
 ---
 type: tool
-related: ["[[Obsidian]]"]
+uses: ["[[Obsidian]]"]
 ---
 
 # Obsidian Git

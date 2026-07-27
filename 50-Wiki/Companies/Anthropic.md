@@ -1,7 +1,6 @@
 ---
 type: company
 relationship: vendor
-related: ["[[Claude Code]]"]
 ---
 
 # Anthropic

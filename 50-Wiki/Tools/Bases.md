@@ -3,7 +3,8 @@ type: tool
 aliases: [Obsidian Bases]
 built_by: "[[Dynalist Inc]]"
 alternative_to: ["[[Dataview]]"]
-related: ["[[Obsidian]]", "[[Knowledge Graph]]"]
+uses: ["[[Obsidian]]"]
+related: ["[[Knowledge Graph]]"]
 tags:
   - tool
 created: 2026-07-24

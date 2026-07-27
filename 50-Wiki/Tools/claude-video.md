@@ -2,7 +2,8 @@
 type: tool
 aliases: ["/watch", "watch skill", "claude-video", "Claude video skill"]
 status: installed
-related: ["[[Claude Code]]", "[[Every Level of a Claude Second Brain]]"]
+uses: ["[[Claude Code]]"]
+related: ["[[Every Level of a Claude Second Brain]]"]
 repo: "https://github.com/bradautomates/claude-video"
 ---
 
