@@ -15,6 +15,8 @@ The odd one out in the [[Sidecar Fleet]], and the most interesting from a risk-c
 
 > [!danger] This bot trades real money
 > The platform-wide "paper only" rule covers the [[Alpaca]] equity and crypto path. `kalshi-bot` runs with `KALSHI_LIVE_TRADING=true` and `KALSHI_OBSERVATION_MODE=false` against a **~$278 live account**. It is a deliberate, deliberately tiny exception — not an oversight.
+>
+> Limits below read from `services/kalshi-bot/src/risk.ts` at `openclaw-ui@ebda240` on **2026-07-27**. The enforced per-trade cap is **$2** (`maxTradeUsd`); a `$3` in the trailing comment beside it is a superseded value, and this note previously repeated it. Numbers on a live-money page are worth re-reading against source before acting on them.
 
 Market: Kalshi BTC binary event contracts (hourly and 15-minute). Fully self-contained — its own price feed, its own Kalshi WebSocket and REST client, RSA-signed API auth. The largest codebase of any bot: a 3,269-line engine, an 802-line API client, a 696-line risk module, and the fleet's only unit test file.
 

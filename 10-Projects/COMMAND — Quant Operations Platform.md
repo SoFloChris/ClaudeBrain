@@ -15,6 +15,9 @@ related: ["[[Governed Tool Execution]]", "[[Strategy Promotion Ladder]]"]
 
 **Repo:** `SoFloChris/openclaw-ui` (private) · **Build:** V112 · **Status:** Active
 
+> [!info] Numbers on this page were checked against source on **2026-07-27**, at `openclaw-ui@ebda240`
+> Gate counts, the `trading-safety.ts` caps, the promotion thresholds, and the Kalshi limits were read from the code, not the docs — which disagree (see below). They drift the moment that repo does. To re-check: `add_repo` the repo, clone it, and compare. Anything here without that stamp behind it is inference, not verification.
+
 > [!warning] Two things to get right about this system
 > 1. **"9 gates" is overloaded.** The [[Strategy Promotion Ladder]] has **9 gates**; order sealing in `execution-authority.ts` runs **16**. The README conflates them.
 > 2. **It is not uniformly paper-only.** Everything on [[Alpaca]] is paper. `kalshi-bot` trades **real money**, deliberately micro-sized (max **$2**/trade, $8 daily loss, one loss trips the breaker). The `$3` you'll see in a trailing comment beside `maxTradeUsd` is a superseded value, not the enforced one.
