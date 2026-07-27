@@ -22,6 +22,18 @@ jobs:
         with:
           python-version: "3.x"
 
+      # check_frontmatter.py is the only step needing a non-stdlib import; it
+      # uses a real YAML parser deliberately, since the bug it catches is one
+      # the vault's own hand-rolled parser would reproduce rather than detect.
+      - name: Install PyYAML
+        run: pip install --disable-pip-version-check pyyaml
+
+      # An unquoted [[wikilink]] is invalid YAML, so Obsidian and every script
+      # silently drop the whole frontmatter block — the note looks fine in the
+      # editor and is invisible to the graph. Also enforces snake_case keys.
+      - name: Frontmatter parses, links quoted, keys snake_case
+        run: python3 "90-System/Scripts/check_frontmatter.py"
+
       # Enforcing counterpart to vault_stats.py, which only reports and always
       # exits 0. Fails the build with file:line for every dangling [[link]].
       - name: Check for broken wikilinks
@@ -39,6 +51,19 @@ jobs:
 
       - name: Guard against committed secrets
         run: ./90-System/Scripts/guard-secrets.sh
+
+      # 90-System/Graph/ and Search Index/ are rebuilt per machine and gitignored
+      # on purpose. Committing them produces endless laptop-vs-desktop conflicts
+      # on files nobody reads — cheap to check, tedious to undo.
+      - name: Derived data stayed out of git
+        run: |
+          if git ls-files --error-unmatch \
+              '90-System/Graph/*' '90-System/Search Index/*' >/dev/null 2>&1; then
+            echo "FAIL — derived graph or search-index files are tracked in git."
+            git ls-files '90-System/Graph/*' '90-System/Search Index/*'
+            exit 1
+          fi
+          echo "PASS — no derived data tracked."
 
       # Vendored third-party scripts under .claude/skills/ are deliberately not
       # linted — they are not ours to fix, and ADR-0005 pins them verbatim.
