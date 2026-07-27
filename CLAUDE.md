@@ -34,6 +34,10 @@ Design principles (in priority order):
 
 Each folder has an `_Index.md` — a map of content listing what's inside. Keep indexes current when adding or moving notes.
 
+## The craft
+
+`90-System/Agent Guide.md` is the working manual — which tool answers which question, the note-type conventions, the failure modes, and the vendored Obsidian skills. Read it when doing substantive work in the vault.
+
 ## Memory (auto-loaded)
 
 My durable facts and preferences load with this file every session:
@@ -70,7 +74,11 @@ Note-type conventions (from Andy Matuschak's evergreen-note practice):
 - **Memory:** When you learn a durable fact about me, my projects, or my preferences, append it to `90-System/Memory.md` under the right heading with today's date (the `/remember` command does this too). Never store secrets or credentials there.
 - **Linking:** Prefer `[[wikilinks]]` to people, companies, and concepts in `50-Wiki/`. Create the wiki note (from the matching template in `90-System/Templates/`) if it doesn't exist.
 - **Typed relationships:** Record facts like "works at" as frontmatter (`works_at: "[[Acme]]"`, quoted, snake_case) using only the predicates in `90-System/Graph Schema.md`. That's what powers `/graph`.
+- **Every note gets a `summary:`** — one quoted sentence saying what the note *claims*, not what category it's in. It's how the next agent decides whether opening the note is worth the context. CI fails without one (ADR-0007).
 - **Recall tools:** `/recall <question>` for semantic + keyword search across the vault; `/graph <entity>` for relationship questions; plain Grep/Read for everything else (often best — this vault is small).
 - **Naming:** Descriptive Title Case filenames, no dates in titles except daily notes (`YYYY-MM-DD`).
 - **Templates:** Use `90-System/Templates/` when creating projects, people, companies, concepts, meetings, or resources.
 - **Deleting:** Don't. Archive to `40-Archive/` instead, and note the move in the relevant `_Index.md`.
+- **NEVER rename or move a note with `mv`, `git mv`, or write-then-delete.** Obsidian only rewrites inbound `[[wikilinks]]` when the rename happens *inside the app* — and it is not running in an agent session. A shell move silently breaks every link pointing at that note. Prefer adding an `alias`. If you must move one: grep the whole vault for the old name, rewrite every inbound link in the same commit, then run `check_links.py` and confirm zero broken links (ADR-0008).
+- **Search before you create.** Before writing a new wiki note, grep `50-Wiki/` for the name **and its likely synonyms and abbreviations**, and check `aliases:` fields. Near-duplicates with no canonical source are the number-one cause of [[Documentation Rot]]. If it already exists under another name, add an `alias` and enrich that note instead. **Say that you searched.**
+- **"Nothing worth capturing" is a valid outcome.** Don't manufacture a thin note to look productive — that's the characteristic agent failure. Say so in one line and move on.

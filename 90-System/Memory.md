@@ -4,7 +4,9 @@ Durable facts Claude has learned, appended over time. Each entry gets a date. Ed
 
 ## About Chris
 
-- (2026-07-24) Vault created; syncing between laptop and desktop via git.
+- (2026-07-24) Vault created; syncing between laptop and desktop via git. GitHub handle `SoFloChris`.
+- (2026-07-24) Wants professional-grade notes: fully linked and backlinked, every curated link annotated with *how* the notes relate. Thin or unlinked notes are a defect, not a placeholder.
+- (2026-07-24) Prefers verified facts over plausible ones. When a doc and the source disagree, cite the source — see [[Config Lies, Code Wins]].
 
 ## Preferences
 
@@ -24,8 +26,18 @@ Durable facts Claude has learned, appended over time. Each entry gets a date. Ed
 
 ## Projects
 
-- (nothing yet)
+- (2026-07-24) **[[COMMAND — Quant Operations Platform]]** (`SoFloChris/openclaw-ui`, private) — self-hosted quant research and execution platform, build V112. Two facts to never get wrong: the [[Strategy Promotion Ladder]] has **9** gates while order sealing runs **16**; and the platform is paper-only *on [[Alpaca]]* — [[Kalshi Bot]] trades real money on a ~$278 account, capped at $2–3 per trade. **Unverified against the running system as of 2026-07-27** — these came from vault notes, not from Chris confirming them.
+- (2026-07-24) **[[Set Up ClaudeBrain]]** (`SoFloChris/ClaudeBrain`, public) — this vault. Levels 1–4 built; eight ADRs recorded.
+- (2026-07-24) **[[Helper-Agents]]** (`SoFloChris/Helper-Agents`, public) — empty repo, no commits. Needs a scope decision or archival.
+
+## Vault decisions worth not relitigating
+
+- **No Obsidian MCP server** — filesystem tools plus the [[Obsidian CLI]] cover it without standing context cost (ADR-0008).
+- **Every content note carries a one-line `summary:`** stating its claim, enforced by templates and `check_frontmatter.py` (ADR-0007).
+- **Never `mv` or `git mv` a note.** Obsidian only rewrites inbound links when the rename happens in-app, and it isn't running in an agent session. Prefer `aliases:`.
+- **No embeddings upgrade planned.** At this vault's size the whole corpus fits in context several times over; see [[Retrieve to Enter, Navigate to Expand]] for the thresholds that would change this.
+- **Third-party skills are vendored, never plugin-installed** (ADR-0005), and **vault invariants are enforced by CI, not just reported** (ADR-0006).
 
 ## People & Relationships
 
-- (nothing yet)
+- (2026-07-24) Still unknown: Chris's employer and colleagues. [[Chris Aguirre]] has no `works_at` or `knows` edges — ask before inventing any.
