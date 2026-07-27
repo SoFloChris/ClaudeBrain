@@ -38,7 +38,9 @@ Project-scoped skills live in `.claude/skills/` (this vault vendors `obsidian-ma
 
 ## What to actually install here
 
-Only [[claude-video]] clears the bar right now — it feeds the capture pipeline this vault already runs by hand. The rest are architecture references, not dependencies: read the tree, steal the naming, skip the install. Forty skills nobody maintains is worse than six that get used ([[Skills Are Verbs, Notes Are Nouns]]).
+Only [[claude-video]] cleared the bar — it feeds the capture pipeline this vault already runs by hand. **Installed 2026-07-27** at `.claude/skills/watch/`, vendored verbatim so it syncs to both machines rather than being a per-machine plugin install; see `.claude/skills/README.md`.
+
+The rest are architecture references, not dependencies: read the tree, steal the naming, skip the install. Forty skills nobody maintains is worse than six that get used ([[Skills Are Verbs, Notes Are Nouns]]).
 
 ## Related
 

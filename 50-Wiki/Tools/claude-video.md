@@ -1,13 +1,16 @@
 ---
 type: tool
 aliases: ["/watch", "watch skill", "claude-video", "Claude video skill"]
+status: installed
 related: ["[[Claude Code]]", "[[Every Level of a Claude Second Brain]]"]
 repo: "https://github.com/bradautomates/claude-video"
 ---
 
 # claude-video
 
-A [[Claude Code]] skill pack (MIT, by GitHub user `bradautomates`) that gives Claude a video input: `/watch <url>` downloads a video, extracts frames, transcribes the audio, and hands all of it to the model. Verified real — 10.8k stars, 1.1k forks as of 2026-07.
+A [[Claude Code]] skill pack (MIT, by Bradley Bonanno / `bradautomates`) that gives Claude a video input: `/watch <url>` downloads a video, extracts frames, transcribes the audio, and hands all of it to the model. Verified real — 10.8k stars, 1.1k forks as of 2026-07.
+
+**Installed in this vault** (2026-07-27) at `.claude/skills/watch/`, v0.2.0, vendored verbatim — so it rides the git sync to both machines instead of needing a per-machine plugin install. Invoke with `/watch <url-or-path> [question]`.
 
 ## Key facts (researched 2026-07)
 
@@ -22,7 +25,9 @@ A [[Claude Code]] skill pack (MIT, by GitHub user `bradautomates`) that gives Cl
 
 This vault's founding note — [[Every Level of a Claude Second Brain]] — is a distilled YouTube video, done by hand. `/watch` industrialises exactly that: paste a URL, get the substance, write the note, keep nothing raw. It's a **capture pipeline for Level 2**, and the guardrail is unchanged — the transcript is not the artifact, the distilled note is ([[Context vs Connections]]).
 
-Worth installing before the next research-video binge. Start in `transcript` mode; frames only matter when the video *demonstrates* something (a UI walkthrough, a file tree) rather than explains it.
+**How to drive it:** start in `--detail transcript` mode. Frames only matter when the video *demonstrates* something (a UI walkthrough, a file tree) rather than explains it — and for anything past ~10 minutes, `--start`/`--end` on the section that matters beats one sparse pass over the whole thing.
+
+First run on a new machine installs `ffmpeg` and `yt-dlp` and writes `~/.config/watch/.env` — outside the repo, so no key ever lands in git.
 
 ## Related
 

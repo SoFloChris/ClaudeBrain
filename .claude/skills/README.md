@@ -1,13 +1,34 @@
 # Vendored skills
 
-`obsidian-markdown/` and `obsidian-bases/` are vendored verbatim from
-[kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) — the official Obsidian
-skills by Steph Ango (@kepano), Obsidian's CEO. MIT licensed, © 2026 Steph Ango.
+Checked in rather than linked so every machine and every agent session has them available
+offline — the vault syncs by git, so a skill vendored here works on both the laptop and the
+desktop with no per-machine install step.
 
-They're checked in rather than linked so every machine and every agent session has them
-available offline. They give Claude exact, authoritative syntax for Obsidian markdown
-(callouts, embeds, block references, properties) and for `.base` files (filters, formulas,
-views, functions).
+## `obsidian-markdown/` · `obsidian-bases/`
+
+Vendored verbatim from [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) —
+the official Obsidian skills by Steph Ango (@kepano), Obsidian's CEO. MIT licensed,
+© 2026 Steph Ango.
+
+They give Claude exact, authoritative syntax for Obsidian markdown (callouts, embeds, block
+references, properties) and for `.base` files (filters, formulas, views, functions).
 
 To update: re-download from
 `https://raw.githubusercontent.com/kepano/obsidian-skills/main/skills/<name>/SKILL.md`.
+
+## `watch/`
+
+`/watch <url> [question]` — gives Claude a video input. Vendored verbatim from
+[bradautomates/claude-video](https://github.com/bradautomates/claude-video) `skills/watch/`
+at **v0.2.0**. MIT licensed, © 2026 Bradley Bonanno (`LICENSE` included).
+
+Installed as a project skill rather than a plugin so it syncs with the vault. The plugin
+repo's `hooks/` are deliberately **not** vendored — `SKILL.md` runs its own setup preflight
+(`scripts/setup.py`), and the vault's own SessionStart/Stop hooks own `settings.json`.
+
+**First run installs `ffmpeg` + `yt-dlp`** (auto via brew on macOS; prints exact commands on
+Linux/Windows) and scaffolds `~/.config/watch/.env`. That config file lives outside the repo,
+so a Whisper API key is never committed — captions are used first and most public videos need
+no key at all. Output frames go to a temp dir, never into the vault.
+
+To update: re-clone the repo and copy `skills/watch/` over this directory.
