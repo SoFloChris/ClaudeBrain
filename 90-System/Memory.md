@@ -19,6 +19,7 @@ Durable facts Claude has learned, appended over time. Each entry gets a date. Ed
 
 ## Environment
 
+- (2026-07-27) **Web sessions cannot delete remote git branches.** The session's git proxy returns HTTP 403 on any delete refspec (`git push origin --delete`, `:branch`, `:refs/heads/branch` all fail), and the GitHub MCP toolset has `create_branch` but no delete-branch tool. Ordinary pushes work fine — it's deletion specifically. So merged branches have to be cleaned up from the PR page's "Delete branch" button or from a local clone. Don't spend turns retrying it.
 - (2026-07-27) **Claude Code web sessions run behind an egress proxy** that denies most non-allowlisted hosts (YouTube is blocked — verified 403 on CONNECT). So `/watch` and anything else that fetches from the open web only works in a **local** session on the laptop or desktop. Don't retry or route around a proxy 403 — it's an org policy denial, not a transient failure. The allowlist is governed by the environment's network policy, changeable in the Claude Code on the web settings.
 
 ## Projects

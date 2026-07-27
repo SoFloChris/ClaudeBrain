@@ -51,4 +51,14 @@ Live dashboards, queried by Obsidian's core Bases plugin. Embed with `![[Name.ba
 
 Runs on every PR and push to `main`: broken wikilinks → parser regression tests → graph builds → secret guard → shellcheck. Ported from an abandoned branch that had better engineering hygiene than the vault it was scaffolding.
 
-The reason it exists: `brain_graph`'s parser silently dropped every multi-value typed edge for weeks, and nothing could see it — a graph that under-reports looks exactly like a graph with fewer relationships. Health *reports* can't catch that; a failing build can.
+The reason it exists: `brain_graph`'s parser silently dropped every multi-value typed edge for weeks, and nothing could see it — a graph that under-reports looks exactly like a graph with fewer relationships. Health *reports* can't catch that; a failing build can. Reasoning in [[0006-enforce-invariants-in-ci|ADR-0006]].
+
+Every step runs locally, so a push never has to be the first test:
+
+```bash
+python3 "90-System/Scripts/check_links.py"
+python3 -m unittest discover -s "90-System/Scripts" -p "test_*.py"
+python3 "90-System/Scripts/brain_graph.py" build
+./90-System/Scripts/guard-secrets.sh
+shellcheck 90-System/Scripts/*.sh .claude/hooks/*.sh   # pip install shellcheck-py
+```
