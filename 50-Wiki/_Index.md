@@ -37,6 +37,7 @@ Evergreen entities — the "nouns" of my life and work. One page per entity, alw
 - [[Bases]] — core database plugin, powers the dashboards · [[Dataview]] — the query plugin it largely replaces
 - [[Smart Connections]] — no-code semantic search plugin
 - [[LightRAG]] — graph RAG system · [[GBrain]] — Level 5 reference design
+- [[Graphify]] — the extraction-based graph tool this vault declined, twice
 - [[claude-video]] — `/watch`, a video capture pipeline for the vault
 - [[Alpaca]] — broker API · [[Ollama]] — local LLM runtime
 
