@@ -1,6 +1,5 @@
 ---
 type: person
-related: ["[[LLM Wiki]]"]
 ---
 
 # Andrej Karpathy

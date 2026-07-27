@@ -2,7 +2,7 @@
 type: concept
 aliases: ["graph engineering", "agentic knowledge graph", "GraphRAG"]
 broader: "[[Knowledge Graph]]"
-related: ["[[Knowledge Graph]]", "[[RAG]]", "[[LightRAG]]"]
+related: ["[[RAG]]", "[[LightRAG]]"]
 ---
 
 # Graph Engineering
