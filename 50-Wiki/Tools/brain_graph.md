@@ -15,6 +15,18 @@ This vault's [[Knowledge Graph]] engine — `90-System/Scripts/brain_graph.py`, 
 - Node types come from `type:` frontmatter, falling back to the folder.
 - Output is `90-System/Graph/graph.json` — gitignored and rebuilt on demand.
 
+## The frontmatter parser is hand-rolled — check it first
+
+`parse_frontmatter()` is a deliberate minimal-YAML subset (zero dependencies), which means **list properties are the fragile part**. It bit once already: the inline-list regex excluded `[` and `]` from unquoted items, so `uses: ["[[A]]", "[[B]]", "[[C]]"]` yielded only the *first* edge and silently dropped the rest — fixed 2026-07-27.
+
+The failure mode is nasty because it's invisible: no error, no broken link, no orphan. The graph just quietly under-reports, and `stats` looks plausible. **When edge counts feel low, test the parser on a real line before trusting the numbers:**
+
+```bash
+python3 -c "import importlib.util; s=importlib.util.spec_from_file_location('bg','90-System/Scripts/brain_graph.py'); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); print(m.parse_frontmatter(['related: [\"[[A]]\", \"[[B]]\"]']))"
+```
+
+Anything other than two intact `[[wikilinks]]` back means the parser is eating edges again.
+
 ## Commands
 
 ```

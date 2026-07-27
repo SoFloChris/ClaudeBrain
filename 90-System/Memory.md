@@ -15,6 +15,7 @@ Durable facts Claude has learned, appended over time. Each entry gets a date. Ed
 - (2026-07-27) Standing filter for skill packs and tools: install only what feeds a workflow already run by hand; read the rest as architecture references. Six maintained commands beat forty unmaintained ones.
 - (2026-07-27) Third-party skills get **vendored into `.claude/skills/`**, not installed as plugins — the vault syncs by git, so checking the skill in makes it work on both machines with no per-device setup. Document source, version, and license in `.claude/skills/README.md`.
 - (2026-07-27) `/watch` ([[claude-video]]) is installed vault-wide for turning videos into notes. Needs `ffmpeg` + `yt-dlp` on first run per machine.
+- (2026-07-27) **Reading `/vault-status` output:** the 40-word stub threshold does not apply to People/Companies/Tools — those are meant to be thin link infrastructure, so leave them. An empty `knows` predicate is likewise not a defect: the vault's cast is public figures Chris learns from, not contacts, so there's no truthful edge to add. Don't re-litigate either every run.
 
 ## Environment
 
