@@ -23,6 +23,13 @@ STRUCTURAL = {"_Index", "Home", "SETUP", "README", "CLAUDE"}
 # trailing backslash has to be stripped off the captured target.
 WIKILINK = re.compile(r"\[\[([^\]|#]+?)\\?(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]")
 STUB_WORDS = 40
+NOTE_TYPE = re.compile(r"^type:\s*(\S+)", re.M)
+# Only note types that carry *thinking* can be stubs. People, companies, and
+# tools are deliberately thin — they're link infrastructure and backlink
+# targets, not essays. Padding one to clear a word count is the note-spam
+# failure mode ADR-0004 warns about, not a fix for it.
+THINKING_TYPES = {"concept", "project", "resource", "reference",
+                  "adr", "runbook", "moc", "area"}
 
 
 def iter_notes():
@@ -40,6 +47,16 @@ def body_of(text):
         if end != -1:
             return text[end + 4:]
     return text
+
+
+def note_type(text):
+    if text.startswith("---"):
+        end = text.find("\n---", 3)
+        if end != -1:
+            m = NOTE_TYPE.search(text[3:end])
+            if m:
+                return m.group(1).strip().strip("\"'")
+    return ""
 
 
 def strip_code(text):
@@ -91,6 +108,7 @@ def collect():
             "path": rel,
             "folder": rel.split("/")[0] if "/" in rel else "(root)",
             "words": len(body_of(text).split()),
+            "type": note_type(text),
             "structural": path.stem in STRUCTURAL,
         }
         links_out[rel] = targets
@@ -109,7 +127,8 @@ def report(brief=False):
         if not links_out.get(rel) and mentioned.get(i["name"], 0) == 0
     )
     stubs = sorted(
-        (i["words"], i["name"]) for i in content.values() if i["words"] < STUB_WORDS
+        (i["words"], i["name"]) for i in content.values()
+        if i["words"] < STUB_WORDS and i["type"] in THINKING_TYPES
     )
     unresolved = sorted({t for tgts in links_out.values() for t in tgts
                          if t not in resolvable})
@@ -143,7 +162,7 @@ def report(brief=False):
     print(f"\n## Orphans — no links in or out ({len(orphans)})")
     print("  " + ("\n  ".join(orphans) if orphans else "none 🎉"))
 
-    print(f"\n## Stubs — under {STUB_WORDS} words ({len(stubs)})")
+    print(f"\n## Stubs — thinking notes under {STUB_WORDS} words ({len(stubs)})")
     if stubs:
         for words, name in stubs:
             print(f"  {words:4}w  {name}")
