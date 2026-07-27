@@ -26,6 +26,7 @@ Durable facts Claude has learned, appended over time. Each entry gets a date. Ed
   The reply that actually helps: **[github.com/SoFloChris/ClaudeBrain/branches](https://github.com/SoFloChris/ClaudeBrain/branches)** (trash icon), or the **Delete branch** button on the merged PR's page, or `git push origin --delete <branch>` from the laptop.
 
   Worth stating whether the branch is a true ancestor of `main` (`git merge-base --is-ancestor`) — if it isn't, deleting discards commit history that content-level salvage doesn't preserve.
+- (2026-07-27) **`openclaw-ui` can be pulled into a session on demand** via `add_repo` (`SoFloChris/openclaw-ui`, private) — so COMMAND claims can be checked against source rather than taken from vault notes. Clone once, inline, with a generous timeout; the proxy caps concurrent git ops. Last verified at `ebda240`.
 - (2026-07-27) **Claude Code web sessions run behind an egress proxy** that denies most non-allowlisted hosts (YouTube is blocked — verified 403 on CONNECT). So `/watch` and anything else that fetches from the open web only works in a **local** session on the laptop or desktop. Don't retry or route around a proxy 403 — it's an org policy denial, not a transient failure. The allowlist is governed by the environment's network policy, changeable in the Claude Code on the web settings.
 
 ## Projects
