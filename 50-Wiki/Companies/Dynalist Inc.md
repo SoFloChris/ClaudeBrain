@@ -3,7 +3,6 @@ type: company
 aliases: [Dynalist]
 relationship: vendor
 people: ["[[Steph Ango]]"]
-related: ["[[Obsidian]]"]
 tags:
   - company
 created: 2026-07-24

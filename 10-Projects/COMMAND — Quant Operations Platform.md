@@ -3,6 +3,7 @@ type: project
 status: active
 repo: "https://github.com/SoFloChris/openclaw-ui"
 people: ["[[Chris Aguirre]]"]
+companies: ["[[Alpaca Markets]]"]
 uses: ["[[Alpaca]]", "[[Ollama]]", "[[Claude Code]]", "[[RAG]]"]
 related: ["[[Governed Tool Execution]]", "[[Strategy Promotion Ladder]]"]
 ---

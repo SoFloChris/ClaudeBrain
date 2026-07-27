@@ -1,7 +1,8 @@
 ---
 type: tool
 alternative_to: ["[[Bases]]"]
-related: ["[[Obsidian]]", "[[Knowledge Graph]]"]
+uses: ["[[Obsidian]]"]
+related: ["[[Knowledge Graph]]"]
 ---
 
 # Dataview

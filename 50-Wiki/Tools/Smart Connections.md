@@ -1,8 +1,8 @@
 ---
 type: tool
-related: ["[[Semantic Search]]", "[[Obsidian]]"]
+related: ["[[Semantic Search]]"]
 alternative_to: ["[[brain_search]]"]
-uses: ["[[Embeddings]]"]
+uses: ["[[Embeddings]]", "[[Obsidian]]"]
 ---
 
 # Smart Connections

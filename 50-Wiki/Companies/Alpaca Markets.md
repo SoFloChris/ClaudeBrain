@@ -2,7 +2,6 @@
 type: company
 aliases: [Alpaca]
 relationship: vendor
-related: ["[[Alpaca]]", "[[COMMAND — Quant Operations Platform]]"]
 tags:
   - company
 created: 2026-07-24
