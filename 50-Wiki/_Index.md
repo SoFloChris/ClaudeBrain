@@ -52,6 +52,7 @@ Evergreen entities — the "nouns" of my life and work. One page per entity, alw
 - [[Graph Engineering]] — Level 4 at corpus scale, and what the 2026 term actually means
 - [[Skills Are Verbs, Notes Are Nouns]] — how to shape an agent workspace
 - [[Verify the Claim, Steal the Architecture]] — how to process viral AI claims
+- [[A Passing Check Proves Only What It Looked At]] — why a clean result can mean nothing
 - [[Strategy Promotion Ladder]] · [[Governed Tool Execution]] — patterns from [[COMMAND — Quant Operations Platform]]
 - [[Architecture Decision Record]] · [[Diataxis]] · [[Documentation Rot]] · [[C4 Model]] — how to write docs that survive
 
