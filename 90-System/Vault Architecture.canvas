@@ -1,0 +1,217 @@
+{
+  "nodes": [
+    {
+      "id": "a1f0c3d5e7b90211",
+      "type": "group",
+      "x": 0,
+      "y": 0,
+      "width": 460,
+      "height": 280,
+      "label": "Level 1 — Router",
+      "color": "4"
+    },
+    {
+      "id": "b2e1d4c6f8a01322",
+      "type": "file",
+      "x": 20,
+      "y": 50,
+      "width": 420,
+      "height": 90,
+      "file": "CLAUDE.md",
+      "color": "4"
+    },
+    {
+      "id": "c3d2e5b7a9f12433",
+      "type": "file",
+      "x": 20,
+      "y": 160,
+      "width": 420,
+      "height": 90,
+      "file": "Home.md",
+      "color": "4"
+    },
+    {
+      "id": "d4c3f6a8b0e23544",
+      "type": "group",
+      "x": 520,
+      "y": 0,
+      "width": 460,
+      "height": 280,
+      "label": "Level 2 — Wiki",
+      "color": "5"
+    },
+    {
+      "id": "e5b4a7c9d1f34655",
+      "type": "file",
+      "x": 540,
+      "y": 50,
+      "width": 420,
+      "height": 90,
+      "file": "50-Wiki/Concepts/LLM Wiki.md",
+      "color": "5"
+    },
+    {
+      "id": "f6a5b8d0c2e45766",
+      "type": "file",
+      "x": 540,
+      "y": 160,
+      "width": 420,
+      "height": 90,
+      "file": "90-System/Memory.md",
+      "color": "5"
+    },
+    {
+      "id": "07b6c9e1d3f56877",
+      "type": "group",
+      "x": 0,
+      "y": 340,
+      "width": 460,
+      "height": 280,
+      "label": "Level 3 — Semantic Search",
+      "color": "6"
+    },
+    {
+      "id": "18c7d0f2e4a67988",
+      "type": "file",
+      "x": 20,
+      "y": 390,
+      "width": 420,
+      "height": 90,
+      "file": "50-Wiki/Concepts/Semantic Search.md",
+      "color": "6"
+    },
+    {
+      "id": "29d8e1a3f5b78a99",
+      "type": "file",
+      "x": 20,
+      "y": 500,
+      "width": 420,
+      "height": 90,
+      "file": "50-Wiki/Tools/brain_search.md",
+      "color": "6"
+    },
+    {
+      "id": "3ae9f2b4a6c89baa",
+      "type": "group",
+      "x": 520,
+      "y": 340,
+      "width": 460,
+      "height": 280,
+      "label": "Level 4 — Knowledge Graph",
+      "color": "2"
+    },
+    {
+      "id": "4bfa03c5b7d9acbb",
+      "type": "file",
+      "x": 540,
+      "y": 390,
+      "width": 420,
+      "height": 90,
+      "file": "50-Wiki/Concepts/Knowledge Graph.md",
+      "color": "2"
+    },
+    {
+      "id": "5c0b14d6c8eabdcc",
+      "type": "file",
+      "x": 540,
+      "y": 500,
+      "width": 420,
+      "height": 90,
+      "file": "50-Wiki/Tools/brain_graph.md",
+      "color": "2"
+    },
+    {
+      "id": "6d1c25e7d9fbcedd",
+      "type": "group",
+      "x": 1040,
+      "y": 0,
+      "width": 460,
+      "height": 620,
+      "label": "Projects",
+      "color": "3"
+    },
+    {
+      "id": "7e2d36f8ea0cdfee",
+      "type": "file",
+      "x": 1060,
+      "y": 50,
+      "width": 420,
+      "height": 130,
+      "file": "10-Projects/COMMAND — Quant Operations Platform.md",
+      "color": "3"
+    },
+    {
+      "id": "8f3e470901de0ff1",
+      "type": "file",
+      "x": 1060,
+      "y": 210,
+      "width": 420,
+      "height": 130,
+      "file": "10-Projects/Set Up ClaudeBrain.md",
+      "color": "3"
+    },
+    {
+      "id": "904f58101ae21002",
+      "type": "file",
+      "x": 1060,
+      "y": 370,
+      "width": 420,
+      "height": 130,
+      "file": "10-Projects/Helper-Agents.md",
+      "color": "3"
+    },
+    {
+      "id": "a15069212bf32113",
+      "type": "text",
+      "x": 1040,
+      "y": 680,
+      "width": 460,
+      "height": 160,
+      "text": "## Level 5 — not built\n\nAlways-on autonomy, [[GBrain]]-style.\n\n**Deliberately skipped** — see [[0001-build-levels-1-4-skip-level-5|ADR-0001]] for the build-triggers that would change that.",
+      "color": "1"
+    },
+    {
+      "id": "b2617a323c043224",
+      "type": "text",
+      "x": 0,
+      "y": 680,
+      "width": 980,
+      "height": 160,
+      "text": "## How to read this\n\nEach level answers one question: **L1** find it by exact name · **L2** pull a topic together · **L3** I searched different words than I wrote · **L4** trace a relationship chain.\n\nEvery box is a live note — click through. Full roadmap in [[Second Brain Levels]]; relationship vocabulary in [[Graph Schema]]."
+    }
+  ],
+  "edges": [
+    {
+      "id": "c3728b434d154335",
+      "fromNode": "a1f0c3d5e7b90211",
+      "fromSide": "right",
+      "toNode": "d4c3f6a8b0e23544",
+      "toSide": "left",
+      "label": "adds entities"
+    },
+    {
+      "id": "d4839c545e265446",
+      "fromNode": "d4c3f6a8b0e23544",
+      "fromSide": "bottom",
+      "toNode": "3ae9f2b4a6c89baa",
+      "toSide": "top",
+      "label": "types the links"
+    },
+    {
+      "id": "e594ad656f376557",
+      "fromNode": "a1f0c3d5e7b90211",
+      "fromSide": "bottom",
+      "toNode": "07b6c9e1d3f56877",
+      "toSide": "top",
+      "label": "adds meaning search"
+    },
+    {
+      "id": "f6a5be767a487668",
+      "fromNode": "6d1c25e7d9fbcedd",
+      "fromSide": "left",
+      "toNode": "d4c3f6a8b0e23544",
+      "toSide": "right",
+      "label": "documented in"
+    }
+  ]
+}

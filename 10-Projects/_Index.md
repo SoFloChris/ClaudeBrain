@@ -9,6 +9,7 @@ When a project finishes, move it to [[40-Archive/_Index|Archive]] and update thi
 ## Active
 
 - [[COMMAND — Quant Operations Platform]] — institutional quant trading lab; paper-live on [[Alpaca]] (`openclaw-ui`)
+    - `COMMAND/` holds `type: reference` notes documenting the system itself: [[Sidecar Fleet]] — the eight service containers · [[Risk Governor]] — the shared pre-trade gate · [[Kalshi Bot]] — the one service trading real money
 - [[Set Up ClaudeBrain]] — this vault: Levels 1–4 built, rolling out to both machines
 
 ## Draft

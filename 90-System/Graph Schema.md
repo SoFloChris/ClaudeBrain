@@ -4,7 +4,9 @@ The controlled vocabulary for this vault's knowledge graph. Every typed relation
 
 ## Node types (`type:` — plain string, never a link)
 
-`person` · `company` · `tool` · `concept` · `project` · `area` · `resource` · `adr` · `runbook` · `moc` · `meeting` · `changelog`
+`person` · `company` · `tool` · `concept` · `project` · `area` · `resource` · `reference` · `adr` · `runbook` · `moc` · `meeting` · `changelog`
+
+`resource` vs `reference`: a **resource** is external material filed by topic in `30-Resources/` (an article, a video, a researched answer). A **reference** documents a system I own — a service, a component, an architecture — and lives beside its project under `10-Projects/<Project>/`, carrying `project:` back to the master note.
 
 Wiki subfolders: `50-Wiki/People/`, `Companies/`, `Tools/`, `Concepts/`.
 Per-project documentation: `10-Projects/<Project>/decisions/NNNN-title-with-dashes.md` (ADRs, per MADR convention).
@@ -25,7 +27,7 @@ Per-project documentation: `10-Projects/<Project>/decisions/NNNN-title-with-dash
 | `uses` | project, tool | Depends on / is built with |
 | `alternative_to` | tool | Competing or substitutable option |
 | `inspired_by` | concept, tool | Where the idea came from |
-| `project` | adr, runbook, changelog | Which project this document belongs to |
+| `project` | adr, runbook, changelog, reference | Which project this document belongs to |
 | `decision_makers` | adr | Who made the call |
 | `owner` | runbook | Who maintains it |
 | `supersedes` | adr | This ADR replaces an older one |
@@ -37,7 +39,8 @@ Body `[[wikilinks]]` become untyped `mentions` edges automatically — use them 
 
 1. **Quote every link in YAML**: `works_at: "[[Acme]]"` — unquoted brackets are invalid YAML and break parsing.
 2. **Store each fact once, on the subject's note.** Jane's note says `works_at: "[[Acme]]"`; Acme's note doesn't need a mirror entry (the graph and backlinks derive the reverse direction).
-3. **Reserved keys carry no edges**: `type`, `tags`, `aliases`, `status`, `created`, `updated`, `date`, `last_reviewed`, `last_tested`, plus plain-string fields like `role`, `relationship`, `source`, `due`, `repo`, `build`, `risk`, `reversible`, `versioning`.
+3. **Reserved keys carry no edges**: `type`, `summary`, `tags`, `aliases`, `status`, `created`, `updated`, `date`, `last_reviewed`, `last_tested`, plus plain-string fields like `role`, `relationship`, `source`, `due`, `repo`, `build`, `risk`, `reversible`, `versioning`.
+   - **`summary:`** is one quoted sentence stating what a note *claims*, not what category it belongs to. It exists so an agent can decide whether to open a note without paying to read it. Currently **optional and unevenly present** — the notes salvaged from `claude/obsidian-second-brain-setup-0c0jdy` carry it, most others don't. Making it required vault-wide is a live proposal with its own ADR on that branch, not yet adopted.
 4. snake_case predicate names, always.
 
 ## Consumers

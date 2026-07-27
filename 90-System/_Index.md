@@ -4,6 +4,7 @@ The machinery of the vault. Rarely touched during day-to-day capture.
 
 ## Docs
 
+- [[Agent Guide]] — the craft, where `CLAUDE.md` is the rules: what to reach for, in what order, and the failure modes
 - [[Memory]] — durable facts Claude has learned (auto-loaded into every session, human-editable)
 - [[Second Brain Levels]] — the 5-level roadmap; Levels 1–4 built, Level 5 deliberately skipped
 - [[Graph Schema]] — the controlled vocabulary for typed relationships
@@ -26,6 +27,10 @@ Other: `Daily Note` · `Meeting Note` · `Resource` · `MOC`
 | `test_brain_graph.py` | Regression tests for [[brain_graph]]'s frontmatter parser (stdlib `unittest`) |
 | `test_vault_stats.py` | Regression tests for `vault_stats.py`'s note keying and link resolution |
 | `guard-secrets.sh` | Fails if anything secret-shaped is tracked; scans `git ls-files`, not the working tree |
+
+## Canvas
+
+`Vault Architecture.canvas` — the vault's own structure as a JSON Canvas: folders, scripts, and the four levels, with 11 live links into the notes they describe. Open it in Obsidian; edit it with the vendored `json-canvas` skill.
 
 ## Bases (`Bases/`)
 
