@@ -1,7 +1,7 @@
 ---
 type: concept
 broader: "[[Second Brain]]"
-related: ["[[Second Brain]]"]
+inspired_by: "[[Andrej Karpathy]]"
 ---
 
 # LLM Wiki
