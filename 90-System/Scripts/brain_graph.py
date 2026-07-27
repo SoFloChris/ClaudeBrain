@@ -91,7 +91,10 @@ def parse_frontmatter(lines):
         if value == "":
             data[key] = []  # may be filled by following `- item` lines
         elif value.startswith("[") and value.endswith("]"):
-            items = re.findall(r'"[^"]*"|\'[^\']*\'|[^,\[\]]+', value[1:-1])
+            # Quoted items match whole (so a comma inside [[A, B]] is safe);
+            # unquoted items run to the next comma. Excluding [] here would
+            # shred the [[wikilinks]] this vault stores in list properties.
+            items = re.findall(r'"[^"]*"|\'[^\']*\'|[^,]+', value[1:-1])
             data[key] = [_scalar(i) for i in items if _scalar(i)]
         else:
             data[key] = _scalar(value)

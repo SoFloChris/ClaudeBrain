@@ -3,7 +3,7 @@ type: project
 status: active
 repo: "https://github.com/SoFloChris/ClaudeBrain"
 people: ["[[Chris Aguirre]]"]
-uses: ["[[Obsidian]]", "[[Claude Code]]", "[[Obsidian Git]]", "[[brain_search]]", "[[brain_graph]]"]
+uses: ["[[Obsidian]]", "[[Claude Code]]", "[[Obsidian Git]]", "[[brain_search]]", "[[brain_graph]]", "[[claude-video]]"]
 related: ["[[Second Brain]]", "[[Every Level of a Claude Second Brain]]"]
 ---
 
@@ -41,6 +41,7 @@ Index only — the reasoning lives in the [[Architecture Decision Record]]s them
 | [[0002-typed-frontmatter-over-inline-fields\|ADR-0002]] | Typed relationships as quoted-wikilink frontmatter | accepted |
 | [[0003-local-embeddings-numpy-storage\|ADR-0003]] | Local embeddings, plain numpy storage | accepted |
 | [[0004-agents-must-grow-the-vault\|ADR-0004]] | Agents must write to the vault, not only read | accepted |
+| [[0005-vendor-skills-not-plugins\|ADR-0005]] | Vendor third-party skills into the repo, don't plugin-install | accepted |
 
 ## Tasks
 
@@ -51,6 +52,7 @@ Index only — the reasoning lives in the [[Architecture Decision Record]]s them
 - [ ] `pip install sentence-transformers` on each machine (enables `/recall`)
 - [ ] Capture 3 real notes into the Inbox and run `/process-inbox`
 - [ ] Try `/graph "Nate Herk"` and `/recall what are the 5 levels?`
+- [ ] **Verify `/watch` end-to-end on a local machine** — it has never actually watched a video. Web sessions can't (egress policy blocks YouTube), so this only proves out locally. Run it on the [[Every Level of a Claude Second Brain]] video, where a hand-written note already exists to compare the extraction against.
 
 ## Open questions
 
