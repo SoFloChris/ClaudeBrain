@@ -30,7 +30,7 @@ Durable facts Claude has learned, appended over time. Each entry gets a date. Ed
 
 ## Projects
 
-- (2026-07-24) **[[COMMAND — Quant Operations Platform]]** (`SoFloChris/openclaw-ui`, private) — self-hosted quant research and execution platform, build V112. Two facts to never get wrong: the [[Strategy Promotion Ladder]] has **9** gates while order sealing runs **16**; and the platform is paper-only *on [[Alpaca]]* — [[Kalshi Bot]] trades real money on a ~$278 account, capped at $2–3 per trade. **Unverified against the running system as of 2026-07-27** — these came from vault notes, not from Chris confirming them.
+- (2026-07-24) **[[COMMAND — Quant Operations Platform]]** (`SoFloChris/openclaw-ui`, private) — self-hosted quant research and execution platform, build V112. Two facts to never get wrong: the [[Strategy Promotion Ladder]] has **9** gates while order sealing runs **16**; and the platform is paper-only *on [[Alpaca]]* — [[Kalshi Bot]] trades real money on a ~$278 account, hard-capped at **$2** per trade. **Verified against `openclaw-ui` @ `ebda240` on 2026-07-27** — the money constants, gate counts, and promotion thresholds all check out against source; one error was found and fixed (the per-trade cap is $2, not $3).
 - (2026-07-24) **[[Set Up ClaudeBrain]]** (`SoFloChris/ClaudeBrain`, public) — this vault. Levels 1–4 built; eight ADRs recorded.
 - (2026-07-24) **[[Helper-Agents]]** (`SoFloChris/Helper-Agents`, public) — empty repo, no commits. Needs a scope decision or archival.
 

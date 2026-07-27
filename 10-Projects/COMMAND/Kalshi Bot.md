@@ -2,7 +2,7 @@
 type: reference
 project: "[[COMMAND — Quant Operations Platform]]"
 aliases: [kalshi-bot, Kalshi]
-summary: "The one COMMAND service that trades real money — a ~$278 account on Kalshi BTC binaries, micro-sized to $2–3 a trade, with the strictest risk config in the fleet."
+summary: "The one COMMAND service that trades real money — a ~$278 account on Kalshi BTC binaries, hard-capped at $2 a trade, with the strictest risk config in the fleet."
 related: ["[[Sidecar Fleet]]", "[[Reconciliation]]", "[[Circuit Breaker]]"]
 tags:
   - reference
