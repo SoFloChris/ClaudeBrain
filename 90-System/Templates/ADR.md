@@ -16,6 +16,13 @@ tags:
 
 # ADR-NNNN — {short title: the problem and the chosen solution}
 
+<!-- Pick NNNN from `decisions/` on the DEFAULT branch, not on yours. Two sessions
+     on separate branches will each read their own folder, each conclude the next
+     number is the same one, and git will merge both without a conflict because
+     each only added a file. This has already happened once here — see the
+     numbering section of [[Architecture Decision Record]]. -->
+
+
 ## Context and Problem Statement
 
 {Two or three sentences. State the problem as a question if you can, and name the
