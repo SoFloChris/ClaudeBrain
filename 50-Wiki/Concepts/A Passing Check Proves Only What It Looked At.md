@@ -21,10 +21,16 @@ Four instances in a single day (2026-07-27), all in this vault or its tooling:
 | `vault_stats` note keying | "what notes exist, keyed by filename?" | "what notes exist?" — seven `_Index.md` collapsed to one |
 | Salvage completeness diff | "which file *paths* exist only on that branch?" | "what content exists only on that branch?" |
 | A grep for `check(N, 'name'` | "which gates are declared on one line?" | "which gates exist?" — five were multi-line |
+| A summary-review script | "which notes with no space in their path?" | "which notes?" — git appends a tab to diff-header paths containing spaces, and `line[6:]` kept it |
 
-Three of the four were caught only because **a number failed to move when it should have**: an edge count that didn't rise when a link was added, a `uses` list that grew without the graph growing. The fourth was caught because its answer was too strange to accept — "gates 7 through 10 don't exist" is not a shape real code takes.
+Three of the first four were caught only because **a number failed to move when it should have**: an edge count that didn't rise when a link was added, a `uses` list that grew without the graph growing. The fourth was caught because its answer was too strange to accept — "gates 7 through 10 don't exist" is not a shape real code takes.
 
 Note what didn't catch any of them: reading the output carefully. It was internally consistent and entirely plausible every time.
+
+> [!warning] The fifth one happened *while applying this note*
+> Reviewing the 60 summaries an hour after writing this, a script reported 36 of 60 notes "missing" and I read it as *superseded*. Both readings were wrong — the paths carried a trailing tab, so `exists()` was false for every filename containing a space. Knowing the pattern did not prevent it. What caught it was the same tell as the gate count: the answer was too strange to believe, since those files had been read successfully two commands earlier.
+>
+> The lesson isn't "be careful." It's that this failure is **structural, not attentional** — which is the argument for tests and deltas over vigilance.
 
 ## Why it matters
 
