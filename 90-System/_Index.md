@@ -20,7 +20,10 @@ Other: `Daily Note` · `Meeting Note` · `Resource` · `MOC`
 |---|---|
 | [[brain_search]] | Level 3 semantic search — `index`, `search`, `chunks` |
 | [[brain_graph]] | Level 4 knowledge graph — `build`, `query`, `path`, `stats` |
-| `vault_stats.py` | Vault health — orphans, stubs, broken links (`--brief` for hooks) |
+| `vault_stats.py` | Vault health — orphans, stubs, broken links (`--brief` for hooks). **Reports; always exits 0.** |
+| `check_links.py` | Broken wikilinks with `file:line`, **exits non-zero** — the enforcing version, run by CI |
+| `test_brain_graph.py` | Regression tests for [[brain_graph]]'s frontmatter parser (stdlib `unittest`) |
+| `guard-secrets.sh` | Fails if anything secret-shaped is tracked; scans `git ls-files`, not the working tree |
 
 ## Bases (`Bases/`)
 
@@ -41,4 +44,10 @@ Live dashboards, queried by Obsidian's core Bases plugin. Embed with `![[Name.ba
 
 ## Vendored skills (`.claude/skills/`)
 
-`obsidian-markdown` and `obsidian-bases` from [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) (MIT, by Obsidian's CEO) — authoritative syntax, available offline.
+`obsidian-markdown` and `obsidian-bases` from [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) (MIT, by Obsidian's CEO) — authoritative syntax, available offline. `watch` from [bradautomates/claude-video](https://github.com/bradautomates/claude-video) (MIT) — see [[claude-video]] and ADR-0005 for why these are vendored rather than plugin-installed.
+
+## CI (`.github/workflows/vault-check.yml`)
+
+Runs on every PR and push to `main`: broken wikilinks → parser regression tests → graph builds → secret guard → shellcheck. Ported from an abandoned branch that had better engineering hygiene than the vault it was scaffolding.
+
+The reason it exists: `brain_graph`'s parser silently dropped every multi-value typed edge for weeks, and nothing could see it — a graph that under-reports looks exactly like a graph with fewer relationships. Health *reports* can't catch that; a failing build can.

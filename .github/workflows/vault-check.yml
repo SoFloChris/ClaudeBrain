@@ -1,0 +1,45 @@
+name: Vault Check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vault-check-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5.3.0
+        with:
+          python-version: "3.x"
+
+      # Enforcing counterpart to vault_stats.py, which only reports and always
+      # exits 0. Fails the build with file:line for every dangling [[link]].
+      - name: Check for broken wikilinks
+        run: python3 "90-System/Scripts/check_links.py"
+
+      # brain_graph's frontmatter parser is hand-rolled and silently dropped
+      # every multi-value typed edge until 2026-07-27. It gets tests.
+      - name: Graph parser regression tests
+        run: python3 "90-System/Scripts/test_brain_graph.py"
+
+      # Catches an outright broken script, which the tests above would miss.
+      - name: Graph builds cleanly
+        run: python3 "90-System/Scripts/brain_graph.py" build
+
+      - name: Guard against committed secrets
+        run: ./90-System/Scripts/guard-secrets.sh
+
+      # Vendored third-party scripts under .claude/skills/ are deliberately not
+      # linted — they are not ours to fix, and ADR-0005 pins them verbatim.
+      - name: Lint our shell scripts
+        run: shellcheck 90-System/Scripts/*.sh .claude/hooks/*.sh
