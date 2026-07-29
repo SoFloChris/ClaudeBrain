@@ -25,9 +25,27 @@ tags:
 
 **Do NOT run this from a web or mobile Claude session.** Those run in throwaway Anthropic cloud containers with no `ssh` binary, no keys, and no network route to either machine. Verified repeatedly — see `Memory.md`. **This runbook only works from a Claude Code session running on the laptop**, because that is where the SSH key physically lives.
 
+## Blocker — the laptop is also broken (2026-07-29)
+
+The laptop cannot reach a desktop, so it cannot yet serve as the jump host this runbook depends on. Signing in produces:
+
+> The User Profile Service service failed the sign-in.
+> User profile cannot be loaded.
+
+**This is not a lockout.** The error fires *after* authentication, so the laptop's password is fine — the profile is corrupted. Almost certainly the same root cause as the desktop's changed password, since modifying Windows user accounts is what damages the `ProfileList` registry entries.
+
+Fix it before starting the procedure below, in this order:
+
+1. **Click OK and retry the sign-in twice.** The failure is intermittent often enough to rule out first.
+2. **System Restore.** Sign-in screen → power icon → hold **Shift** and click **Restart** → Troubleshoot → Advanced options → System Restore → pick a point dated before the change. Needs no working profile, which is why it beats the alternatives.
+3. **Offline registry fix,** if no restore points exist. Same blue screen → Advanced options → **Command Prompt** → `regedit` → select `HKEY_LOCAL_MACHINE` → File → Load Hive → `<windows-drive>\Windows\System32\config\SOFTWARE`, mounted as `OFFLINE` → navigate to `OFFLINE\Microsoft\Windows NT\CurrentVersion\ProfileList` → repair the `S-1-5-21-…` key per the `.bak` rules in step 3 of the desktop procedure → File → Unload Hive.
+
+**Do not reach for Safe Mode here.** It still loads a user profile, so it hits the same error under the affected account — it only helps from a *different* admin account.
+
 ## Prerequisites
 
-- [ ] **BitLocker recovery key saved** from [account.microsoft.com/devices/recoverykey](https://account.microsoft.com/devices/recoverykey) — screenshot every entry, both machines. Do this first; it is the only guard against the one unrecoverable outcome.
+- [ ] **BitLocker recovery key saved** from [account.microsoft.com/devices/recoverykey](https://account.microsoft.com/devices/recoverykey) — screenshot every entry, both machines. Do this first; it is the only guard against the one unrecoverable outcome. Entering the recovery environment is exactly where that prompt appears.
+- [ ] Laptop signing in cleanly (see the blocker above)
 - [ ] Laptop powered on and on the same network as the desktop
 - [ ] Claude Code installed on the laptop
 
