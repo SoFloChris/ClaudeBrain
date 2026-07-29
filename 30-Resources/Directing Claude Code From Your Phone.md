@@ -84,6 +84,18 @@ Requirements worth checking before committing to this path:
 | Take over a session already in progress at the desk | **Remote Control** |
 | Work a repo you don't have cloned, or run many tasks in parallel | **Cloud** |
 
+## Out-of-band access is a different job
+
+Everything above assumes the machine is healthy and signed in. When it isn't — locked out, service down, mid-boot — none of it helps, because all of it runs *inside* a working session. That's a separate need, and SSH is the right tool for it.
+
+**The obstacle is NAT, not SSH.** Home machines have no public address. Forwarding port 22 on the router solves reachability by exposing SSH to the entire internet, which invites continuous brute-force traffic against a machine holding trading credentials. Not worth it.
+
+**Tailscale is the answer instead.** Free for personal use, runs on Windows and both phone platforms, and puts every device on a private WireGuard mesh with a stable `100.x.x.x` address — no port forwarding, no dynamic DNS, nothing publicly exposed. Pair it with a phone terminal (Termius, Blink, JuiceSSH) for access from anywhere.
+
+**A laptop can serve as a jump host when the target is locked out.** Phone → laptop over Tailscale → desktop over whatever SSH key the laptop already holds. Only the laptop needs to be reachable, which makes this work even when the desktop can't be signed into at all.
+
+**Keep the two jobs separate.** SSH is a recovery channel; a phone keyboard driving a Windows command prompt is a miserable place to write code. Dispatch is the work surface. Wanting SSH was never the mistake — changing a machine's login password to get it was, and so was expecting it to double as the way to do real work.
+
 ## The GitHub access rule people get wrong
 
 For **cloud** sessions specifically:

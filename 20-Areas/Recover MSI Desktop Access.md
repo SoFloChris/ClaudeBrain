@@ -104,6 +104,17 @@ Proves recovery worked independently of the steps above:
 - [ ] A task messaged to Dispatch from the phone spawns a session badged **Dispatch** in the Desktop app's Code tab
 - [ ] `ssh` to the desktop from the laptop now **fails**, confirming the SSH exposure is closed
 
+## Variant — driving this from the phone instead of the laptop keyboard
+
+The laptop must be **on**, but nobody has to be sitting at it. Tailscale turns it into a jump host, which works even though the desktop can't be signed into:
+
+1. Install Tailscale on the laptop and the phone, signed into the same account
+2. Install a phone terminal — Termius or Blink (iOS), Termius or JuiceSSH (Android)
+3. SSH from the phone to the laptop's `100.x.x.x` address
+4. From that shell, continue at **step 2** above
+
+Once the desktop is recoverable, install Tailscale there too so the hop is no longer needed. This is the setup that would have made this whole incident a two-minute fix, and it is worth keeping as a standing recovery channel — distinct from Dispatch, which is the surface for actual work.
+
 ## Rollback
 
 **Trigger:** step 3 fails, meaning there is no working key.
