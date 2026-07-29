@@ -96,7 +96,14 @@ Everything above assumes the machine is healthy and signed in. When it isn't —
 
 **A laptop can serve as a jump host when the target is locked out.** Phone → laptop over Tailscale → desktop over whatever SSH key the laptop already holds. Only the laptop needs to be reachable, which makes this work even when the desktop can't be signed into at all.
 
-**The client-side failure mode to recognize.** A phone SSH client reporting *"connection timed out — no more addresses to try"* against a `100.x` address almost always means the VPN is off, not that the host is down: without Tailscale running, that address is unroutable. On iOS the tell is the **`VPN` badge in the status bar** — absent badge, absent route. Check that before touching the host, port, or key, all of which are innocent.
+**The client-side failure mode to recognize.** A phone SSH client reporting *"connection timed out — no more addresses to try"* against a `100.x` address means one of two things, and the **Tailscale machine list settles which in one glance** — check it before touching host, port, or key:
+
+| What you see | Meaning |
+|---|---|
+| No `VPN` badge in the iOS status bar | Tailscale is off on the phone; the address is unroutable |
+| Target shows a **grey dot** while other devices are green | The phone is fine — the target isn't on the tailnet |
+
+**An always-on machine that drops off at the login screen is the trap here.** On Windows, Tailscale runs as the signed-in user by default, so a rebooted desktop sitting at its lock screen leaves the tailnet and is indistinguishable from one that's powered off. Run `tailscale up --unattended` once, as admin, and set sleep to Never on AC power. Until then, "always on" means "on while someone is logged in" — which is exactly when you don't need it.
 
 **Private keys are the single point of failure.** `~/.ssh` is not inside OneDrive or any sync folder by default, so the keys die with the machine holding them. Copy the folder into cloud storage — it is a few KB, and it is what lets a phone pick up the connection after a laptop is gone.
 
