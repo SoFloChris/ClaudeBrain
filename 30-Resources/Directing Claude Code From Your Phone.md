@@ -60,9 +60,29 @@ Worth knowing before relying on it:
 - Requires a claude.ai login. API keys, `setup-token` tokens, and a non-Anthropic `ANTHROPIC_BASE_URL` all disqualify it.
 - `DISABLE_TELEMETRY`, `DO_NOT_TRACK`, `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`, and `DISABLE_GROWTHBOOK` each silently disable the feature-flag check it depends on.
 
-## Dispatch — delegating without a running session
+## Dispatch — a chat on the phone that spawns a session on the desktop
 
-Remote Control's weakness is that *something has to already be running*. Dispatch removes that: pair the mobile app with the Desktop app once, then message a task from the phone and it spawns a Desktop session on demand. The docs rate it "minimal setup," and it's the better fit for delegating work while genuinely away rather than steering work already in progress.
+Remote Control's weakness is that *something has to already be running* before the phone is useful. Dispatch removes that precondition, which makes it the right answer to "open a chat on my phone and have it start up on my desktop."
+
+Dispatch is a persistent conversation living in the **Cowork** tab of the Claude Desktop app. Message it a task and it decides how to handle it. A task becomes a Code session either because you asked outright ("open a Claude Code session and fix the login bug") or because Dispatch judged it to be development work. Bug fixes, dependency updates, test runs, and PRs route to Code; research, documents, and spreadsheets stay in Cowork.
+
+The spawned session appears in the Desktop app's **Code** tab sidebar with a **Dispatch** badge — so it's controllable from the desktop *and* the phone, and a push notification hits the phone when it finishes or needs approval.
+
+Requirements worth checking before committing to this path:
+
+- **Pro or Max plan.** Dispatch is explicitly unavailable on Team and Enterprise.
+- **Desktop app installed and running** on the target machine — this is what hosts the session, so the machine has to be awake.
+- **On Windows, [Git for Windows](https://git-scm.com/downloads/win) must be installed** or the Code tab won't work at all; restart the app after installing.
+- Each session gets its own [git worktree](https://code.claude.com/docs/en/worktrees) under `<project-root>/.claude/worktrees/`, so parallel sessions don't collide.
+- With computer use enabled, Dispatch sessions can drive apps too — but approvals expire every 30 minutes and re-prompt, unlike the session-long approvals in ordinary Code sessions.
+
+## Choosing between them
+
+| If you want to… | Use |
+|---|---|
+| Start work from the phone with nothing running yet | **Dispatch** |
+| Take over a session already in progress at the desk | **Remote Control** |
+| Work a repo you don't have cloned, or run many tasks in parallel | **Cloud** |
 
 ## The GitHub access rule people get wrong
 
