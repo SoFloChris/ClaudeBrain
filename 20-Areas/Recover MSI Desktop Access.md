@@ -25,16 +25,24 @@ tags:
 
 **Do NOT run this from a web or mobile Claude session.** Those run in throwaway Anthropic cloud containers with no `ssh` binary, no keys, and no network route to either machine. Verified repeatedly — see `Memory.md`. **This runbook only works from a Claude Code session running on the laptop**, because that is where the SSH key physically lives.
 
-## Blocker — the laptop is also broken (2026-07-29)
+## What actually happened (2026-07-29) — read this before the procedure
 
-The laptop cannot reach a desktop, so it cannot yet serve as the jump host this runbook depends on. Signing in produces:
+Three findings from the live incident supersede the assumptions this runbook was written under:
+
+1. **Tailscale was already installed on both machines the whole time.** The `~/.ssh/config` points at a `100.x` tailnet address for the desktop, and the laptop holds one too. Earlier advice in [[Directing Claude Code From Your Phone]] to "install Tailscale" was wrong for these machines — **check `~/.ssh/config` and `tailscale status` before setting anything up.**
+2. **SSH to the desktop is key-only on a non-default port.** The host block sets `PasswordAuthentication no` and `PreferredAuthentications publickey`. So the Windows password change bought *nothing* for SSH — key auth was already the only accepted method. The lockout was pure cost.
+3. **The SSH channel itself works and is worth keeping.** An earlier note called the whole SSH effort a pure loss; that was too strong. The *password change* was the loss. Reaching the desktop from a phone over the tailnet is exactly what it enables.
+
+**Keys live in `~/.ssh` on the laptop, which is not inside OneDrive** — so they die with the machine. Copy the folder into OneDrive before anything else; it is the single point of failure in this whole setup.
+
+## Resolved — the laptop profile failure (2026-07-29)
+
+The laptop briefly failed to sign in with:
 
 > The User Profile Service service failed the sign-in.
 > User profile cannot be loaded.
 
-**This is not a lockout.** The error fires *after* authentication, so the laptop's password is fine — the profile is corrupted. Almost certainly the same root cause as the desktop's changed password, since modifying Windows user accounts is what damages the `ProfileList` registry entries.
-
-Fix it before starting the procedure below, in this order:
+**This is not a lockout.** The error fires *after* authentication, so the password is fine — the profile is corrupted. Recovered the same day; the real profile loaded again. Keep the fix order below in case it recurs, since modifying Windows user accounts is what damages the `ProfileList` entries and that is exactly what triggered it:
 
 1. **Click OK and retry the sign-in twice.** The failure is intermittent often enough to rule out first.
 2. **System Restore.** Sign-in screen → power icon → hold **Shift** and click **Restart** → Troubleshoot → Advanced options → System Restore → pick a point dated before the change. Needs no working profile, which is why it beats the alternatives.

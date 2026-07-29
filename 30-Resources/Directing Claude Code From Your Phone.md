@@ -92,7 +92,13 @@ Everything above assumes the machine is healthy and signed in. When it isn't —
 
 **Tailscale is the answer instead.** Free for personal use, runs on Windows and both phone platforms, and puts every device on a private WireGuard mesh with a stable `100.x.x.x` address — no port forwarding, no dynamic DNS, nothing publicly exposed. Pair it with a phone terminal (Termius, Blink, JuiceSSH) for access from anywhere.
 
+> **Check before building.** On 2026-07-29 this was recommended as new setup when Tailscale had in fact been running on both of Chris's machines for weeks. `~/.ssh/config` already pointed at `100.x` addresses. **Read `~/.ssh/config` and run `tailscale status` first** — the mesh may already exist, and the only missing piece may be the phone.
+
 **A laptop can serve as a jump host when the target is locked out.** Phone → laptop over Tailscale → desktop over whatever SSH key the laptop already holds. Only the laptop needs to be reachable, which makes this work even when the desktop can't be signed into at all.
+
+**The client-side failure mode to recognize.** A phone SSH client reporting *"connection timed out — no more addresses to try"* against a `100.x` address almost always means the VPN is off, not that the host is down: without Tailscale running, that address is unroutable. On iOS the tell is the **`VPN` badge in the status bar** — absent badge, absent route. Check that before touching the host, port, or key, all of which are innocent.
+
+**Private keys are the single point of failure.** `~/.ssh` is not inside OneDrive or any sync folder by default, so the keys die with the machine holding them. Copy the folder into cloud storage — it is a few KB, and it is what lets a phone pick up the connection after a laptop is gone.
 
 **Keep the two jobs separate.** SSH is a recovery channel; a phone keyboard driving a Windows command prompt is a miserable place to write code. Dispatch is the work surface. Wanting SSH was never the mistake — changing a machine's login password to get it was, and so was expecting it to double as the way to do real work.
 
