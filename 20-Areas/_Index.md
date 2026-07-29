@@ -7,3 +7,7 @@ One note or subfolder per area. If something in an area becomes a concrete effor
 ## Areas
 
 - (add your areas — e.g. Health, Finances, Work)
+
+## Runbooks
+
+- [[Recover MSI Desktop Access]] — run from the laptop, the only machine holding the SSH key to the locked-out desktop
